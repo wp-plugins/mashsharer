@@ -169,6 +169,10 @@ class mashsharer {
              if( $pages === $pt){
                 return $content;
             }
+            
+            if( in_array('get_the_excerpt', $wp_current_filter) ) {
+                return $content;
+            }
 
             switch($position){
                 case 'manual':
