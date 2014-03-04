@@ -7,21 +7,20 @@ Requires at least: 3.1+
 Tested up to: 3.8.1
 Stable tag: 1.0
 
-Mashsharer is a high-performance Share functionality inspired by the the great website Mashable for Facebook and Twitter (More sites are coming soon)
+Mashsharer is a high-performance Share functionality inspired by the great website Mashable for Facebook and Twitter (More sites are coming soon)
 
 
 == Description == 
 
 Mashsharer shows the total share counts of Facebook and Twitter at a glance 
-It puts some beautiful and clean designed share buttons on top and end of your posts to get the best possible social share feedback from your user.<br>
+It puts some beautiful and clean designed share buttons on top and end of your posts to get the best most possible social share feedback from your user.<br>
 It´s inspired by the Share buttons Mashable is using on his website.
 
-<h3> Demo </h3>
+<h3> Demonstration website </h3>
 
-[DEMO](http://www.digitalsday.com/fix-this-app-cant-open-windows-8-error/ "Mashsharer - Mashable inspired Share Buttons")<br>
+[See it on Digitalsday](http://www.digitalsday.com/fix-this-app-cant-open-windows-8-error/ "Mashsharer - Mashable inspired Share Buttons")<br>
 
 This plugin is in active development and will be updated on a regular basis - Please do not rate negative before i tried my best to solve your issue. Thanks buddy!
-
 
 = Features =
 

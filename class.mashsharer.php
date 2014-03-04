@@ -51,7 +51,7 @@ class mashsharer {
 
             $counts = json_decode($output, true);
             //echo "This page has " . $counts["Twitter"] ." tweets, " . $counts["Facebook"]["like_count"] . " likes, and ". $counts["GooglePlusOne"] . "+1's";
-            $total_count = $counts['Twitter'] + $counts['Facebook']['total_count'] + $counts['GooglePlusOne'] + 10; /* we add a fake number here for smaller websites */
+            $total_count = $counts['Twitter'] + $counts['Facebook']['total_count'] + $counts['GooglePlusOne']; /* we can add a fake number here for smaller websites */
             
             $sql = "select TOTAL_SHARES from ".MASHSHARER_TABLE." where URL='".$url."'"; 
             $results = $wpdb->get_results($sql);
