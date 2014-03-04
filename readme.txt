@@ -7,14 +7,14 @@ Requires at least: 3.1+
 Tested up to: 3.8.1
 Stable tag: 1.0
 
-Mashsharer is a high-performance Share functionality inspired by the the great website Mashable for Facebook and Twitter (Additional websites are coming soon)
+Mashsharer is a high-performance Share functionality inspired by the the great website Mashable for Facebook and Twitter (More sites are coming soon)
 
 
 == Description == 
 
 Mashsharer shows the total share counts of Facebook and Twitter at a glance 
-It puts some beautiful and clean designed share buttons on top and end of your posts to get the best possible social share feedback from your user<br>
-It´s inspired by the same Share buttons Mashable is using on his website.
+It puts some beautiful and clean designed share buttons on top and end of your posts to get the best possible social share feedback from your user.<br>
+It´s inspired by the Share buttons Mashable is using on his website.
 
 <h3> Demo </h3>
 
@@ -51,7 +51,7 @@ After installation goto the settings page Settings->Mashsharer and make your cha
 
 
 == Official Site ==
-* http://www.mashsharer.com
+* http://www.digitalsday.com
 
 == Installation ==
 1. Download the plugin "Mashsharer" , unzip and place it in your wp-content/plugins/ folder. You can alternatively upload and install it via the WordPress plugin backend.
