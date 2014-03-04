@@ -1,0 +1,61 @@
+/*.share-buttons.v2 .primary-shares, .share-buttons.v2 .share-count {
+display: inline-block;
+}*/
+
+.mashsharer-box {
+/*float:left;
+margin-right:30px;
+margin-top:4px;*/
+line-height: 40px;
+padding-bottom:40px;
+}
+
+
+.mashsharer-count {
+text-align: center;
+margin-right: 30px;
+margin-top: 7px;
+float: left;
+line-height: 20px;
+}
+
+.mashsharer-buttons {
+display:inline-block;
+}
+
+.mashsharer-buttons > .facebook{
+font-size: 14px;
+border-radius: 2px;
+margin-right: 4px;
+background: #2d5f9a;
+position: relative;
+display: inline-block;
+cursor: pointer;
+height: 41px;
+width: 160px;
+color: #FFF;
+line-height:41px;
+text-align:center;
+}
+
+.mashsharer-buttons > .twitter{
+font-size: 14px;
+border-radius: 2px;
+margin-right: 4px;
+background: #00c3f3;
+position: relative;
+display: inline-block;
+cursor: pointer;
+height: 41px;
+width: 160px;
+color: #FFF;
+line-height:41px;
+text-align:center;
+}
+.mashsharer-sharetext {
+font-size:11px;
+font-family:Arial,sans-serif;
+color:#8A8C8E;
+}
+
+
