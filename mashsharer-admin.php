@@ -236,6 +236,17 @@ function mashsharer_conf() {
                                                     <?php _e('Select where you want the share buttons appear', 'mashsharer') ?>
                                                 </td>
 					</tr>
+                                        <tr valign="top">
+						<th scope="row">
+							<?php _e('Support', 'mashsharer') ?>
+						</th>
+						<td>
+							
+						</td>
+                                                <td>
+                                                    <?php _e('Do you have any issues? Write me and i try my best to fix it: <a href="mailto:rene@digitalsday.com">rene@digitalsday.com</a>.<br> Please also rate this plugin at <a href="http://wordpress.org/support/view/plugin-reviews/mashsharer" target="_blank">wordpress.org</a>. That helps me to increase the download rate.', 'mashsharer') ?>
+                                                </td>
+					</tr>
                                     </tr>
                                 </table>    
                             
