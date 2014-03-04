@@ -1,11 +1,11 @@
-=== Mashsharer===
+﻿=== Mashsharer===
 Contributors: ReneHermi
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Mashable, Share button, Facebook Share button, Twitter Share Button, Social Share, Share, Google+, Twitter, Facebook, Digg, Email, Stumble Upon, Linkedin
 Requires at least: 3.1+
 Tested up to: 3.8.1
-Stable tag: 1.0.1
+Stable tag: 1.1.0
 
 Mashsharer is a high-performance Share functionality inspired by the great website Mashable for Facebook and Twitter (More sites are coming soon)
 
