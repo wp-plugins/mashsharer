@@ -1,18 +1,18 @@
 <?php
 /*
-* Plugin Name: Mashsharer
-* Version: 1.0.0
-* Plugin URI: http://www.mashsharer.com
-* Description: Mashsharer is a Share functionality inspired by the the great website Mashable for Facebook and Twitter (Additional services are coming soon)
+* Plugin Name: Mashshare
+* Version: 1.1.0
+* Plugin URI: http://www.digitalsday.com
+* Description: Mashshare is a Share functionality inspired by the the great website Mashable for Facebook and Twitter (Additional services are coming soon)
 * Author: Rene Hermenau
-* Author URI: http://www.mashsharer.com
+* Author URI: http://www.digitalsday.com
   
-* Mashsharer is free software: you can redistribute it and/or modify
+* Mashshare is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
 * the Free Software Foundation, either version 2 of the License, or
 * any later version.
 *
-* Mashsharer is distributed in the hope that it will be useful,
+* Mashshare is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 * GNU General Public License for more details.
@@ -30,7 +30,7 @@ if (!defined('MASHSHARER_VERSION_KEY'))
     define('MASHSHARER_VERSION_KEY', 'mashsharer_version');
 
 if (!defined('MASHSHARER_VERSION_NUM'))
-    define('MASHSHARER_VERSION_NUM', '1.0.0');
+    define('MASHSHARER_VERSION_NUM', '1.1.0');
 add_option(MASHSHARER_VERSION_KEY, MASHSHARER_VERSION_NUM);
 
 global $wpdb;
@@ -210,22 +210,6 @@ function mashsharer(){
     global $atts;
     $mashsharer = new mashsharer();
     echo $mashsharer->mashsharerShow($atts);
-    //$mashsharer->mashsharer_filter_content($content);
 }
-
-/*function mashsharerInject($content){
-    //$content = get_the_content();
-    //global $content;
-    $mashsharerfilter = new mashsharer();
-    $mashsharerfilter->mashsharer_filter_content($content);
-}
-
-
-function mashsharertest(){
-        $mashsharerfilter = new mashsharer();  
-}*/
-//add_filter('the_content', 'mashsharerInject');
-//add_filter('the_content', 'mashsharer');
-//add_filter('the_content', array('mashsharer', 'mashsharer_filter_content'));
 
 ?>

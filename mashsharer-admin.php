@@ -22,7 +22,7 @@ function mashsharer_load_menu() {
 	$plugin_key = array_keys($active_plugin,"$pluginpath");
 	$active_plugin_key = $plugin_key[0];
 	
-	add_submenu_page('options-general.php', __('Mashsharer'), __('Mashsharer'), 'manage_options', 'mashsharer-config', 'mashsharer_conf');
+	add_submenu_page('options-general.php', __('Mashshare'), __('Mashshare'), 'manage_options', 'mashsharer-config', 'mashsharer_conf');
 	
 }
 
@@ -210,7 +210,7 @@ function mashsharer_conf() {
                                         </td>
                                         <td valign="top">
                                              Choose where you would like the social icons to appear, before or after the main content. If set to Manual, you can use this code to place your Social links anywhere you like in your templates files:
-                                             &nbsp; <strong>&lt;?php mashsharer(); ?&gt;</strong>
+                                             &nbsp; <strong>&lt;?php mashsharer(); ?&gt;</strong> or use the shortcode: [mashshare] in your posts.
                                         </td>
                                         <tr valign="top">
 						<th scope="row">

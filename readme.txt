@@ -1,4 +1,4 @@
-﻿=== Mashsharer===
+﻿=== Mashshare===
 Contributors: ReneHermi
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -7,18 +7,18 @@ Requires at least: 3.1+
 Tested up to: 3.8.1
 Stable tag: 1.1.0
 
-Mashsharer is a high-performance Share functionality inspired by the great website Mashable for Facebook and Twitter (More sites are coming soon)
+Mashshare is a high-performance Share functionality inspired by the great website Mashable for Facebook and Twitter (More sites are coming soon)
 
 
 == Description == 
 
-Mashsharer shows the total share counts of Facebook and Twitter at a glance 
+Mashshare shows the total share counts of Facebook and Twitter at a glance 
 It puts some beautiful and clean designed share buttons on top and end of your posts to get the best most possible social share feedback from your user.<br>
 It´s inspired by the Share buttons Mashable is using on his website.
 
 <h3> Demonstration website </h3>
 
-[See it on Digitalsday](http://www.digitalsday.com/fix-this-app-cant-open-windows-8-error/ "Mashsharer - Mashable inspired Share Buttons")<br>
+[See it on Digitalsday](http://www.digitalsday.com/fix-this-app-cant-open-windows-8-error/ "Mashshare - Mashable inspired Share Buttons")<br>
 
 This plugin is in active development and will be updated on a regular basis - Please do not rate negative before i tried my best to solve your issue. Thanks buddy!
 
@@ -40,22 +40,22 @@ This plugin is in active development and will be updated on a regular basis - Pl
 
 = How does it work? =
 
-Mashsharer makes use of the great webservice sharedcount.com and periodically checks for the total count 
+Mashshare makes use of the great webservice sharedcount.com and periodically checks for the total count 
 of all your Facebook and Twitter shares and cumulates them. It than shows the total number beside the Share buttons. 
 No need to embed dozens of external slow loading scripts into your website. 
  
 = How to install and setup? =
-Install it via the admin dashboard and to 'Plugins', click 'Add New' and search the plugins for 'Mashsharer'. Install the plugin with 'Install Now'.
-After installation goto the settings page Settings->Mashsharer and make your changes there.
+Install it via the admin dashboard and to 'Plugins', click 'Add New' and search the plugins for 'Mashshare'. Install the plugin with 'Install Now'.
+After installation goto the settings page Settings->Mashshare and make your changes there.
 
 
 == Official Site ==
 * http://www.digitalsday.com
 
 == Installation ==
-1. Download the plugin "Mashsharer" , unzip and place it in your wp-content/plugins/ folder. You can alternatively upload and install it via the WordPress plugin backend.
+1. Download the plugin "Mashshare" , unzip and place it in your wp-content/plugins/ folder. You can alternatively upload and install it via the WordPress plugin backend.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Select Plugins->Mashsharer
+3. Select Plugins->Mashshare
 
 == Screenshots ==
 
@@ -65,6 +65,12 @@ After installation goto the settings page Settings->Mashsharer and make your cha
 3. screenshot-4.png
 
 == Changelog ==
+
+= 1.1 = 
+* Fix: Disable sharer in excerpts
+* New: Add support contact data
+* New: Change public name to mashshare (shorter is better sometimes)
+* New: Add Shortcode [mashshare]
 
 = 1.0 = 
 * First release
