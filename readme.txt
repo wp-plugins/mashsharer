@@ -22,7 +22,7 @@ It´s inspired by the Share buttons Mashable is using on his website.
 
 This plugin is in active development and will be updated on a regular basis - Please do not rate negative before i tried my best to solve your issue. Thanks buddy!
 
-= Features =
+= Main features Features =
 
 * Performance improvement for your website as no external scripts and count data is loaded
 * Privacy protection for your user - No permanent connection to Facebook, Twitter and Google needed
@@ -38,6 +38,15 @@ This plugin is in active development and will be updated on a regular basis - Pl
 * Service and support by the author
 * Periodic updates and improvements. (Feel free to tell me your demand)
 * More Share Buttons are coming soon. 
+
+**Shortcodes**
+
+* Use `[mashshare]` anywhere in pages or post's text to show the buttons and total count where you like to at a custom position.
+Buttons are shown exactly where you put the shortcode in.
+* For manual insertion of the Share Buttons in your template files use the following php code where you want to show your Mashshare buttons: `mashsharer();`
+Configure the Share buttons in the settings page of the plugin.
+* Change the color and font size of Mashshare directly in the css file `yourwebsite.com/wp-content/mashsharer/assets/mashsharer.css`
+* With one of the next updates i will give you the possibility to change color and font-size on the settings page. So you dont have to fiddle around in css files any longer.
 
 = How does it work? =
 
