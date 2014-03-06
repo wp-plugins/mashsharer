@@ -12,13 +12,13 @@ Mashshare Share Buttons is a high-performance Share functionality inspired by th
 
 == Description == 
 
-Mashshare shows the total share counts of Facebook and Twitter at a glance 
-It puts some beautiful and clean designed share buttons on top and end of your posts to get the best most possible social share feedback from your user.<br>
+Mashshare Share Buttons shows the total share counts of Facebook and Twitter at a glance 
+It puts some beautiful and clean designed Share Buttons on top and end of your posts to get the best most possible social share feedback from your user.<br>
 It´s inspired by the Share buttons Mashable is using on his website.
 
 <h3> Demonstration website </h3>
 
-[See it on Digitalsday](http://www.digitalsday.com/fix-this-app-cant-open-windows-8-error/ "Mashshare - Mashable inspired Share Buttons")<br>
+[Share Buttons](http://www.digitalsday.com/fix-this-app-cant-open-windows-8-error/ "Mashshare - Mashable inspired Share Buttons")<br>
 
 This plugin is in active development and will be updated on a regular basis - Please do not rate negative before i tried my best to solve your issue. Thanks buddy!
 
@@ -37,6 +37,7 @@ This plugin is in active development and will be updated on a regular basis - Pl
 * Uninstaller: Removes all plugin tables and settings in the WP database
 * Service and support by the author
 * Periodic updates and improvements. (Feel free to tell me your demand)
+* More Share Buttons are coming soon. 
 
 = How does it work? =
 
