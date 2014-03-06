@@ -7,7 +7,7 @@ Requires at least: 3.1+
 Tested up to: 3.8.1
 Stable tag: 1.1.0
 
-Mashshare sharing plugin is a high-performance Share Button functionality inspired by the great website Mashable for Facebook and Twitter (More sites coming)
+Mashshare sharing plugin is a high-performance share functionality inspired by the great website Mashable for Facebook and Twitter
 
 
 == Description == 
