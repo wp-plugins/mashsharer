@@ -12,13 +12,13 @@ Mashshare Share Buttons is a high-performance Share functionality inspired by th
 
 == Description == 
 
-Mashshare Share Buttons shows the total share counts of Facebook and Twitter at a glance 
-It puts some beautiful and clean designed Share Buttons on top and end of your posts to get the best most possible social share feedback from your user.<br>
+> Mashshare Share Buttons shows the total share counts of Facebook and Twitter at a glance 
+It puts some beautiful and clean designed Share Buttons on top and end of your posts to get the best most possible social share feedback from your user.
 It´s inspired by the Share buttons Mashable is using on his website.
 
-<h3> Demonstration website </h3>
+<h3> Share buttons demo </h3>
 
-[Share Buttons](http://www.digitalsday.com/fix-this-app-cant-open-windows-8-error/ "Mashshare - Mashable inspired Share Buttons")<br>
+[Share Buttons](http://www.digitalsday.com/fix-this-app-cant-open-windows-8-error/ "Mashshare - Mashable inspired Share Buttons")
 
 This plugin is in active development and will be updated on a regular basis - Please do not rate negative before i tried my best to solve your issue. Thanks buddy!
 
@@ -48,6 +48,31 @@ No need to embed dozens of external slow loading scripts into your website.
 = How to install and setup? =
 Install it via the admin dashboard and to 'Plugins', click 'Add New' and search the plugins for 'Mashshare'. Install the plugin with 'Install Now'.
 After installation goto the settings page Settings->Mashshare and make your changes there.
+
+
+== Frequently Asked Questions ==
+
+<h4>Find here the most asked questions and my answers. If you have any special question do not hesitate to write me personally at rene[at]digitalsday.com</h4>
+
+<h4>Do i need a Mashshare or sharedcount account?</h4>
+No you don´t. There is no account needed for up to 10.000 daily requests. For most websites this is suitable enough as Mashshare make use of exensive caching so 
+the requests to sharedount are reduced to a little. If you want to have more often updated share counts you can register at sharecount for a free account and than are able
+to use a free api key which increases your daily request limit up to 50.000 which should be fine for very large websites. Within the settings page of Mashshare Share buttons you find the sharedcount register link.
+
+<h4>Does this plugin sends any personal user data to you or to Facebook, Twitter etc.?</h4>
+
+No, there is no personal data send to Facebook, Twitter, Google and other services. There is also no data which goes to my hands that includes any IP or other data. 
+The big advantage of using this Mashare Share buttons is the independance in comparision to other plugins which creates steady connections to Facebook and Co. 
+So there is no IP based data send to the social networks or to sharedcount. 
+
+<h4>How is sharedcount able to get the total number of shares?</h4>
+Sharedcount is using public available API services of the social networks which deliver only the number of shares for a specific webpage. Sharedcount is not able to see who shared anything, only how often.
+
+<h4>Do i have to do manual changes in Javascript or HTML Code?</h4>
+There is no need for you to make any manual changes. The plugin does everything for you. But if you are an experienced web-developer you are free to use the php function mashsharer(); in your templates.
+
+<h4>Is there a shortcode for pages and posts?</h4>
+Use the shortcode [mashshare] to embed the Share Buttons in pages or posts.
 
 
 == Official Site ==
