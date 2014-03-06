@@ -1,6 +1,6 @@
 <?php
 /*
-* Plugin Name: Mashshare
+* Plugin Name: Mashshare Share Buttons
 * Version: 1.1.0
 * Plugin URI: http://www.digitalsday.com
 * Description: Mashshare is a Share functionality inspired by the the great website Mashable for Facebook and Twitter (Additional services are coming soon)
