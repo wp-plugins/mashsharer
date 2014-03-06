@@ -18,7 +18,7 @@ It´s inspired by the Share buttons Mashable is using on his website.
 
 <h3> Mashshare demo </h3>
 
-[Share Buttons](http://www.digitalsday.com/fix-this-app-cant-open-windows-8-error/ "Mashshare - Mashable inspired Share Buttons")
+[Share Buttons](http://www.digitalsday.com/fix-this-app-cant-open-windows-8-error/ "Mash share - Mashable inspired Share Buttons")
 
 This plugin is in active development and will be updated on a regular basis - Please do not rate negative before i tried my best to solve your issue. Thanks buddy!
 
