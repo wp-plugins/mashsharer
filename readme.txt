@@ -2,12 +2,12 @@
 Contributors: ReneHermi
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: Mashable, Share button, Facebook Share button, Twitter Share Button, Social Share, Share, Google+, Twitter, Facebook, Digg, Email, Stumble Upon, Linkedin
+Tags: Mashable, Share button, Facebook Share button, Twitter Share Button, Social Share, Share, Google+, Twitter, Facebook, Digg, Email, Stumble Upon, Linkedin,+1, add to any, AddThis, addtoany, admin, bookmark, bookmarking, bookmarks, buffer, button, del.icio.us, Digg, e-mail, email, Facebook, facebook like, google, google plus, google plus one, icon, icons, image, images, Like, linkedin, links, lockerz, page, pages, pin, pin it, pinit, pinterest, plugin, plus 1, plus one, Post, posts, Reddit, save, seo, Share, Shareaholic, sharedaddy, sharethis, sharing, shortcode, sidebar, sociable, social, social bookmarking, social bookmarks, statistics, stats, stumbleupon, svg, technorati, tumblr, tweet, twitter, vector, widget, wpmu
 Requires at least: 3.1+
 Tested up to: 3.8.1
 Stable tag: 1.1.0
 
-Mashshare Share Buttons is a high-performance Share functionality inspired by the great website Mashable for Facebook and Twitter (More sites coming)
+Mashshare sharing plugin is a high-performance Share Button functionality inspired by the great website Mashable for Facebook and Twitter (More sites coming)
 
 
 == Description == 
@@ -25,7 +25,7 @@ This plugin is in active development and will be updated on a regular basis - Pl
 = Main features Features =
 
 * Performance improvement for your website as no external scripts and count data is loaded
-* Privacy protection for your user - No permanent connection to Facebook, Twitter and Google needed
+* Privacy protection for your user - No permanent connection to Facebook, Twitter and Google needed for sharing
 * High-Performance caching functionality. You decide how often counts are updated.
 * All counts will be collected in your database and loaded first from cache. No further database requests than.
 * Up to 10.000 free daily requests
