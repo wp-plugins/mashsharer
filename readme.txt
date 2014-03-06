@@ -1,4 +1,4 @@
-﻿=== Mashshare===
+﻿=== Mashshare Share Buttons ===
 Contributors: ReneHermi
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -7,7 +7,7 @@ Requires at least: 3.1+
 Tested up to: 3.8.1
 Stable tag: 1.1.0
 
-Mashshare is a high-performance Share functionality inspired by the great website Mashable for Facebook and Twitter (More sites are coming soon)
+Mashshare Share Buttons is a high-performance Share functionality inspired by the great website Mashable for Facebook and Twitter (More sites coming)
 
 
 == Description == 
