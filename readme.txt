@@ -43,7 +43,7 @@ This plugin is in active development and will be updated on a regular basis - Pl
 
 * Use `[mashshare]` anywhere in pages or post's text to show the buttons and total count where you like to at a custom position.
 Buttons are shown exactly where you put the shortcode in.
-* For manual insertion of the Share Buttons in your template files use the following php code where you want to show your Mashshare buttons: `mashsharer();`
+* For manual insertion of the Share Buttons in your template files use the following php code where you want to show your Mash share buttons:`mashsharer();`
 Configure the Share buttons in the settings page of the plugin.
 * Change the color and font size of Mashshare directly in the css file `yourwebsite.com/wp-content/mashsharer/assets/mashsharer.css`
 * With one of the next updates i will give you the possibility to change color and font-size on the settings page. So you dont have to fiddle around in css files any longer.
