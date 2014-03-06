@@ -16,7 +16,7 @@ Mashshare Share Buttons is a high-performance Share functionality inspired by th
 It puts some beautiful and clean designed Share Buttons on top and end of your posts to get the best most possible social share feedback from your user.
 It´s inspired by the Share buttons Mashable is using on his website.
 
-<h3> Share buttons demo </h3>
+<h3> Mashshare demo </h3>
 
 [Share Buttons](http://www.digitalsday.com/fix-this-app-cant-open-windows-8-error/ "Mashshare - Mashable inspired Share Buttons")
 
@@ -100,6 +100,3 @@ Use the shortcode [mashshare] to embed the Share Buttons in pages or posts.
 
 = 1.0 = 
 * First release
-
-
-== Frequently Asked Questions ==
