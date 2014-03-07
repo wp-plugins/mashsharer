@@ -104,8 +104,11 @@ Use the shortcode [mashshare] to embed the Share Buttons in pages or posts.
 3. screenshot-4.png
 
 == Changelog ==
+= 1.1.1 =
 
-= 1.1 = 
+Fix: Error in sharing title in EDD easy digital download and other third party plugins
+
+= 1.1.0 = 
 * Fix: Disable sharer in excerpts
 * New: Add support contact data
 * New: Change public name to mashshare (shorter is better sometimes)
