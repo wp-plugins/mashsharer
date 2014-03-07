@@ -61,7 +61,11 @@ After installation goto the settings page Settings->Mashshare and make your chan
 
 == Frequently Asked Questions ==
 
-<h4>Find here the most asked questions and my answers. If you have any special question do not hesitate to write me personally at rene[at]digitalsday.com</h4>
+> <h4>Find here the most asked questions and my answers. If you have any special question do not hesitate to write me personally at rene[at]digitalsday.com</h4>
+
+<h4>Why is the total count not shown immediately after sharing?</h4>
+It takes some time for the script to detect the sharing. So wait a few minutes than you see the total calculated clicks. Keep also in mind the caching time you defined in the admin panel.
+So when you set the plugin to 5minutes caching time. You have to wait at least for 5minutes until the click count is shown.
 
 <h4>Do i need a Mashshare or sharedcount account?</h4>
 No you don´t. There is no account needed for up to 10.000 daily requests. For most websites this is suitable enough as Mashshare make use of exensive caching so 
