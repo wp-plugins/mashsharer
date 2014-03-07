@@ -2,8 +2,8 @@
 /*
  	Class Name: class.mashsharer.php
  	Author: Rene Hermenau
- *      version 1.0.0
- 	@scince 1.0.0
+ *      version 1.0.1
+ 	@scince 1.1.1
  	Description: main class for mashsharer
 */
 
@@ -95,7 +95,7 @@ class mashsharer {
             'fontfamily' => 'Helvetica Neue,Helvetica,Arial,sans-serif'
                         ), $atts));
 
-        $title = "" . get_the_title() . "";
+        $title = urlencode(get_the_title());
 
 
             if (!$url)
@@ -144,7 +144,7 @@ class mashsharer {
                     </div>
                     <div style="clear:both;:"></div>
                     ';
-            return $return;
+            echo $return;
         
     }
     
