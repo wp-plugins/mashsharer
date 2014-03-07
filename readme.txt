@@ -61,7 +61,7 @@ After installation goto the settings page Settings->Mashshare and make your chan
 
 == Frequently Asked Questions ==
 
-> <h4>Find here the most asked questions and my answers. If you have any special question do not hesitate to write me personally at rene[at]digitalsday.com</h4>
+> Find here the most asked questions and my answers. If you have any special question do not hesitate to write me personally at rene[at]digitalsday.com
 
 <h4>Why is the total count not shown immediately after sharing?</h4>
 It takes some time for the script to detect the sharing. So wait a few minutes than you see the total calculated clicks. Keep also in mind the caching time you defined in the admin panel.
@@ -105,11 +105,7 @@ Use the shortcode [mashshare] to embed the Share Buttons in pages or posts.
 
 == Changelog ==
 
-= 1.1.1 =
-
-* Fix: Title error in EDD Easy Digital downloads and other third party plugins
-
-= 1.1.0 = 
+= 1.1 = 
 * Fix: Disable sharer in excerpts
 * New: Add support contact data
 * New: Change public name to mashshare (shorter is better sometimes)
