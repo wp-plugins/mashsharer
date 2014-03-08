@@ -2,7 +2,7 @@
 /*
  	Class Name: class.mashsharer.php
  	Author: Rene Hermenau
- *      version 1.0.1
+ *      version 1.0.2
  	@scince 1.1.1
  	Description: main class for mashsharer
 */
@@ -144,7 +144,7 @@ class mashsharer {
                     </div>
                     <div style="clear:both;:"></div>
                     ';
-            echo $return;
+            return $return;
         
     }
     
@@ -173,6 +173,16 @@ class mashsharer {
             if( in_array('get_the_excerpt', $wp_current_filter) ) {
                 return $content;
             }
+			
+			 if ( !is_singular() ){
+                return $content;
+            }
+
+
+            if( is_feed() ) {
+                return $content;
+            }
+
 
             switch($position){
                 case 'manual':
