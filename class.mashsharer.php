@@ -2,7 +2,7 @@
 /*
  	Class Name: class.mashsharer.php
  	Author: Rene Hermenau
- *      version 1.0.2
+ *      version 1.0.3
  	@scince 1.1.1
  	Description: main class for mashsharer
 */
@@ -95,8 +95,9 @@ class mashsharer {
             'fontfamily' => 'Helvetica Neue,Helvetica,Arial,sans-serif'
                         ), $atts));
 
-        $title = urlencode(get_the_title());
-
+      
+		$title = the_title_attribute('echo=0'); 
+		
 
             if (!$url)
                 $url = get_permalink($post->ID);
