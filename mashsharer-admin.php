@@ -65,10 +65,9 @@ $mashsharer_nonce = 'mashsharer-update-key';
 				'cache'		 	=> get_option('mashsharer_cache_expire'),
                                 'position'		=> get_option('mashsharer_position'),
                                 'pages'                 => get_option('mashsharer_pages'),
-                                'posts'                 => get_option('mashsharer_posts')
-                            ,
-                        
-			)
+                                'posts'                 => get_option('mashsharer_posts'),
+                                'frontpage'             => get_option('mashsharer_frontpage')
+           			)
 		);
 	}
         
@@ -150,6 +149,12 @@ function mashsharer_conf() {
 
                  if ( isset( $_POST['mashsharer_position'] ) )
 			update_option( 'mashsharer_position', $_POST['mashsharer_position'] );
+                 
+                 if ( $_POST['mashsharer_frontpage'] == 1){
+			update_option( 'mashsharer_frontpage', 1 ); echo $_POST['mashsharer_frontpage'];
+                } else {
+                        update_option( 'mashsharer_frontpage', 0 ); echo $_POST['mashsharer_frontpage'];
+                }
                 
 
 	} 
@@ -234,6 +239,21 @@ function mashsharer_conf() {
 						</td>
                                                 <td>
                                                     <?php _e('Select where you want the share buttons appear', 'mashsharer') ?>
+                                                </td>
+					</tr>
+                                        <tr valign="top">
+						<th scope="row">
+							<?php _e('Frontpage', 'mashsharer') ?>
+						</th>
+						<td>
+							<fieldset>
+								<label for="mashsharer_frontpage">
+									<input type="checkbox" name="mashsharer_frontpage" id="mashsharer_frontpage" value="1" <?php checked('1', $options['frontpage']); ?> />
+								</label>
+                                                         </fieldset>
+						</td>
+                                                <td>
+                                                    <?php _e('Select when the buttons should appear on the frontpage', 'mashsharer') ?>
                                                 </td>
 					</tr>
                                         <tr valign="top">

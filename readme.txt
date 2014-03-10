@@ -5,7 +5,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Mashable, Share button, Facebook Share button, Twitter Share Button, Social Share, Share, Google+, Twitter, Facebook, Digg, Email, Stumble Upon, Linkedin,+1, add to any, AddThis, addtoany, admin, bookmark, bookmarking, bookmarks, buffer, button, del.icio.us, Digg, e-mail, email, Facebook, facebook like, google, google plus, google plus one, icon, icons, image, images, Like, linkedin, links, lockerz, page, pages, pin, pin it, pinit, pinterest, plugin, plus 1, plus one, Post, posts, Reddit, save, seo, Share, Shareaholic, sharedaddy, sharethis, sharing, shortcode, sidebar, sociable, social, social bookmarking, social bookmarks, statistics, stats, stumbleupon, svg, technorati, tumblr, tweet, twitter, vector, widget, wpmu
 Requires at least: 3.1+
 Tested up to: 3.8.1
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 
 Mashshare sharing plugin is a high-performance share functionality inspired by the great website Mashable for Facebook and Twitter
 
@@ -104,6 +104,12 @@ Use the shortcode [mashshare] to embed the Share Buttons in pages or posts.
 3. screenshot-4.png
 
 == Changelog ==
+
+= 1.1.4 =
+* New: Support for more social networks (background work)
+* Fix: No bgcolor for count
+* Fix: Use onlick instead javascript in href. Prevents issues with YOAST analytics plugin
+* New: Allow shortcode in text widgets
 
 = 1.1.3 =
 * Fix: Sanitation fix for international languages. E.g. french

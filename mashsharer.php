@@ -1,7 +1,7 @@
 <?php
 /*
 * Plugin Name: Mashshare Share Buttons
-* Version: 1.1.3
+* Version: 1.1.4
 * Plugin URI: http://www.digitalsday.com
 * Description: Mashshare is a Share functionality inspired by the the great website Mashable for Facebook and Twitter (Additional services are coming soon)
 * Author: Rene Hermenau
@@ -30,7 +30,7 @@ if (!defined('MASHSHARER_VERSION_KEY'))
     define('MASHSHARER_VERSION_KEY', 'mashsharer_version');
 
 if (!defined('MASHSHARER_VERSION_NUM'))
-    define('MASHSHARER_VERSION_NUM', '1.1.3');
+    define('MASHSHARER_VERSION_NUM', '1.1.4');
 add_option(MASHSHARER_VERSION_KEY, MASHSHARER_VERSION_NUM);
 
 global $wpdb;
@@ -103,6 +103,7 @@ function mashsharer_create()
         add_option('mashsharer_position');
         add_option('mashsharer_pages');
         add_option('mashsharer_posts');
+        add_option('mashsharer_frontpage');
         
         wp_schedule_event( time(), 'daily', 'mashsharer_transients_cron');
 }
@@ -126,6 +127,7 @@ function mashsharer_uninstall() {
     delete_option('mashsharer_position');
     delete_option('mashsharer_pages');
     delete_option('mashsharer_posts');
+    delete_option('mashsharer_frontpage');
     
     wp_clear_scheduled_hook('mashsharer_transients_cron');
     //delete_option('mashsharer_check_frequency', '');

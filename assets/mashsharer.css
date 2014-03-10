@@ -1,13 +1,10 @@
-/*.share-buttons.v2 .primary-shares, .share-buttons.v2 .share-count {
-display: inline-block;
-}*/
 
 .mashsharer-box {
-/*float:left;
-margin-right:30px;
+/*margin-right:30px;
 margin-top:4px;*/
-line-height: 40px;
-padding-bottom:40px;
+/*line-height: 40px;*/
+/*padding-bottom:40px;*/
+float:clear;
 }
 
 
@@ -21,6 +18,8 @@ line-height: 20px;
 
 .mashsharer-buttons {
 display:inline-block;
+float:left;
+padding-bottom:7px;
 }
 
 .mashsharer-buttons > .facebook{
@@ -41,7 +40,7 @@ text-align:center;
 .mashsharer-buttons > .twitter{
 font-size: 14px;
 border-radius: 2px;
-margin-right: 4px;
+margin-right: 7px;
 background: #00c3f3;
 position: relative;
 display: inline-block;

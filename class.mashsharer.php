@@ -2,7 +2,7 @@
 /*
  	Class Name: class.mashsharer.php
  	Author: Rene Hermenau
- *      version 1.0.3
+ *      version 1.0.4
  	@scince 1.1.1
  	Description: main class for mashsharer
 */
@@ -25,6 +25,7 @@ class mashsharer {
             //self::$instance = $this;
             add_shortcode('mashshare',array( $this, 'mashsharerShow'));
             add_filter('the_content', array( $this, 'mashsharer_filter_content'));
+            add_filter('widget_text', 'do_shortcode');
             //add_shortcode('mashshare',array( $this, 'mashsharerGetTotal'));
         } // __construct
         
@@ -72,19 +73,37 @@ class mashsharer {
             echo $sql;*/
     }
     
-    public function mashsharerShow($atts) {
+    /* DEFINE ADDONS */
+    public function mashload($place){
+        	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		if (class_exists('mashshare_networks') && is_plugin_active('mashshare-networks/mashshare-networks.php')) {
+                        include_once(ABSPATH . '/wp-content/plugins/mashshare-networks/mashshare-networks.php');
+			$networks = new mashshare_networks();
+			$addons = $networks->mashshare_get_networks($place);
+		}
+        return $addons;
+    }
+    
+    public function mashsharerShow($atts, $place) {
         global $wpdb;
         global $post;
         global $url;
         global $cacheexpire;
+        global $addons;
+        //global $place;
         $cacheexpire = get_option('mashsharer_cache_expire');
         //$cacheexpire = 1;
         $logme = new mashsharer_debug;
+		
+	/* Load addons */
+        $addons = $this->mashload($place);	
+
+		
         extract(shortcode_atts(array(
             'cache' => '3600',
             'url' => 0,
             'f' => 1,
-            'bgcolor' => '#ffffff',
+            'bgcolor' => '',
             'bordercolor' => '#ffffff',
             'borderwidth' => '0',
             'bordertype' => 'solid',
@@ -96,9 +115,8 @@ class mashsharer {
                         ), $atts));
 
       
-		$title = the_title_attribute('echo=0'); 
-		
-
+            $title = addslashes(the_title_attribute('echo=0')); 
+	
             if (!$url)
                 $url = get_permalink($post->ID);
   
@@ -139,10 +157,11 @@ class mashsharer {
 	            <br><span class="mashsharer-sharetext">SHARES</span>
 	            </div>
                     <div class="mashsharer-buttons">
-                      <a class="facebook" href="javascript:mashFbSharrer(\'' . $url . '\', \'' . $title . '\', \'Facebook share popup\', \'http://goo.gl/dS52U\', 520, 350)">Share on Facebook</a>	    
-                      <a class="twitter" href="javascript:mashTwSharrer(\'' . $url . '\', \'' . $title . '\', \'Twitter share popup\', \'http://goo.gl/dS52U\', 520, 350)">Tweet on Twitter</a>
-                    </div>
-                    </div>
+                      <a class="facebook" onclick="javascript:mashFbSharrer(\'' . $url . '\',\'' . $title . '\', \'Facebook share popup\',\'http://goo.gl/dS52U\',520,350)" href="javascript:return(0);">Share on Facebook</a>	    
+                      <a class="twitter" onclick="javascript:mashTwSharrer(\'' . $url . '\', \'' . $title . '\', \'Twitter share popup\', \'http://goo.gl/dS52U\', 520, 350)"" href="javascript:return(0)">Tweet on Twitter</a>
+                    </div>'
+                    . $addons . 
+                    '</div>
                     <div style="clear:both;:"></div>
                     ';
             return $return;
@@ -152,11 +171,13 @@ class mashsharer {
     public function mashsharer_filter_content($content){
             global $atts;
             global $wp_current_filter;
-
+            global $posts;
+            global $pages;
             $position   = get_option('mashsharer_position');
             $option_posts = get_option('mashsharer_posts');
             $option_pages = get_option('mashsharer_pages');
             $pt         = get_post_type();
+            $frontpage = get_option('mashsharer_frontpage');
             
             if ($option_posts != 1)
                     $posts = 'post';
@@ -174,10 +195,14 @@ class mashsharer {
             if( in_array('get_the_excerpt', $wp_current_filter) ) {
                 return $content;
             }
-			
-			 if ( !is_singular() ){
+            
+            if ($frontpage == 0){
                 return $content;
             }
+			
+            /*if ( !is_singular() ){
+                return $content;
+            }*/
 
 
             if( is_feed() ) {
@@ -190,15 +215,15 @@ class mashsharer {
                 break;
 
                 case 'both':
-                    $content = $this->mashsharerShow($atts) . $content . $this->mashsharerShow($atts);
+                    $content = $this->mashsharerShow($atts, '') . $content . $this->mashsharerShow($atts, "bottom");
                 break;
 
                 case 'before':
-                    $content = $this->mashsharerShow($atts) . $content;
+                    $content = $this->mashsharerShow($atts, '') . $content;
                 break;
 
                 case 'after':
-                    $content .= $this->mashsharerShow($atts);
+                    $content .= $this->mashsharerShow($atts, '');
                 break;
             }
 
