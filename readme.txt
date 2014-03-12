@@ -5,7 +5,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Mashable, Share button, Facebook Share button, Twitter Share Button, Social Share, Share, Google+, Twitter, Facebook, Digg, Email, Stumble Upon, Linkedin,+1, add to any, AddThis, addtoany, admin, bookmark, bookmarking, bookmarks, buffer, button, del.icio.us, Digg, e-mail, email, Facebook, facebook like, google, google plus, google plus one, icon, icons, image, images, Like, linkedin, links, lockerz, page, pages, pin, pin it, pinit, pinterest, plugin, plus 1, plus one, Post, posts, Reddit, save, seo, Share, Shareaholic, sharedaddy, sharethis, sharing, shortcode, sidebar, sociable, social, social bookmarking, social bookmarks, statistics, stats, stumbleupon, svg, technorati, tumblr, tweet, twitter, vector, widget, wpmu
 Requires at least: 3.1+
 Tested up to: 3.8.1
-Stable tag: 1.1.3
+Stable tag: 1.1.4
 
 Mashshare sharing plugin is a high-performance share functionality inspired by the great website Mashable for Facebook and Twitter
 
@@ -87,6 +87,9 @@ There is no need for you to make any manual changes. The plugin does everything 
 <h4>Is there a shortcode for pages and posts?</h4>
 Use the shortcode [mashshare] to embed the Share Buttons in pages or posts.
 
+<h4>Why do i get a blank page when i try to activate or uninstall the plugin</h4>
+Most times this is a result of some php server limits. Check your logfiles to see which values must be increased.
+I can also assist you with such problems, but keep in mind that they are mostly not caused by this plugin.
 
 == Official Site ==
 * http://www.digitalsday.com
@@ -110,6 +113,7 @@ Use the shortcode [mashshare] to embed the Share Buttons in pages or posts.
 * Fix: No bgcolor for count
 * Fix: Use onlick instead javascript in href. Prevents issues with YOAST analytics plugin
 * New: Allow shortcode in text widgets
+* New: Option to allow or prevent share buttons on frontpage
 
 = 1.1.3 =
 * Fix: Sanitation fix for international languages. E.g. french
