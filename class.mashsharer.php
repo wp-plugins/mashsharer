@@ -75,13 +75,15 @@ class mashsharer {
     
     /* DEFINE ADDONS */
     public function mashload($place){
+        global $addons;
         	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 		if (class_exists('mashshare_networks') && is_plugin_active('mashshare-networks/mashshare-networks.php')) {
                         include_once(ABSPATH . '/wp-content/plugins/mashshare-networks/mashshare-networks.php');
 			$networks = new mashshare_networks();
 			$addons = $networks->mashshare_get_networks($place);
+                        return $addons;
 		}
-        return $addons;
+        return '';
     }
     
     public function mashsharerShow($atts, $place) {
@@ -157,8 +159,8 @@ class mashsharer {
 	            <br><span class="mashsharer-sharetext">SHARES</span>
 	            </div>
                     <div class="mashsharer-buttons">
-                      <a class="facebook" onclick="javascript:mashFbSharrer(\'' . $url . '\',\'' . $title . '\', \'Facebook share popup\',\'http://goo.gl/dS52U\',520,350)" href="javascript:return(0);">Share on Facebook</a>	    
-                      <a class="twitter" onclick="javascript:mashTwSharrer(\'' . $url . '\', \'' . $title . '\', \'Twitter share popup\', \'http://goo.gl/dS52U\', 520, 350)"" href="javascript:return(0)">Tweet on Twitter</a>
+                      <a class="facebook" onclick="javascript:mashFbSharrer(\'' . $url . '\',\'' . esc_html(htmlspecialchars($title)) . '\', \'Facebook share popup\',\'http://goo.gl/dS52U\',520,350)" href="javascript:return(0);">Share on Facebook</a>	    
+                      <a class="twitter" onclick="javascript:mashTwSharrer(\'' . $url . '\', \'' . esc_html(htmlspecialchars($title)) . '\', \'Twitter share popup\', \'http://goo.gl/dS52U\', 520, 350)"" href="javascript:return(0)">Tweet on Twitter</a>
                     </div>'
                     . $addons . 
                     '</div>
@@ -196,7 +198,7 @@ class mashsharer {
                 return $content;
             }
             
-            if ($frontpage == 0){
+            if ($frontpage == 0 && is_front_page()== true){
                 return $content;
             }
 			
