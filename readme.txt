@@ -91,6 +91,15 @@ Use the shortcode [mashshare] to embed the Share Buttons in pages or posts.
 Most times this is a result of some php server limits. Check your logfiles to see which values must be increased.
 I can also assist you with such problems, but keep in mind that they are mostly not caused by this plugin.
 
+<h4>When i click on the share buttons, nothing happens and no popup window</h4>
+Mostly that is because you are using any third party and outdated theme which is not coded very well by the author and is not using the Wordpress API for embeding external plugin script.
+For Mashsharer make sure your website source contains the script /mashsharer/assets/mashsharer.js
+
+So if you have no chance to update or change your theme do some hardcoding and put the following line into the head template of your theme file:
+> <script type='text/javascript' src='http://yourwebsite.com/wp-content/plugins/mashsharer/assets/mashsharer.js?ver=1.1'></script>
+
+
+
 == Official Site ==
 * http://www.digitalsday.com
 
