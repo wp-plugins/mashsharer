@@ -18,7 +18,8 @@ It´s inspired by the Share buttons Mashable is using on his website.
 
 <h3> Mashshare demo </h3>
 
-[Share Buttons](http://www.digitalsday.com/fix-this-app-cant-open-windows-8-error/ "Share-Buttons - Mashable inspired Share Buttons")
+[Share Buttons](http://www.mashshare.net "Share-Buttons - Mashable inspired Share Buttons")
+
 
 This plugin is in active development and will be updated on a regular basis - Please do not rate negative before i tried my best to solve your issue. Thanks buddy!
 
@@ -118,7 +119,7 @@ So if you have no chance to update or change your theme do some hardcoding and p
 == Changelog ==
 
 = 1.1.7 =
-* Fix: fixed mashsharer() function for templates
+* Fix: changed mashsharer() to mashsharer('');
 
 = 1.1.6 =
 * New: graphical icons
