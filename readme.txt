@@ -5,7 +5,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Mashable, Share button, Facebook Share button, Twitter Share Button, Social Share, Share, Google+, Twitter, Facebook, Digg, Email, Stumble Upon, Linkedin,+1, add to any, AddThis, addtoany, admin, bookmark, bookmarking, bookmarks, buffer, button, del.icio.us, Digg, e-mail, email, Facebook, facebook like, google, google plus, google plus one, icon, icons, image, images, Like, linkedin, links, lockerz, page, pages, pin, pin it, pinit, pinterest, plugin, plus 1, plus one, Post, posts, Reddit, save, seo, Share, Shareaholic, sharedaddy, sharethis, sharing, shortcode, sidebar, sociable, social, social bookmarking, social bookmarks, statistics, stats, stumbleupon, svg, technorati, tumblr, tweet, twitter, vector, widget, wpmu
 Requires at least: 3.1+
 Tested up to: 3.8.1
-Stable tag: 1.1.6
+Stable tag: 1.1.7
 
 Mashshare sharing plugin is a high-performance share functionality inspired by the great website Mashable for Facebook and Twitter
 
@@ -96,7 +96,7 @@ Mostly that is because you are using any third party and outdated theme which is
 For Mashsharer make sure your website source contains the script /mashsharer/assets/mashsharer.js
 
 So if you have no chance to update or change your theme do some hardcoding and put the following line into the head template of your theme file:
-> <script type='text/javascript' src='http://yourwebsite.com/wp-content/plugins/mashsharer/assets/mashsharer.js?ver=1.1'></script>
+`<script type='text/javascript' src='http://yourwebsite.com/wp-content/plugins/mashsharer/assets/mashsharer.js?ver=1.1'></script>`
 
 
 
@@ -116,6 +116,9 @@ So if you have no chance to update or change your theme do some hardcoding and p
 3. screenshot-4.png
 
 == Changelog ==
+
+= 1.1.7 =
+* Fix: changed mashsharer() to mashsharer('');
 
 = 1.1.6 =
 * New: graphical icons
