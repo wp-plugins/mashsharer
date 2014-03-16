@@ -99,6 +99,13 @@ For Mashsharer make sure your website source contains the script /mashsharer/ass
 So if you have no chance to update or change your theme do some hardcoding and put the following line into the head template of your theme file:
 `<script type='text/javascript' src='http://yourwebsite.com/wp-content/plugins/mashsharer/assets/mashsharer.js?ver=1.1'></script>`
 
+<h4>Why is Facebook only sharing the URL and not the title and description of my page?</h4>
+Facebook does not longer supports custom titles, descriptions and images in the sharer.php but you can use open graph meta tags to show the desired custom formats. So if you theme does not suppport open graph meta tags (you see them in the html header as og: tags) use a plugin. Personally i use 'NextGEN Facebook Open Graph', which is great and easy to use:
+http://wordpress.org/plugins/nextgen-facebook/
+
+After installation you can check with the Facebook debugger how Facebook is seeing your site: 
+http://wordpress.org/plugins/nextgen-facebook/
+
 
 
 == Official Site ==
