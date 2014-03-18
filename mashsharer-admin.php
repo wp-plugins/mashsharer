@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /* Quit */
 defined('ABSPATH') OR exit;
 
