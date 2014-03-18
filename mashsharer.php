@@ -1,7 +1,7 @@
 <?php
 /*
 * Plugin Name: Mashshare Share Buttons
-* Version: 1.1.4
+* Version: 1.2.0
 * Plugin URI: http://www.digitalsday.com
 * Description: Mashshare is a Share functionality inspired by the the great website Mashable for Facebook and Twitter (Additional services are coming soon)
 * Author: Rene Hermenau
@@ -30,7 +30,7 @@ if (!defined('MASHSHARER_VERSION_KEY'))
     define('MASHSHARER_VERSION_KEY', 'mashsharer_version');
 
 if (!defined('MASHSHARER_VERSION_NUM'))
-    define('MASHSHARER_VERSION_NUM', '1.1.4');
+    define('MASHSHARER_VERSION_NUM', '1.2.0');
 add_option(MASHSHARER_VERSION_KEY, MASHSHARER_VERSION_NUM);
 
 global $wpdb;
@@ -45,9 +45,13 @@ define('MASHSHARER_PLUGIN_URL', plugin_dir_url( __FILE__ )); //production
 define('MASHSHARER_PLUGIN_INSTALL_FILE', plugin_basename(__FILE__));
 
 /* include main mashsharer class*/
-include_once 'class.mashsharer.php';
-include_once 'class.debug.php';
-include_once 'class.mashsharer-transients.php';
+    include_once 'class.mashsharer.php';
+    include_once 'class.debug.php';
+    include_once 'class.mashsharer-transients.php';
+if ( is_admin() ) {
+    require_once dirname( __FILE__ ) . '/includes/admin/add-ons.php';
+}
+
 
 if( is_admin() ) require_once dirname( __FILE__ ) . '/mashsharer-admin.php';
 
@@ -70,6 +74,7 @@ function mashsharer_upgrade_db() {
         dbDelta($sql);
         /* update version number */
         update_option("mashsharer_version", MASHSHARER_VERSION_NUM);
+        add_option('mashsharer_do_activation_redirect', true);
     }
 }
 
@@ -104,11 +109,26 @@ function mashsharer_create()
         add_option('mashsharer_pages');
         add_option('mashsharer_posts');
         add_option('mashsharer_frontpage');
-        
+        add_option('mashsharer_do_activation_redirect', true);
         wp_schedule_event( time(), 'daily', 'mashsharer_transients_cron');
 }
+
+ 
+register_activation_hook(__FILE__,'mashsharer_create');
       		
-			
+
+ /* redirect user to settings page after activation */
+ 
+ function mashshare_redirect() {
+    if (get_option('mashsharer_do_activation_redirect', false)) {
+        delete_option('mashsharer_do_activation_redirect');
+        if(!isset($_GET['activate-multi']))
+        {
+            wp_redirect("options-general.php?page=mashsharer-config");
+        }
+    }
+}
+ add_action('admin_init', 'mashshare_redirect');   
 
 /* Disable plugin 
  * 
@@ -128,7 +148,7 @@ function mashsharer_uninstall() {
     delete_option('mashsharer_pages');
     delete_option('mashsharer_posts');
     delete_option('mashsharer_frontpage');
-    
+    delete_option('mashsharer_do_activation_redirect');
     wp_clear_scheduled_hook('mashsharer_transients_cron');
     //delete_option('mashsharer_check_frequency', '');
     //wp_unschedule_event(time(), 'check_frequency_hook');
@@ -145,8 +165,7 @@ function mashsharer_uninstall() {
 /* initialize class 
 * check first if option  exist 
 */
- 
-register_activation_hook(__FILE__,'mashsharer_create');
+
 register_uninstall_hook(__FILE__, 'mashsharer_uninstall');
 
 /* Add settings link on plugin page
@@ -211,7 +230,7 @@ function mashsharer(){
     global $content;
     global $atts;
     $mashsharer = new mashsharer();
-    echo $mashsharer->mashsharerShow($atts);
+    echo $mashsharer->mashsharerShow($atts, '');
 }
 
 ?>

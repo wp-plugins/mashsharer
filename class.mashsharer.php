@@ -2,7 +2,7 @@
 /*
  	Class Name: class.mashsharer.php
  	Author: Rene Hermenau
- *      version 1.0.4
+ *      version 1.0.6
  	@scince 1.1.1
  	Description: main class for mashsharer
 */
@@ -12,7 +12,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 require_once 'class.debug.php';
     /*
       Sharer inspired by the Mashable one - get shares from the big four FB, Twitter, G+, LinkedIn
-      Credit goes to http://www.internoetics.com/2014/02/03/display-total-number-of-social-shares-with-php-and-wordpress-shortcode/
      */
 
 class mashsharer {
@@ -75,13 +74,16 @@ class mashsharer {
     
     /* DEFINE ADDONS */
     public function mashload($place){
+        global $addons;
         	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-		if (class_exists('mashshare_networks') && is_plugin_active('mashshare-networks/mashshare-networks.php')) {
-                        include_once(ABSPATH . '/wp-content/plugins/mashshare-networks/mashshare-networks.php');
+		//if (class_exists('mashshare_networks') && is_plugin_active('mashshare-networks/mashshare-networks.php')) {
+		if (class_exists('mashshare_networks')) {
+                        include_once(ABSPATH . 'wp-content/plugins/mashshare-networks/mashshare-networks.php');
 			$networks = new mashshare_networks();
 			$addons = $networks->mashshare_get_networks($place);
+                        return $addons;
 		}
-        return $addons;
+        return '';
     }
     
     public function mashsharerShow($atts, $place) {
@@ -157,10 +159,10 @@ class mashsharer {
 	            <br><span class="mashsharer-sharetext">SHARES</span>
 	            </div>
                     <div class="mashsharer-buttons">
-                      <a class="facebook" onclick="javascript:mashFbSharrer(\'' . $url . '\',\'' . $title . '\', \'Facebook share popup\',\'http://goo.gl/dS52U\',520,350)" href="javascript:return(0);">Share on Facebook</a>	    
-                      <a class="twitter" onclick="javascript:mashTwSharrer(\'' . $url . '\', \'' . $title . '\', \'Twitter share popup\', \'http://goo.gl/dS52U\', 520, 350)"" href="javascript:return(0)">Tweet on Twitter</a>
+                      <a class="facebook" onclick="javascript:mashFbSharrer(\'' . $url . '\',\'' . esc_html(htmlspecialchars(urlencode($title))) . '\', \'Facebook share popup\',\'http://goo.gl/dS52U\',520,350)" href="javascript:return(0);">Share on Facebook</a>	    
+                      <a class="twitter" onclick="javascript:mashTwSharrer(\'' . $url . '\', \'' . esc_html(htmlspecialchars(urlencode($title))) . '\', \'Twitter share popup\', \'http://goo.gl/dS52U\', 520, 350)"" href="javascript:return(0)">Tweet on Twitter</a>
                     </div>'
-                    . $addons . 
+                    . $addons .
                     '</div>
                     <div style="clear:both;:"></div>
                     ';
@@ -171,45 +173,55 @@ class mashsharer {
     public function mashsharer_filter_content($content){
             global $atts;
             global $wp_current_filter;
-            global $posts;
             global $pages;
+			
+			
             $position   = get_option('mashsharer_position');
             $option_posts = get_option('mashsharer_posts');
             $option_pages = get_option('mashsharer_pages');
             $pt         = get_post_type();
             $frontpage = get_option('mashsharer_frontpage');
             
-            if ($option_posts != 1)
-                    $posts = 'post';
-            if ($option_pages != 1)
-                    $pages = 'page';
+			
+            if ($option_posts == '1')
+                    $option_posts = 'post';
+            if ($option_pages == '1')
+                    $option_pages = 'page';
 
-       
-             if( $posts === $pt){
+				$post_types = array(
+									$option_posts,
+									$option_pages
+									);
+									
+			if( $post_types && !in_array($pt,$post_types)){
                 return $content;
+            }
+	   
+             /*if( $posts === $pt){
+                return "posts".$content . "content is empty";
             }
              if( $pages === $pt){
+                return "pages".$content;
+            }*/
+			
+            
+			if ( !is_singular() ){
                 return $content;
             }
-            
+			
             if( in_array('get_the_excerpt', $wp_current_filter) ) {
                 return $content;
             }
             
-            if ($frontpage == 0){
+            if ($frontpage == 0 && is_front_page()== true){
                 return $content;
             }
 			
-            /*if ( !is_singular() ){
-                return $content;
-            }*/
 
-
-            if( is_feed() ) {
+			if( is_feed() ) {
                 return $content;
             }
-
-
+			
             switch($position){
                 case 'manual':
                 break;

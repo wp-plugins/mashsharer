@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /* Quit */
 defined('ABSPATH') OR exit;
 
@@ -185,7 +185,7 @@ function mashsharer_conf() {
                                                 </label>
                                         </td>
                                         <td>
-                                         Share count is updated after cache expire time. SharedCount uses his own cache so it does not update immediately when expire time is very very low, e.g. 5 minutes.
+                                         Share count is updated after cache expire time. SharedCount uses his own cache so it does not update immediately when expire time is very low, e.g. 5 minutes.
                                         </td>
                                     </tr>
                                     <tr valign="top">
@@ -215,7 +215,7 @@ function mashsharer_conf() {
                                         </td>
                                         <td valign="top">
                                              Choose where you would like the social icons to appear, before or after the main content. If set to Manual, you can use this code to place your Social links anywhere you like in your templates files:
-                                             &nbsp; <strong>&lt;?php mashsharer(); ?&gt;</strong> or use the shortcode: [mashshare] in your posts.
+                                             &nbsp; <strong>&lt;?php mashsharer(); ?&gt;</strong> or use the shortcode: [mashshare] in your posts. <strong>Note: You have to use permanent urls</strong>
                                         </td>
                                         <tr valign="top">
 						<th scope="row">
@@ -264,7 +264,7 @@ function mashsharer_conf() {
 							
 						</td>
                                                 <td>
-                                                    <?php _e('Do you have any issues? Write me and i try my best to fix it: <a href="mailto:rene@digitalsday.com">rene@digitalsday.com</a>.<br> Please also rate this plugin at <a href="http://wordpress.org/support/view/plugin-reviews/mashsharer" target="_blank">wordpress.org</a>. That helps me to increase the download rate.', 'mashsharer') ?>
+                                                    <?php _e('Do you have any issues? Write me and i try my best to fix it: <a href="mailto:rene@digitalsday.com">rene@digitalsday.com</a>.<br> Please also rate this plugin at <a href="http://wordpress.org/support/view/plugin-reviews/mashsharer?filter=5" target="_blank">wordpress.org</a>. That helps me to increase the download rate.', 'mashsharer') ?>
                                                 </td>
 					</tr>
                                     </tr>
@@ -277,14 +277,13 @@ function mashsharer_conf() {
                                 
                                 <p class="submit"><input type="submit" name="submit" value="<?php _e('Save settings &raquo;'); ?>" /></p>
                             </div>
-                         
-				
-
-				<?php mashsharer_nonce_field($mashsharer_nonce); ?>
+                         <?php mashsharer_nonce_field($mashsharer_nonce); ?>
 			</form>
 
 		</div>
 	</div>
+<div style="clear:both;">
+    <?php mash_add_ons_page(); ?>
 <div style="clear:both;">
 
 </div>

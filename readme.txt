@@ -127,11 +127,11 @@ http://wordpress.org/plugins/nextgen-facebook/
 
 = 1.2.0 =
 * Change: FAQ
-* Fix: Facebook URL not shared on mobile devices.
+* Fix: Share button Facebook URL not shared on mobile devices.
 
 = 1.1.9 =
-* Fix: Change rating link in admin
-* Fix: Change check for addon
+* Fix: Change share button rating link in admin
+* Fix: Change share button check for addon
 * Fix: Sanitation for ampersand and hash / urlencode
 
 = 1.1.8 =

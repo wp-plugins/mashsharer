@@ -23,7 +23,7 @@ padding-bottom:7px;
 }
 
 .mashsharer-buttons > .facebook{
-font-size: 14px;
+font-size: 13px;
 border-radius: 2px;
 margin-right: 4px;
 background: #2d5f9a;
@@ -31,14 +31,16 @@ position: relative;
 display: inline-block;
 cursor: pointer;
 height: 41px;
-width: 160px;
+width: 134px;
 color: #FFF;
 line-height:41px;
-text-align:center;
+/*text-align:center;*/
+background: url(facebook.png) no-repeat 10px 12px #2D5F9A;
+padding-left: 35px;
 }
 
 .mashsharer-buttons > .twitter{
-font-size: 14px;
+font-size: 13px;
 border-radius: 2px;
 margin-right: 7px;
 background: #00c3f3;
@@ -46,10 +48,12 @@ position: relative;
 display: inline-block;
 cursor: pointer;
 height: 41px;
-width: 160px;
+width: 116px;
 color: #FFF;
 line-height:41px;
-text-align:center;
+/*text-align:center;*/
+background: url(twitter.png) no-repeat 10px 14px #00c3f3;
+padding-left:37px;
 }
 .mashsharer-sharetext {
 font-size:11px;
