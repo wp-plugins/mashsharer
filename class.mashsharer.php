@@ -41,7 +41,7 @@ class mashsharer {
 
             // We use curl instead file_get_contents for security purposes
             $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, "http://free.sharedcount.com/?url=" . rawurlencode($url) . "&apikey=" . $apikey);
+            curl_setopt($ch, CURLOPT_URL, "http://api.sharedcount.com/?url=" . rawurlencode($url) . "&apikey=" . $apikey);
             /* For debugging */
             //curl_setopt($ch, CURLOPT_URL, "http://api.sharedcount.com/?url=" . rawurlencode('http://www.google.de') . "&apikey=" . $apikey);
             /* For debugging */
