@@ -145,30 +145,30 @@ function mashsharer_conf() {
 			update_option( 'mashsharer_apikey', $_POST['mashsharer_apikey'] );
 		
 		if (isset( $_POST['mashsharer_posts']) == 1){
-			update_option( 'mashsharer_posts', 1 ); echo $_POST['mashsharer_posts'];
+			update_option( 'mashsharer_posts', 1 ); 
                 } else{ 
-                        update_option( 'mashsharer_posts', 0 ); echo $_POST['mashsharer_posts']; 
+                        update_option( 'mashsharer_posts', 0 );
                 }
                 
                 if ( $_POST['mashsharer_pages'] == 1){
-			update_option( 'mashsharer_pages', 1 ); echo $_POST['mashsharer_pages'];
+			update_option( 'mashsharer_pages', 1 );
                 } else {
-                        update_option( 'mashsharer_pages', 0 ); echo $_POST['mashsharer_pages'];
+                        update_option( 'mashsharer_pages', 0 ); 
                 }
 
                  if ( isset( $_POST['mashsharer_position'] ) )
 			update_option( 'mashsharer_position', $_POST['mashsharer_position'] );
                  
                  if ( $_POST['mashsharer_frontpage'] == 1){
-			update_option( 'mashsharer_frontpage', 1 ); echo $_POST['mashsharer_frontpage'];
+			update_option( 'mashsharer_frontpage', 1 );
                 } else {
-                        update_option( 'mashsharer_frontpage', 0 ); echo $_POST['mashsharer_frontpage'];
+                        update_option( 'mashsharer_frontpage', 0 );
                 }
 				
                  if ( $_POST['mashsharer_round'] == 1){
-			update_option( 'mashsharer_round', 1 ); echo $_POST['mashsharer_round'];
+			update_option( 'mashsharer_round', 1 );
                 } else {
-                        update_option( 'mashsharer_round', 0 ); echo $_POST['mashsharer_round'];
+                        update_option( 'mashsharer_round', 0 );
                 }
                 
 
@@ -282,7 +282,7 @@ function mashsharer_conf() {
 									<input type="checkbox" name="mashsharer_round" id="mashsharer_round" value="1" <?php checked('1', $options['round']); ?> />
 									
 								</label>
-                                                                Let´s round them!
+                                                                Let´s round it!
 								
                                                                 
 							</fieldset>
@@ -299,7 +299,7 @@ function mashsharer_conf() {
 							
 						</td>
                                                 <td>
-                                                    <?php _e('Do you have any issues? Write me and i try my best to fix it: <a href="mailto:rene@digitalsday.com">rene@digitalsday.com</a>.<br> Please also rate this plugin at <a href="http://wordpress.org/support/view/plugin-reviews/mashsharer?filter=5" target="_blank">wordpress.org</a>. That helps me to increase the download rate.', 'mashsharer') ?>
+                                                    <?php _e('Do you have any issues? Write me and i try my best to fix it: <a href="mailto:rene@digitalsday.com">rene@digitalsday.com</a>.<br> Please also rate this plugin at <a href="http://wordpress.org/support/view/plugin-reviews/mashsharer?filter=5" target="_blank">wordpress.org</a>. That motivates me to improve the plugin.', 'mashsharer') ?>
                                                 </td>
 					</tr>
                                     </tr>

@@ -1,10 +1,10 @@
 <?php
 /*
- 	Class Name: class.mashsharer.php
- 	Author: Rene Hermenau
- *      version 1.0.8
- 	@scince 1.1.1
- 	Description: main class for mashsharer
+ *	Class Name: class.mashsharer.php
+ *	Author: Rene Hermenau
+ *  @version 1.0.9
+ *	@scince 1.1.1
+ *	Description: main class for mashsharer
 */
 
 // Exit if accessed directly
@@ -165,8 +165,8 @@ class mashsharer {
                 $return = '
                     <div style="line-height:10px;">&nbsp;</div>
                     <div class="mashsharer-box">
-                    <div class="mashsharer-count"><font style="padding: ' . $padding . 'px ' . $padding . 'px ' . $padding . 'px ' . $padding . 'px; font-size: ' . $fontsize . 'px; font-weight:' . $fontweight . '; font-family: ' . $fontfamily . '; color: ' . $fontcolor . '; background-color: ' . $bgcolor . '; border: ' . $bordercolor . ' ' . $bordertype . ' ' . $borderwidth . 'px">' . $totalshares . '</font>
-	            <br><span class="mashsharer-sharetext">SHARES</span>
+                    <div class="mashsharer-count"><font style="display:block;padding-bottom:17px;font-size: ' . $fontsize . 'px; font-weight:' . $fontweight . '; font-family: ' . $fontfamily . '; color: ' . $fontcolor . '; background-color: ' . $bgcolor . '; border: ' . $bordercolor . ' ' . $bordertype . ' ' . $borderwidth . 'px">' . $totalshares . '</font>
+	            <span class="mashsharer-sharetext">SHARES</span>
 	            </div>
                     <div class="mashsharer-buttons">
                       <a class="facebook" onclick="javascript:mashFbSharrer(\'' . $url . '\',\'' . esc_html(htmlspecialchars(urlencode($title))) . '\', \'Facebook share popup\',\'http://goo.gl/dS52U\',520,350)" href="javascript:return(0);">Share on Facebook</a>	    
