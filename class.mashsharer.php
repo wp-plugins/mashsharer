@@ -148,7 +148,7 @@ class mashsharer {
 		{
                         $totalshares = 0;
                 } else {
-                        $totalshares = $results[0]->TOTAL_SHARES + 1501; 
+                        $totalshares = $results[0]->TOTAL_SHARES; 
                 }
 				
 				/* 
