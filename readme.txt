@@ -1,4 +1,4 @@
-﻿=== Mashshare Share Button ===
+﻿=== Share Button Mashshare ===
 Contributors: ReneHermi
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -7,7 +7,7 @@ Requires at least: 3.1+
 Tested up to: 3.9.1
 Stable tag: 1.2.4
 
-Mashshare sharing plugin is a high-performance share functionality inspired by the great website Mashable for Facebook and Twitter
+Mashshare Share Button plugin is a high-performance share functionality inspired by the great website Mashable for Facebook and Twitter
 
 
 == Description == 
