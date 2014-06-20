@@ -112,7 +112,7 @@ http://wordpress.org/plugins/nextgen-facebook/
 * http://www.digitalsday.com
 
 == Installation ==
-1. Download the plugin "Mashshare" , unzip and place it in your wp-content/plugins/ folder. You can alternatively upload and install it via the WordPress plugin backend.
+1. Download the share button plugin "Mashshare" , unzip and place it in your wp-content/plugins/ folder. You can alternatively upload and install it via the WordPress plugin backend.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Select Plugins->Mashshare
 
@@ -132,10 +132,10 @@ http://wordpress.org/plugins/nextgen-facebook/
 * Fix: Remove duplicate quote
 
 = 1.2.4 =
-* Option to round the shares e.g. 1.5k instead 1500
+* New: Option to round the shares e.g. 1.5k instead 1500
 
 = 1.2.3 =
-* Fix linkedIn Sharebutton
+* Fix: linkedIn Sharebutton
 
 = 1.2.2 =
 * Share button Compatibility for WordPress 3.9.1
