@@ -126,10 +126,10 @@ http://wordpress.org/plugins/nextgen-facebook/
 == Changelog ==
 
 = 1.2.5 =
-* New: Security Layer prevents zero sharecounts when sharedcount API is down 
-* Fix: Change add_filter priority to 1000 to prevent errors with other plugins
-* Fix: Delete non printable character which wraps the buttons
-* Fix: Remove duplicate quote
+* New: Security Layer prevents zero share button sharecounts when sharedcount API is down 
+* Fix: Change share button add_filter priority to 1000 to prevent errors with other plugins
+* Fix: Delete non printable character which wraps the share buttons
+* Fix: Remove duplicate quote in share button
 
 = 1.2.4 =
 * New: Option to round the shares e.g. 1.5k instead 1500
