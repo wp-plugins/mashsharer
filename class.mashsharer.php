@@ -176,7 +176,8 @@ class mashsharer {
 	            <span class="mashsharer-sharetext">SHARES</span>
 	            </div>
                     <div class="mashsharer-buttons">
-<a class="facebook" onclick="javascript:mashFbSharrer(\'' . $url . '\',\'' . esc_html(htmlspecialchars(urlencode($title))) . '\', \'Facebook share popup\',\'http://goo.gl/dS52U\',520,350)" href="javascript:return(0);">Share on Facebook</a><a class="twitter" onclick="javascript:mashTwSharrer(\'' . $url . '\', \'' . esc_html(htmlspecialchars(urlencode($title))) . '\', \'Twitter share popup\', \'http://goo.gl/dS52U\', 520, 350)" href="javascript:return(0)">Tweet on Twitter</a>
+<a class="facebook" onclick="javascript:mashFbSharrer(\'' . $url . '\',\'' . esc_html(htmlspecialchars(urlencode($title))) . '\', \'Facebook share popup\',\'http://goo.gl/dS52U\',520,350)" href="javascript:return(0);">Share on Facebook</a>
+<a class="twitter" onclick="javascript:mashTwSharrer(\'' . $url . '\', \'' . esc_html(htmlspecialchars(urlencode($title))) . '\', \'Twitter share popup\', \'http://goo.gl/dS52U\', 520, 350)" href="javascript:return(0)">Tweet on Twitter</a>
                     </div>'
                     . $addons .
                     '</div>
