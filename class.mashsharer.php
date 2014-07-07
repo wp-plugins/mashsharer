@@ -2,7 +2,7 @@
 /*
  *	Class Name: class.mashsharer.php
  *	Author: Rene Hermenau
- *  @version 1.1.0
+ *  @version 1.1.1
  *	@scince 1.1.1
  *	Description: main class for mashsharer
 */
@@ -33,6 +33,7 @@ class mashsharer {
         global $wpdb;
         global $post;
         global $url;
+ 
         $apikey = get_option('mashsharer_apikey');
 
             if (!$url)
@@ -52,13 +53,11 @@ class mashsharer {
             
             include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
      		if (class_exists('mashshare_networks')) {
-			    $total_count = $counts['Twitter'] + $counts['Facebook']['total_count'] + $counts['GooglePlusOne'] + $counts['Pinterest'] + $counts['LinkedIn'] + $counts['StumbleUpon']; /* we can add a fake number here for smaller websites */
+			    $total_count = isset($counts['Twitter']) + isset($counts['Facebook']['total_count']) + isset($counts['GooglePlusOne']) + isset($counts['Pinterest']) + isset($counts['LinkedIn']) + isset($counts['StumbleUpon']); /* we can add a fake number here for smaller websites */
 		    }else {
-		        $total_count = $counts['Twitter'] + $counts['Facebook']['total_count']; /* we can add a fake number here for smaller websites */
-
+		        $total_count = isset($counts['Twitter']) + isset($counts['Facebook']['total_count']); /* we can add a fake number here for smaller websites */
 		    }
-            //echo "This page has " . $counts["Twitter"] ." tweets, " . $counts["Facebook"]["like_count"] . " likes, and ". $counts["GooglePlusOne"] . "+1's";            
-            
+            //echo "This page has " . $counts["Twitter"] ." tweets, " . $counts["Facebook"]["like_count"] . " likes, and ". $counts["GooglePlusOne"] . "+1's";
 			$sql = "select TOTAL_SHARES from ".MASHSHARER_TABLE." where URL='".$url."'"; 
             $results = $wpdb->get_results($sql);
 
@@ -106,8 +105,8 @@ class mashsharer {
         global $cacheexpire;
         global $addons;
         //global $place;
-        $cacheexpire = get_option('mashsharer_cache_expire');
-        //$cacheexpire = 1;
+        //$cacheexpire = get_option('mashsharer_cache_expire');
+        $cacheexpire = 1;
         $logme = new mashsharer_debug;
 		
 	    /* Load addons */
