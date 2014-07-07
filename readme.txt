@@ -5,7 +5,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Mashable, Share button, Facebook Share button, Twitter Share Button, Social Share, Share, Google+, Twitter, Facebook, Digg, Email, Stumble Upon, Linkedin,+1, add to any, AddThis, addtoany, admin, bookmark, bookmarking, bookmarks, buffer, button, del.icio.us, Digg, e-mail, email, Facebook, facebook like, google, google plus, google plus one, icon, icons, image, images, Like, linkedin, links, lockerz, page, pages, pin, pin it, pinit, pinterest, plugin, plus 1, plus one, Post, posts, Reddit, save, seo, Share, Shareaholic, sharedaddy, sharethis, sharing, shortcode, sidebar, sociable, social, social bookmarking, social bookmarks, statistics, stats, stumbleupon, svg, technorati, tumblr, tweet, twitter, vector, widget, wpmu
 Requires at least: 3.1+
 Tested up to: 3.9.1
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 
 Mashshare share button plugin is a high-performance share functionality inspired by the great website Mashable for Facebook and Twitter
 
@@ -123,6 +123,8 @@ http://wordpress.org/plugins/nextgen-facebook/
 3. screenshot-4.png
 
 == Changelog ==
+
+= See separate file changelog_mashshare.txt =
 
 = 1.2.4 =
 * New: Option to round the shares e.g. 1.5k instead 1500
