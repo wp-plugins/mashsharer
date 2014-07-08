@@ -53,9 +53,9 @@ class mashsharer {
             
             include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
      		if (class_exists('mashshare_networks')) {
-			    $total_count = isset($counts['Twitter']) + isset($counts['Facebook']['total_count']) + isset($counts['GooglePlusOne']) + isset($counts['Pinterest']) + isset($counts['LinkedIn']) + isset($counts['StumbleUpon']); /* we can add a fake number here for smaller websites */
+			    $total_count = $counts['Twitter'] + $counts['Facebook']['total_count'] + $counts['GooglePlusOne'] + $counts['Pinterest'] + $counts['LinkedIn'] + $counts['StumbleUpon']; /* we can add a fake number here for smaller websites */
 		    }else {
-		        $total_count = isset($counts['Twitter']) + isset($counts['Facebook']['total_count']); /* we can add a fake number here for smaller websites */
+		        $total_count = $counts['Twitter'] + $counts['Facebook']['total_count']; /* we can add a fake number here for smaller websites */
 		    }
             //echo "This page has " . $counts["Twitter"] ." tweets, " . $counts["Facebook"]["like_count"] . " likes, and ". $counts["GooglePlusOne"] . "+1's";
 			$sql = "select TOTAL_SHARES from ".MASHSHARER_TABLE." where URL='".$url."'"; 
