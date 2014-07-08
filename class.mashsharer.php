@@ -33,6 +33,13 @@ class mashsharer {
         global $wpdb;
         global $post;
         global $url;
+        
+        $counts['Twitter'] = 0;
+        $counts['Facebook']['total_count'] = 0;
+        $counts['GooglePlusOne'] = 0;
+        $counts['Pinterest'] = 0;
+        $counts['LinkedIn'] = 0;
+        $counts['StumbleUpon'] = 0;
  
         $apikey = get_option('mashsharer_apikey');
 
@@ -105,8 +112,8 @@ class mashsharer {
         global $cacheexpire;
         global $addons;
         //global $place;
-        //$cacheexpire = get_option('mashsharer_cache_expire');
-        $cacheexpire = 1;
+        $cacheexpire = get_option('mashsharer_cache_expire');
+        //$cacheexpire = 1;
         $logme = new mashsharer_debug;
 		
 	    /* Load addons */
