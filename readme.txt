@@ -62,7 +62,7 @@ After installation goto the settings page Settings->Mashshare and make your chan
 
 == Frequently Asked Questions ==
 
-> Find here the most asked questions and my answers. If you have any special question do not hesitate to write me personally at rene[at]digitalsday.com
+> Find here the most asked questions and my answers. If you have any special question do not hesitate to write me personally at info[at]mashshare.net
 
 <h4>Why is the total count not shown immediately after sharing?</h4>
 It takes some time for the script to detect the sharing. So wait a few minutes than you see the total calculated clicks. Keep also in mind the caching time you defined in the admin panel.
@@ -108,7 +108,7 @@ http://wordpress.org/plugins/nextgen-facebook/
 
 
 == Official Site ==
-* http://www.digitalsday.com
+* https://www.mashshare.net
 
 == Installation ==
 1. Download the share button plugin "Mashshare" , unzip and place it in your wp-content/plugins/ folder. You can alternatively upload and install it via the WordPress plugin backend.
