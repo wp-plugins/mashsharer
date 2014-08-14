@@ -1,4 +1,12 @@
 <?php
+
+/* Mashshare admin template
+ * Author: René Hermenau
+ * @since 1.0.0
+ * @change 1.0.1
+ */ 
+
+
 /* Quit */
 defined('ABSPATH') OR exit;
 
@@ -63,10 +71,12 @@ $mashsharer_nonce = 'mashsharer-update-key';
 			array(
 				'apikey'	 	=> get_option('mashsharer_apikey'),
 				'cache'		 	=> get_option('mashsharer_cache_expire'),
-                                'position'		=> get_option('mashsharer_position'),
-                                'pages'                 => get_option('mashsharer_pages'),
-                                'posts'                 => get_option('mashsharer_posts'),
-                                'frontpage'             => get_option('mashsharer_frontpage')
+                'position'		=> get_option('mashsharer_position'),
+                'pages'                 => get_option('mashsharer_pages'),
+                'posts'                 => get_option('mashsharer_posts'),
+                'frontpage'             => get_option('mashsharer_frontpage'),
+				'round'					=> get_option('mashsharer_round'),
+				'hashtag'				=> get_option('mashsharer_hashtag'),
            			)
 		);
 	}
@@ -86,7 +96,7 @@ $mashsharer_nonce = 'mashsharer-update-key';
 			'before'   => 'Top',
 			'after'   => 'Bottom',
 			'both'   => 'Top and Bottom',
-                        'manual'   => 'Manual'
+            'manual'   => 'Manual'
 		);
 	}
 
@@ -103,13 +113,13 @@ $mashsharer_nonce = 'mashsharer-update-key';
 	{
 		/* Defaults */
 		$methods = array(
-			'300'  => 'in 5 minutes',
+			'300' => 'in 5 minutes',
 			'600' => 'in 10 minutes',
 			'1800' => 'in 30 minutes',
-                        '3600' => 'in 1 hour',
+            '3600' => 'in 1 hour',
 			'21600' => 'in 6 hours',
-                        '43200' => 'in 12 hours',
-                        '86400' => 'in 24 hours'
+            '43200' => 'in 12 hours',
+            '86400' => 'in 24 hours'
 		);
 
 		return $methods;
@@ -136,25 +146,34 @@ function mashsharer_conf() {
 			update_option( 'mashsharer_apikey', $_POST['mashsharer_apikey'] );
 		
 		if (isset( $_POST['mashsharer_posts']) == 1){
-			update_option( 'mashsharer_posts', 1 ); echo $_POST['mashsharer_posts'];
+			update_option( 'mashsharer_posts', 1 ); 
                 } else{ 
-                        update_option( 'mashsharer_posts', 0 ); echo $_POST['mashsharer_posts']; 
+                        update_option( 'mashsharer_posts', 0 );
                 }
                 
                 if ( $_POST['mashsharer_pages'] == 1){
-			update_option( 'mashsharer_pages', 1 ); echo $_POST['mashsharer_pages'];
+			update_option( 'mashsharer_pages', 1 );
                 } else {
-                        update_option( 'mashsharer_pages', 0 ); echo $_POST['mashsharer_pages'];
+                        update_option( 'mashsharer_pages', 0 ); 
                 }
 
                  if ( isset( $_POST['mashsharer_position'] ) )
 			update_option( 'mashsharer_position', $_POST['mashsharer_position'] );
                  
                  if ( $_POST['mashsharer_frontpage'] == 1){
-			update_option( 'mashsharer_frontpage', 1 ); echo $_POST['mashsharer_frontpage'];
+			update_option( 'mashsharer_frontpage', 1 );
                 } else {
-                        update_option( 'mashsharer_frontpage', 0 ); echo $_POST['mashsharer_frontpage'];
+                        update_option( 'mashsharer_frontpage', 0 );
                 }
+				
+                 if ( $_POST['mashsharer_round'] == 1){
+			update_option( 'mashsharer_round', 1 );
+                } else {
+                        update_option( 'mashsharer_round', 0 );
+                }
+				
+				if ( isset( $_POST['mashsharer_hashtag'] ) )
+			update_option( 'mashsharer_hashtag', $_POST['mashsharer_hashtag'] );
                 
 
 	} 
@@ -185,11 +204,11 @@ function mashsharer_conf() {
                                                 </label>
                                         </td>
                                         <td>
-                                         Share count is updated after cache expire time. SharedCount uses his own cache so it does not update immediately when expire time is very low, e.g. 5 minutes.
+                                         The amount of shares are updated after time of "cache expire". Notice that Sharedcount.com uses his own cache (30 - 60min) so it does not update immediately when expire time is very low, e.g. 5 minutes.
                                         </td>
                                     </tr>
                                     <tr valign="top">
-                                        <th scope="row">API KEY</th>
+                                        <th scope="row">API KEY - IMPORTANT!</th> 
                                         <td>
                                             <fieldset>
                                                     <label for="mashsharer-apikey">
@@ -198,7 +217,8 @@ function mashsharer_conf() {
                                                 </fieldset>
                                         </td>
                                         <td>
-                                          Optional needed for 50.000 free daily request - Get it at <a href="https://admin.sharedcount.com/admin/signup.php" target="_blank">SharedCount.com</a> 
+                                          Get it FREE at <a href="https://admin.sharedcount.com/admin/signup.php" target="_blank">SharedCount.com</a> for 50.000 free daily requests.
+										  Its essential for accurate function of this plugin.
                                         </td>
                                     </tr>
                                     <tr valign="top">
@@ -256,6 +276,38 @@ function mashsharer_conf() {
                                                     <?php _e('Select when the buttons should appear on the frontpage', 'mashsharer') ?>
                                                 </td>
 					</tr>
+					<tr valign="top">
+						<th scope="row">
+							<?php _e('Round Share counts ', 'mashsharer') ?>
+						</th>
+						<td>
+							<fieldset>
+								<label for="mashsharer_round">
+									<input type="checkbox" name="mashsharer_round" id="mashsharer_round" value="1" <?php checked('1', $options['round']); ?> />
+									
+								</label>
+                                                                Let´s round it!
+								
+                                                                
+							</fieldset>
+						</td>
+                                                <td>
+                                                    <?php _e('E.g.: Shares greater than 1000 are shown like 1k', 'mashsharer') ?>
+                                                </td>
+					</tr>
+					<tr valign="top">
+                                        <th scope="row">Twitter Hashtag</th> 
+                                        <td>
+                                            <fieldset>
+                                                    <label for="mashsharer-hashtag">
+                                                        <input type="text" name="mashsharer_hashtag" id="mashsharer-mashtag" value="<?php echo $options['hashtag'];?>">
+                                                    </label>
+                                                </fieldset>
+                                        </td>
+                                        <td>
+                                          Optional: Use name of your website or any other hashtah, e.g. 'Mashshare' results in via @Mashshare
+                                        </td>
+                                    </tr>
                                         <tr valign="top">
 						<th scope="row">
 							<?php _e('Support', 'mashsharer') ?>
@@ -264,7 +316,7 @@ function mashsharer_conf() {
 							
 						</td>
                                                 <td>
-                                                    <?php _e('Do you have any issues? Write me and i try my best to fix it: <a href="mailto:rene@digitalsday.com">rene@digitalsday.com</a>.<br> Please also rate this plugin at <a href="http://wordpress.org/support/view/plugin-reviews/mashsharer?filter=5" target="_blank">wordpress.org</a>. That helps me to increase the download rate.', 'mashsharer') ?>
+                                                    <?php _e('Do you have any issues? Write me and i try my best to fix it: <a href="mailto:rene@digitalsday.com">rene@digitalsday.com</a>.<br> Please also rate this plugin at <a href="http://wordpress.org/support/view/plugin-reviews/mashsharer?filter=5" target="_blank">wordpress.org</a>. That motivates me to improve the plugin.', 'mashsharer') ?>
                                                 </td>
 					</tr>
                                     </tr>

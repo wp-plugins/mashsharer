@@ -1,0 +1,24 @@
+CHANGELOG MASHSHARE
+
+= 1.2.9 =
+* Fix: void(0) instead return(0)
+* Fix: Remove url_encode in twitter title
+* New: Change Add-On Url to https://
+
+
+= 1.2.8 =
+* Fix: Show mashshare on frontpage in full blog layout
+* New: Add Hashtag e.g. via @website
+
+= 1.2.7 =
+* Fix: Count issue for unshared posts
+
+= 1.2.6 =
+* Fix: Count G+, Linked, Pinterest, Stumble Upon when mashshare-networks installed.
+* New: Add-On WPSSO
+
+= 1.2.5 =
+* New: Security Layer prevents zero share button sharecounts when sharedcount API is down 
+* Fix: Change share button add_filter priority to 1000 to prevent errors with other plugins
+* Fix: Delete non printable character which wraps the share buttons
+* Fix: Remove duplicate quote in share button

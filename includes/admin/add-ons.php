@@ -25,7 +25,7 @@ function mash_add_ons_page() {
 	<div class="wrap" id="edd-add-ons">
 		<h2>
 			<?php _e( 'Add Ons for Mashshare', 'mashshare' ); ?>
-			&nbsp;&mdash;&nbsp;<a href="http://www.mashshare.net" class="button-primary" title="<?php _e( 'Visit Website', 'mash' ); ?>" target="_blank"><?php _e( 'See Details', 'mash' ); ?></a>
+			&nbsp;&mdash;&nbsp;<a href="https://www.mashshare.net" class="button-primary" title="<?php _e( 'Visit Website', 'mash' ); ?>" target="_blank"><?php _e( 'See Details', 'mash' ); ?></a>
 		</h2>
 		<p><?php _e( 'These add-ons extend the functionality of Mashshare.', 'mash' ); ?></p>
 		<?php echo mash_add_ons_get_feed(); ?>
@@ -44,7 +44,7 @@ function mash_add_ons_page() {
  */
 function mash_add_ons_get_feed() {
 	if ( false === ( $cache = get_transient( 'mashshare_add_ons_feed' ) ) ) {
-		$feed = wp_remote_get( 'http://mashshare.net/?feed=addons', array( 'sslverify' => false ) );
+		$feed = wp_remote_get( 'https://www.mashshare.net/?feed=addons', array( 'sslverify' => false ) );
 		if ( ! is_wp_error( $feed ) ) {
 			if ( isset( $feed['body'] ) && strlen( $feed['body'] ) > 0 ) {
 				$cache = wp_remote_retrieve_body( $feed );
@@ -52,7 +52,7 @@ function mash_add_ons_get_feed() {
 			}
 		} else {
 			$cache = '<div class="error"><p>' . __( 'There was an error retrieving the Mashshare addon list from the server. Please try again later.', 'mash' ) . '
-                                   <br>Visit instead the Mashshare Addon Website <a href="http://www.mashshare.net" class="button-primary" title="Mashshare Add ons" target="_blank"> Get Add-Ons  </a></div>';
+                                   <br>Visit instead the Mashshare Addon Website <a href="https://www.mashshare.net" class="button-primary" title="Mashshare Add ons" target="_blank"> Get Add-Ons  </a></div>';
 		}
 	}
 	return $cache;
