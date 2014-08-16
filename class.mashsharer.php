@@ -228,7 +228,8 @@ class mashsharer {
 									);
 									
 			if( $post_types && !in_array($pt,$post_types)){
-                return $content;
+                // disabled to show mashshare on blog frontpage
+                //return $content;
             }
 	   
              /*if( $posts === $pt){
