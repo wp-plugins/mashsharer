@@ -1,11 +1,15 @@
 ﻿=== Share Button Mashshare ===
-Contributors: ReneHermi
+Author URL: https://www.mashshare.net
+Plugin URL: https://www.mashshare.net
+Contributors: renehermi
+Donate link: https://www.mashshare.net/buy-me-a-coffee/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: Mashable, Share button, share buttons, Facebook Share button, Twitter Share Button, Social Share, Share, Google+, Twitter, Facebook, Digg, Email, Stumble Upon, Linkedin,+1, add to any, AddThis, addtoany, admin, bookmark, bookmarking, bookmarks, buffer, button, del.icio.us, Digg, e-mail, email, Facebook, facebook like, google, google plus, google plus one, icon, icons, image, images, Like, linkedin, links, lockerz, page, pages, pin, pin it, pinit, pinterest, plugin, plus 1, plus one, Post, posts, Reddit, save, seo, Share, Shareaholic, sharedaddy, sharethis, sharing, shortcode, sidebar, sociable, social, social bookmarking, social bookmarks, statistics, stats, stumbleupon, svg, technorati, tumblr, tweet, twitter, vector, widget, wpmu
+Tags: Mashable, Share button, share buttons, Facebook Share button, Twitter Share Button, Social Share, Social buttons, Share, Google+, Twitter, Facebook, Digg, Email, Stumble Upon, Linkedin,+1, add to any, AddThis, addtoany, admin, bookmark, bookmarking, bookmarks, buffer, button, del.icio.us, Digg, e-mail, email, Facebook, facebook like, google, google plus, google plus one, icon, icons, image, images, Like, linkedin, links, lockerz, page, pages, pin, pin it, pinit, pinterest, plugin, plus 1, plus one, Post, posts, Reddit, save, seo, Share, Shareaholic, sharedaddy, sharethis, sharing, shortcode, sidebar, sociable, social, social bookmarking, social bookmarks, statistics, stats, stumbleupon, svg, technorati, tumblr, tweet, twitter, vector, widget, wpmu
 Requires at least: 3.1+
 Tested up to: 3.9.2
-Stable tag: 1.2.9
+
+Stable tag: 2.0.0
 
 Mashshare share button plugin is a high-performance share functionality inspired by the great website Mashable for Facebook and Twitter
 
@@ -31,8 +35,8 @@ This plugin is in active development and will be updated on a regular basis - Pl
 * All counts will be collected in your database and loaded first from cache. No further database requests than.
 * Up to 10.000 free daily requests
 * Up to 40.000 free additional daily requests with an api key (Get it free at sharedcount.com)
-* Works with every Theme
-* Works in pages and posts
+* Social buttons works with every Theme
+* Works on pages and posts
 * Automatic embedding or manual via Shortcode into posts and pages
 * Simple installation and setup
 * Uninstaller: Removes all plugin tables and settings in the WP database
@@ -62,7 +66,7 @@ After installation goto the settings page Settings->Mashshare and make your chan
 
 == Frequently Asked Questions ==
 
-> Find here the most asked questions and my answers. If you have any special question do not hesitate to write me personally at info[at]mashshare.net
+> Find here the most asked questions and my answers. If you have any special question do not hesitate to write me personally at rene[at]digitalsday.com
 
 <h4>Why is the total count not shown immediately after sharing?</h4>
 It takes some time for the script to detect the sharing. So wait a few minutes than you see the total calculated clicks. Keep also in mind the caching time you defined in the admin panel.
@@ -108,7 +112,7 @@ http://wordpress.org/plugins/nextgen-facebook/
 
 
 == Official Site ==
-* https://www.mashshare.net
+* http://www.mashshare.net
 
 == Installation ==
 1. Download the share button plugin "Mashshare" , unzip and place it in your wp-content/plugins/ folder. You can alternatively upload and install it via the WordPress plugin backend.
@@ -124,68 +128,14 @@ http://wordpress.org/plugins/nextgen-facebook/
 
 == Changelog ==
 
-= See changelog file changelog_mashshare.txt for latest changes =
+Attention: This 2.0.0 version is a major update and uses new css3 buttons and vector scalable icon fonts which are much easier to modify, sharper and more beautiful. 
+As a drawback your old css styles will no longer be compatible with this share buttons.
 
-= 1.2.4 =
-* New: Option to round the shares e.g. 1.5k instead 1500
+If you already use an older version of Mashshare and you did a lot of customizing work for your buttons,
+test this update first before you install it. Converting your old share buttons to the new ones will be easy 
+and you can contact me if you need any help: info@mashshare.net
 
-= 1.2.3 =
-* Fix: linkedIn Sharebutton
+Yours, René
 
-= 1.2.2 =
-* Share button Compatibility for WordPress 3.9.1
-* Change Share button api.sharedcount.com to free.sharedcount.com (more reliable)
-
-= 1.2.1 =
-* Fix: Header already send due to wp_redirect 
-
-= 1.2.0 =
-* Change: FAQ
-* Fix: Share button Facebook URL not shared on mobile devices.
-
-= 1.1.9 =
-* Fix: Change share button rating link in admin
-* Fix: Change share button check for addon
-* Fix: Sanitation for ampersand and hash / urlencode
-
-= 1.1.8 =
-* Fix: Change font-size to 13px
-* New: Install Addons
-
-= 1.1.7 =
-* Fix: changed mashsharer() to mashsharer('');
-
-= 1.1.6 =
-* New: graphical icons
-
-= 1.1.5 =
-* Fix: Broken Layout when no page option, (frontpage, posts, pages) is activated
-
-= 1.1.4 =
-* New: Support for more social networks (background work)
-* New: Allow shortcode in text widgets
-* New: Option to allow or prevent share buttons on frontpage
-
-* Fix: No bgcolor for count
-* Fix: Use onlick instead javascript in href. Prevents issues with YOAST analytics plugin
-
-= 1.1.3 =
-* Fix: Sanitation fix for international languages. E.g. french
-
-= 1.1.2 =
-Fix: Disable share buttons on frontpage
-Fix: Prevent share buttons double shown on pages.
-Fix: Disable Share Button in feeds
-
-= 1.1.1 =
-
-Fix: Error in sharing title in EDD easy digital download and other third party plugins
-
-= 1.1.0 = 
-* Fix: Disable sharer in excerpts
-* New: Add support contact data
-* New: Change public name to mashshare (shorter is better sometimes)
-* New: Add Shortcode [mashshare]
-
-= 1.0 = 
-* First release
+See release notes and changelog at:
+https://www.mashshare.net/downloads/mashshare/changelog.txt
