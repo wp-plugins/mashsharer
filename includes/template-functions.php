@@ -258,7 +258,12 @@ add_filter('widget_text', 'do_shortcode');
          */
         $getnetworks = $mashsb_options['networks'];
         /* Delete disabled services from array. Use callback function here */
+        if (is_array($getnetworks)){
         $enablednetworks = array_filter($getnetworks, 'isStatus');
+        }else{
+        $enablednetworks = $getnetworks; 
+        }
+        echo "tester" . count($enablednetworks);
         //var_dump($enablednetworks);
         //echo "max: " . $maxcounter;
     if (!empty($enablednetworks)) {
