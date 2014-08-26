@@ -138,4 +138,4 @@ and you can contact me if you need any help: info@mashshare.net
 Yours, René
 
 See release notes and changelog at:
-https://www.mashshare.net/downloads/mashshare/changelog.txt
+https://www.mashshare.net/changelogs/mashshare/changelog.txt

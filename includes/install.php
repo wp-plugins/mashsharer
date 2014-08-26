@@ -63,10 +63,11 @@ function mashsb_install() {
     );
 
      
-    //if (false == get_option('mashsb_networks')) {
-        //add_option('mashsb_networks', $networks);
-        update_option('mashsb_networks', $networks);
-    //}
+    if (false == get_option('mashsb_networks')) {
+        add_option('mashsb_networks', $networks);
+        /* Uncomment for debug */
+        //update_option('mashsb_networks', $networks);
+    }
 
 }
 register_activation_hook( MASHSB_PLUGIN_FILE, 'mashsb_install' );
