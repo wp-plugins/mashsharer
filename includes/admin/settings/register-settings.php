@@ -136,8 +136,7 @@ function mashsb_get_registered_settings() {
 					'name' => __( 'API Key - Important', 'mashsb' ),
 					'desc' => __( 'Get it FREE at <a href="https://admin.sharedcount.com/admin/signup.php" target="_blank">SharedCount.com</a> for 50.000 free daily requests. It´s essential for accurate function of this plugin. Make sure Curl is working on your server.', 'mashsb' ),
 					'type' => 'text',
-					'size' => 'medium',
-					'std' => ''
+					'size' => 'medium'
 				),
 				
                                 'disable_sharecount' => array(

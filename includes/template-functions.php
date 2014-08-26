@@ -177,9 +177,9 @@ add_filter('widget_text', 'do_shortcode');
           
               /* return total counts */  
           if (empty($results)) {
-                $totalshares = 0 + ($fakecount * mashsb_get_fake_factor());
+                $totalshares = 0 + round($fakecount * mashsb_get_fake_factor(), 0);
             } else {
-                $totalshares = $results[0]->TOTAL_SHARES + ($fakecount * mashsb_get_fake_factor());
+                $totalshares = $results[0]->TOTAL_SHARES + round($fakecount * mashsb_get_fake_factor(), 0);
             }
             return apply_filters('filter_get_sharedcount', $totalshares);
             

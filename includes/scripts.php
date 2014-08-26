@@ -41,11 +41,11 @@ function mashsb_load_scripts() {
 	// Use minified libraries if SCRIPT_DEBUG is turned off
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 	wp_enqueue_script( 'mashsb', $js_dir . 'mashsb' . $suffix . '.js', array( 'jquery' ), MASHSB_VERSION );
-	if (isset($mashsb_options['animate_shares'])){
                 $shareresult = getSharedcount($url);
                 wp_localize_script( 'mashsb', 'mashsb', array(
 			'shares'        => $shareresult,
                         'round_shares'  => isset($mashsb_options['mashsharer_round']),
+                        /* Do not animate shares on blog posts. The share count would be wrong there and performance bad */
                         'animate_shares' => isset($mashsb_options['animate_shares']) && is_single() ? 1 : 0,
                         'share_url' => $url,
                         'title' => $titleclean,
@@ -55,7 +55,7 @@ function mashsb_load_scripts() {
                         'subscribe' => $mashsb_options['subscribe_behavior'] === 'content' ? 'content' : 'link',
                         'subscribe_url' => isset($mashsb_options['subscribe_link']) ? $mashsb_options['subscribe_link'] : ''
                     ));
-        }                
+                        
 }
 add_action( 'wp_enqueue_scripts', 'mashsb_load_scripts' );
 
