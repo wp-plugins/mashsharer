@@ -79,7 +79,7 @@ function mashsb_register_styles() {
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 	$file          = 'mashsb' . $suffix . '.css';
 
-	$url = trailingslashit( plugins_url(). '/mashshare/templates/'    ) . $file;
+	$url = trailingslashit( plugins_url(). '/mashsharer/templates/'    ) . $file;
 	wp_enqueue_style( 'mashsb-styles', $url, array(), MASHSB_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'mashsb_register_styles' );
