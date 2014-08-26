@@ -263,7 +263,6 @@ add_filter('widget_text', 'do_shortcode');
         }else{
         $enablednetworks = $getnetworks; 
         }
-        echo "tester" . count($enablednetworks);
         //var_dump($enablednetworks);
         //echo "max: " . $maxcounter;
     if (!empty($enablednetworks)) {
