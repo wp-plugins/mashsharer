@@ -8,9 +8,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Mashable, Share button, share buttons, Facebook Share button, Twitter Share Button, Social Share, Social buttons, Share, Google+, Twitter, Facebook, Digg, Email, Stumble Upon, Linkedin,+1, add to any, AddThis, addtoany, admin, bookmark, bookmarking, bookmarks, buffer, button, del.icio.us, Digg, e-mail, email, Facebook, facebook like, google, google plus, google plus one, icon, icons, image, images, Like, linkedin, links, lockerz, page, pages, pin, pin it, pinit, pinterest, plugin, plus 1, plus one, Post, posts, Reddit, save, seo, Share, Shareaholic, sharedaddy, sharethis, sharing, shortcode, sidebar, sociable, social, social bookmarking, social bookmarks, statistics, stats, stumbleupon, svg, technorati, tumblr, tweet, twitter, vector, widget, wpmu
 Requires at least: 3.1+
 Tested up to: 3.9.2
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 
-Mashshare share button plugin is a high-performance share functionality inspired by the great website Mashable for Facebook and Twitter
+Mashshare share buttons plugin is a high-performance share functionality inspired by the great website Mashable for Facebook and Twitter
 
 
 == Description == 
@@ -46,7 +46,13 @@ This plugin is in active development and will be updated on a regular basis - Pl
 **Shortcodes**
 
 * Use `[mashshare]` anywhere in pages or post's text to show the buttons and total count where you like to at a custom position.
-Buttons are shown exactly where you put the shortcode in.
+Buttons are shown exactly on the place where you use the shortcode in your content.
+
+There are more shortcodes:
+
+ `[mashshare shares="false" buttons="true"]` for buttons without shares
+ `[mashshare shares="true" buttons="false"]` for sharecount without buttons
+
 * For manual insertion of the Share Buttons in your template files use the following php code where you want to show your Mash share buttons:`mashsharer();`
 Configure the Share buttons sharing function in the settings page of the plugin.
 * Change the color and font size of Mashshare directly in the css file `yourwebsite.com/wp-content/mashsharer/assets/mashsharer.css`
