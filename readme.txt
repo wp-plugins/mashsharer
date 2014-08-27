@@ -120,10 +120,10 @@ http://wordpress.org/plugins/nextgen-facebook/
 
 == Screenshots ==
 
-1. screenshot-1.png
-2. screenshot-2.png
-3. screenshot-3.png
-3. screenshot-4.png
+1. Some possible styles
+2. Visual settings
+3. General settings
+4. Social networks (included are Facebook, Twitter and Subscribe)
 
 == Changelog ==
 
