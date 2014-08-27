@@ -1,7 +1,7 @@
 ﻿=== Share Button Mashshare ===
 Author URL: https://www.mashshare.net
 Plugin URL: https://www.mashshare.net
-Contributors: renehermi
+Contributors: Rene Hermenau
 Donate link: https://www.mashshare.net/buy-me-a-coffee/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -139,3 +139,67 @@ Yours, René
 
 See release notes and changelog at:
 https://www.mashshare.net/changelogs/mashshare/changelog.txt
+
+= 1.2.4 =
+* New: Option to round the shares e.g. 1.5k instead 1500
+
+= 1.2.3 =
+* Fix: linkedIn Sharebutton
+
+= 1.2.2 =
+* Share button Compatibility for WordPress 3.9.1
+* Change Share button api.sharedcount.com to free.sharedcount.com (more reliable)
+
+= 1.2.1 =
+* Fix: Header already send due to wp_redirect 
+
+= 1.2.0 =
+* Change: FAQ
+* Fix: Share button Facebook URL not shared on mobile devices.
+
+= 1.1.9 =
+* Fix: Change share button rating link in admin
+* Fix: Change share button check for addon
+* Fix: Sanitation for ampersand and hash / urlencode
+
+= 1.1.8 =
+* Fix: Change font-size to 13px
+* New: Install Addons
+
+= 1.1.7 =
+* Fix: changed mashsharer() to mashsharer('');
+
+= 1.1.6 =
+* New: graphical icons
+
+= 1.1.5 =
+* Fix: Broken Layout when no page option, (frontpage, posts, pages) is activated
+
+= 1.1.4 =
+* New: Support for more social networks (background work)
+* New: Allow shortcode in text widgets
+* New: Option to allow or prevent share buttons on frontpage
+
+* Fix: No bgcolor for count
+* Fix: Use onlick instead javascript in href. Prevents issues with YOAST analytics plugin
+
+= 1.1.3 =
+* Fix: Sanitation fix for international languages. E.g. french
+
+= 1.1.2 =
+Fix: Disable share buttons on frontpage
+Fix: Prevent share buttons double shown on pages.
+Fix: Disable Share Button in feeds
+
+= 1.1.1 =
+
+Fix: Error in sharing title in EDD easy digital download and other third party plugins
+
+= 1.1.0 = 
+* Fix: Disable sharer in excerpts
+* New: Add support contact data
+* New: Change public name to mashshare (shorter is better sometimes)
+* New: Add Shortcode [mashshare]
+
+= 1.0 = 
+* First release
