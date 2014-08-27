@@ -120,14 +120,14 @@ http://wordpress.org/plugins/nextgen-facebook/
 
 == Screenshots ==
 
-1. screenshot-1.png
-2. screenshot-2.png
-3. screenshot-3.png
-3. screenshot-4.png
+1. Share buttons possible styles
+2. Share button Visual settings
+3. Mashshare General settings
+4. Social share button networks (included are Facebook, Twitter and Subscribe)
 
 == Changelog ==
 
-Attention: This 2.x version is a major update and uses new css3 buttons and vector scalable icon fonts which are much easier to modify, sharper and more beautiful. 
+Attention: This 2.x version of Mashshare share buttons is a major update and uses new css3 share buttons and vector scalable icon fonts which are much easier to modify, sharper and more beautiful. 
 As a drawback your old css styles will no longer be compatible with this share buttons. 
 Please make sure that you have the latest responsive Add-On and network Add-On before you install it.
 
