@@ -5,10 +5,14 @@ New: Shortcodes:
     Buttons with disabled sharecount: [mashshare shares="false" buttons="true"]
     Sharecount without buttons: [mashshare shares="true" buttons="false"]
     Buttons and Sharecount: [mashshare]
-
+New: Enable debug mode
+New: First redirect after installation goes to 'Social networks' tab
+New: do_action('mashshare');
 Fix: Change css path to MASHSB_PLUGIN_URL
 Fix: Compatibility patch for old shortcode [mashshare]
 Fix: Rename fontello fonts to mashsb-font.ttf to prevent multiple use of same icon font when page is using fontelle fonts for theme or other plugins
+Fix: Count additional networks when Add-On is installed
+Fix: remove some deprecated functions
 
 = 2.0.1/2 =
 Fix: No share buttons visible

@@ -6,7 +6,7 @@
  * @subpackage  Admin/Welcome
  * @copyright   Copyright (c) 2014, René Hermenau
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
- * @since       1.4
+ * @since       2.0
  */
 
 // Exit if accessed directly
@@ -63,9 +63,9 @@ class MASHSB_Welcome {
 		$upgrade = get_option( 'mashsb_version_upgraded_from' );
 
 		if( ! $upgrade ) { // First time install
-			wp_safe_redirect( admin_url( 'options-general.php?page=mashsb-settings' ) ); exit;
+			wp_safe_redirect( admin_url( 'options-general.php?page=mashsb-settings&tab=networks' ) ); exit;
 		} else { // Update
-			wp_safe_redirect( admin_url( 'options-general.php?page=mashsb-settings' ) ); exit;
+			wp_safe_redirect( admin_url( 'options-general.php?page=mashsb-settings&tab=networks' ) ); exit;
 		}
 	}
 }

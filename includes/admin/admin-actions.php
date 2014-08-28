@@ -46,7 +46,6 @@ function mashsb_save_order(){
                 
             }
         }
-
         //print_r($_POST);
         /* Update sort order of networks */
         update_option('mashsb_networks', $new_list);

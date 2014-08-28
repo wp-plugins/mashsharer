@@ -20,6 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 add_shortcode('mashshare', 'mashshareShortcodeShow');
 add_filter('the_content', 'mashshare_filter_content', 1000);
 add_filter('widget_text', 'do_shortcode');
+add_action('mashshare', 'mashshare');
 
 
     /* Get share counts of current page by sharedcount.com and write them in database
@@ -38,7 +39,6 @@ add_filter('widget_text', 'do_shortcode');
  
         $apikey = $mashsb_options['mashsharer_apikey'];
 
-        //echo "debug url: " . $url . "<br>";
             // We use curl instead file_get_contents for security purposes
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, "http://free.sharedcount.com/?url=" . rawurlencode($url) . "&apikey=" . $apikey);
@@ -51,13 +51,15 @@ add_filter('widget_text', 'do_shortcode');
 
             $counts = json_decode($output, true);
             
-            include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-        if (class_exists('mashshare_networks')) {
+            // DEPRECATED: delete include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+        if (class_exists('MashshareNetworks')) {
+            mashdebug()->info('Mashshare Networks exists');
             $total_count = $counts['Twitter'] + $counts['Facebook']['total_count'] + $counts['GooglePlusOne'] + $counts['Pinterest'] + $counts['LinkedIn'] + $counts['StumbleUpon'];
+            mashdebug()->info("Debug: This page has " . $counts["Twitter"] ." Tweeter tweets, " . $counts["Facebook"]["like_count"] . " Facebook likes, and ". $counts["GooglePlusOne"] . " Google +1's and " . $counts['Pinterest']. " Pinterest counts and " . $counts['stumbleupon'] . " StumbleUpon counts and " . $counts['LinkedIn'] . "Linked in counts");      
         } else {
             $total_count = $counts['Twitter'] + $counts['Facebook']['total_count'];
+            mashdebug()->info("Debug: This page has " . $counts["Twitter"] ." Tweeter tweets, " . $counts["Facebook"]["like_count"] . " Facebook likes");
         }
-        //echo "Debug: This page has " . $counts["Twitter"] ." tweets, " . $counts["Facebook"]["like_count"] . " likes, and ". $counts["GooglePlusOne"] . "+1's";
         $sql = "select TOTAL_SHARES from " . MASHSB_TABLE . " where URL='" . $url . "'";
         $results = $wpdb->get_results($sql);
 
@@ -82,11 +84,12 @@ add_filter('widget_text', 'do_shortcode');
             echo $sql;*/
     }
     
-    /* Check if networks Add-On is present and returns additional networks
+    /* DEPRECATED: todo delete Check if networks Add-On is present and returns additional networks
      * @scince 1.0
      * @return string
      */
 
+    /*
     function mashload($place){
         global $addons;
         	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
@@ -99,6 +102,7 @@ add_filter('widget_text', 'do_shortcode');
         return apply_filters( 'mashsb_output_networks', $addons );
     }
     add_filter('mashsb_load_addons', 'mashload');
+     */
     
     /* Show Subscribe extra button
      * @scince 2.0
@@ -108,7 +112,8 @@ add_filter('widget_text', 'do_shortcode');
     function mashsb_subscribe_button(){
         global $mashsb_options;
         if ($mashsb_options['networks'][2]){
-            $subscribebutton = '<a href="javascript:void(0)" class="mashicon-subscribe" id="mash-subscribe-control"><span class="icon"></span><span class="text">' . __('Subscribe', 'mashsb') . '</span></a>' . $addons;
+            // DEPRECATED todo: remove in later version $subscribebutton = '<a href="javascript:void(0)" class="mashicon-subscribe" id="mash-subscribe-control"><span class="icon"></span><span class="text">' . __('Subscribe', 'mashsb') . '</span></a>' . $addons;
+        $subscribebutton = '<a href="javascript:void(0)" class="mashicon-subscribe" id="mash-subscribe-control"><span class="icon"></span><span class="text">' . __('Subscribe', 'mashsb') . '</span></a>';
         } else {
             $subscribebutton = '';    
         }
@@ -142,31 +147,27 @@ add_filter('widget_text', 'do_shortcode');
         global $wpdb ,$mashsb_options, $post;
         $cacheexpire = $mashsb_options['mashsharer_cache'];
         //$cacheexpire = 1; //only for debugging
-        //echo "Debug:  url getSharedcount function: " . $url . "<br>";
+        mashdebug()->info( "getSharedcount(): " . $url);
         /* Create transient caching function */
         $mashsharer_transient_key = "mash_".md5($url);
         
-            /* Use with caution 
-             * This deletes the transient cache
-             */
             if (isset($mashsb_options['disable_cache'])){
-                //echo "Debug: cache deleted<br>";
+                mashdebug()->warn('getSharedcount() Cache deleted (admin option) ' . $mashsharer_transient_key);
                 delete_transient($mashsharer_transient_key); // for debugging  
             }
         
         $results = get_transient($mashsharer_transient_key);
 
             if ($results === false) {
-                //echo "debug: not cached <br>"; // for debugging
+                mashdebug()->warn ("getSharedcount() not cached");
                 /* Get the share counts and write them to database when cache is expired */
                 mashshareGetTotal($url);
                 $sql = "select TOTAL_SHARES from " . MASHSB_TABLE . " where URL='" . $url . "'";
                 $results = $wpdb->get_results($sql);
                 set_transient($mashsharer_transient_key, $results, $cacheexpire);
             } else {
-
                 $results = get_transient($mashsharer_transient_key);
-                //echo "Debug: cached results: " . $results[0]->TOTAL_SHARES; // for debugging
+                mashdebug()->info('cached results: ' . $results[0]->TOTAL_SHARES);
             }
           //echo $mashsharer_transient_key;
           
@@ -314,8 +315,12 @@ add_filter('widget_text', 'do_shortcode');
         //global $cacheexpire;
         //$cacheexpire = $mashsb_options['mashsharer_cache'];
         //$cacheexpire = 1;
-	/* Load addons */
-        $addons = mashload($place);
+        
+        /*DEPRECATED : todo delete
+	 * Load addons
+         *       
+         * $addons = mashload($place);
+         */
        
             /* Load hashshag*/       
             if ($mashsb_options['mashsharer_hashtag'] != '') {
@@ -327,19 +332,11 @@ add_filter('widget_text', 'do_shortcode');
             if (!isset($mashsb_options['disable_sharecount'])) {
                     /* get totalshares of the current page with sharedcount.com */
                     $totalshares = getSharedcount($url);
-
                     /* Round total shares when enabled */
-                    //$roundenabled = isset($mashsb_options['mashsharer_round']) ? $mashsb_options['mashsharer_round'] : null;
                     if (isset($mashsb_options['mashsharer_round'])) {
                         $totalshares = roundshares($totalshares);
-                    }
-                    /* If share animation is enabled, 
-                     * we start with sharecount 0 to count up with jQuery */
-                    /*if (isset($mashsb_options['animate_shares'])) {
-                        $totalshares = 0;
-                    } */   
-                
-                $sharecount = '<div class="mashsb-count"><div class="counts" id="mashsbcount">' . $totalshares . '</div><span class="mashsb-sharetext">' . __('SHARES', 'mashsb') . '</span></div>';    
+                    }  
+                 $sharecount = '<div class="mashsb-count"><div class="counts" id="mashsbcount">' . $totalshares . '</div><span class="mashsb-sharetext">' . __('SHARES', 'mashsb') . '</span></div>';    
              } else {
                  $sharecount = '';
              }
@@ -351,9 +348,7 @@ add_filter('widget_text', 'do_shortcode');
                     '<div class="mashsb-buttons">' 
                         . getNetworks() . 
                         //'<a class="mashicon-facebook" href="javascript:void(0);"><span class="icon"></span><span class="text">' . __('Share&nbsp;on&nbsp;Facebook', 'mashsb') . '</span></a><a class="mashicon-twitter" href="javascript:void(0)"><span class="icon"></span><span class="text">' . __('Tweet&nbsp;on&nbsp;Twitter', 'mashsb') . '</span></a><a class="mashicon-google" href="javascript:void(0)"><span class="icon"></span><span class="text">' . __('Google+', 'mashsb') . '</span></a>' . mashsb_subscribe_button() .                     
-                    '</div>'
-                    . $addons .
-                    '</div>
+                    '</div></div>
                     <div style="clear:both;"></div>'
                     . mashsb_subscribe_content() .
                     '</aside>
@@ -370,8 +365,10 @@ add_filter('widget_text', 'do_shortcode');
         global $wpdb ,$mashsb_options, $post;
         $url = get_permalink($post->ID);
         $title = addslashes(the_title_attribute('echo=0'));
-	/* Load addons */
-        $addons = mashload($place);	
+	/* DEPRECATED todo: delete Load addons */
+        /*
+         * $addons = mashload($place);	
+         */
 
         extract(shortcode_atts(array(
             'cache' => '3600',
@@ -415,9 +412,7 @@ add_filter('widget_text', 'do_shortcode');
                     '<div class="mashsb-buttons">' 
                         . getNetworks() . 
                         //'<a class="mashicon-facebook" href="javascript:void(0);"><span class="icon"></span><span class="text">' . __('Share&nbsp;on&nbsp;Facebook', 'mashsb') . '</span></a><a class="mashicon-twitter" href="javascript:void(0)"><span class="icon"></span><span class="text">' . __('Tweet&nbsp;on&nbsp;Twitter', 'mashsb') . '</span></a><a class="mashicon-google" href="javascript:void(0)"><span class="icon"></span><span class="text">' . __('Google+', 'mashsb') . '</span></a>' . mashsb_subscribe_button() .                     
-                    '</div>'
-                    . $addons .
-                    '</div>
+                    '</div></div>
                     <div style="clear:both;"></div>'
                     . mashsb_subscribe_content() .
                     '</aside>

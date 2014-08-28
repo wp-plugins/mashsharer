@@ -149,18 +149,21 @@ class MASHSB_License {
 	 * @return  void
 	 */
 	public function activate_license() {
-
+            mashdebug()->info('activate_license' . $_POST['mashsb_settings']);
 		if ( ! isset( $_POST['mashsb_settings'] ) ) {
+                        mashdebug()->info("no value in _POST[mashsb_settings]");
 			return;
 		}
 
 		if ( ! isset( $_POST['mashsb_settings'][ $this->item_shortname . '_license_key' ] ) ) {
+                        mashdebug()->info("Product name does not match");
 			return;
 		}
 
 		foreach( $_POST as $key => $value ) {
 			if( false !== strpos( $key, 'license_key_deactivate' ) ) {
 				// Don't activate a key when deactivating a different key
+                                mashdebug()->info("Don't activate a key when deactivating a different key");
 				return;
 			}
 		}
@@ -168,7 +171,7 @@ class MASHSB_License {
 		if( ! current_user_can( 'manage_options' ) ) {
 			return;
 		}
-
+                mashdebug()->info("OK");
 		if ( 'valid' == get_option( $this->item_shortname . '_license_active' ) ) {
 			return;
 		}
@@ -183,7 +186,7 @@ class MASHSB_License {
 			'url'        => home_url()
 		);
 
-                  
+                mashdebug()->info($api_params);
                 
 		// Call the API
 		$response = wp_remote_get(

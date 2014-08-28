@@ -163,8 +163,9 @@ final class Mashshare {
 		require_once MASHSB_PLUGIN_DIR . 'includes/template-functions.php';
                 require_once MASHSB_PLUGIN_DIR . 'includes/class-mashsb-license-handler.php';
                 require_once MASHSB_PLUGIN_DIR . 'includes/class-mashsb-html-elements.php';
-                //require_once MASHSB_PLUGIN_DIR . 'includes/class.mashshare.php';
-		
+                require_once MASHSB_PLUGIN_DIR . 'includes/debug/classes/MashDebug.interface.php';
+                require_once MASHSB_PLUGIN_DIR . 'includes/debug/classes/MashDebug.class.php';
+               
 		if ( is_admin() || ( defined( 'WP_CLI' ) && WP_CLI ) ) {
 			require_once MASHSB_PLUGIN_DIR . 'includes/admin/add-ons.php';
 			require_once MASHSB_PLUGIN_DIR . 'includes/admin/admin-actions.php';

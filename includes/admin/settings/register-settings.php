@@ -148,7 +148,13 @@ function mashsb_get_registered_settings() {
                                 'disable_cache' => array(
 					'id' => 'disable_cache',
 					'name' => __( 'Disable Cache', 'mashsb' ),
-					'desc' => __( '<strong>Caution: </strong>Use this only for testing to see if share counts are working! Your page loading performance will drop. Works only when shares are enabled.', 'mashsb' ),
+					'desc' => __( '<strong>Note: </strong>Use this only for testing to see if share counts are working! Your page loading performance will drop. Works only when shares are enabled.', 'mashsb' ),
+					'type' => 'checkbox'
+				),
+                                'debug_mode' => array(
+					'id' => 'debug_mode',
+					'name' => __( 'Debug mode', 'mashsb' ),
+					'desc' => __( '<strong>Note: </strong> Check this box this before you get in contact with our support team. This allows us to check publically hidden debug messages on your website. Do not forget to disable it thereafter!', 'mashsb' ),
 					'type' => 'checkbox'
 				),
                                 'fake_count' => array(
@@ -296,8 +302,8 @@ function mashsb_get_registered_settings() {
                          array(
                                 'visible_services' => array(
 					'id' => 'visible_services',
-					'name' => __( 'Visible Services', 'mashsb' ),
-					'desc' => __( 'Specify how many services and social networks are visible before the "Plus" Button is shown.', 'mashsb' ),
+					'name' => __( 'Large Buttons', 'mashsb' ),
+					'desc' => __( 'Specify how many services and social networks are visible before the "Plus" Button is shown. This buttons turn into large prominent buttons.', 'mashsb' ),
 					'type' => 'select',
                                         'options' => numberServices()
 					
