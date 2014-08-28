@@ -43,6 +43,32 @@ This plugin is in active development and will be updated on a regular basis - Pl
 * Periodic updates and improvements. (Feel free to tell me your demand)
 * More Share Buttons are coming soon. 
 
+New in v. 2.x
+
+* New: Improved performance
+* New: Option to disable share count completely  (no sql queries will be generated any longer)
+* New: Shortcode option to disable share counts
+* New: Check if curl is working on the server
+* New: Option to disable share cache for testing purposes
+* New: Use of sharp and crisp clear font icons instead png icons
+* New: Button 'extra content' for content slider subcribe forms or any other content
+* New: Use a link behind the Subscribe button instead the toggle slider
+* New: Complete rewrite of css for easier modifications
+* New: Improved extension system
+* New: Improved backend, new Add-On page
+* New: Multi language capable, *.po files
+* New: Change color of share counts via setting
+* New: Count up animation for share counts (Does not work for shortcodes and on blog pages)
+* New: HTML5 Tag <aside> wrapped around to tell search engines that the share buttons are not part of the content
+* New: Plus button moves to end of share buttons when activated and does not stay longer in place.
+* New: Drag and drop sort order of services.
+* New: Enable desired services with one click
+* New: Choose which network should be visible all the time This ones will be large sized by default. Other ones are behind the plus sign
+* New: Two different share button styles includes
+* New: Choose border radius of the buttons from settings
+* New: Keep settings when plugin is uninstalled - optional
+* New: Custom CSS field
+
 **Shortcodes**
 
 * Use `[mashshare]` anywhere in pages or post's text to show the buttons and total count where you like to at a custom position.
@@ -53,10 +79,9 @@ There are more shortcodes:
  `[mashshare shares="false" buttons="true"]` for buttons without shares
  `[mashshare shares="true" buttons="false"]` for sharecount without buttons
 
-* For manual insertion of the Share Buttons in your template files use the following php code where you want to show your Mash share buttons:`mashsharer();`
+* For manual insertion of the Share Buttons in your template files use the following php code where you want to show your Mash share buttons:`do_action('mashshare');`
 Configure the Share buttons sharing function in the settings page of the plugin.
-* Change the color and font size of Mashshare directly in the css file `yourwebsite.com/wp-content/mashsharer/assets/mashsharer.css`
-* With one of the next updates i will give you the possibility to change color and font-size on the settings page. So you dont have to fiddle around in css files any longer.
+* Change the color of Mashshare count with setting option.
 
 = How does it work? =
 
