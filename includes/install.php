@@ -36,23 +36,11 @@ function mashsb_install() {
 		update_option( 'mashsb_version_upgraded_from', $current_version );
 	}
 
-	// Bail if activating from network, or bulk
-	if ( is_network_admin() || isset( $_GET['activate-multi'] ) ) {
-		return;
-	}
+	
+        
         // Add the current version
         update_option( 'mashsb_version', EDD_VERSION );
-	// Add the transient to redirect
-	set_transient( '_mashsb_activation_redirect', true, 30 );
-                /* create database table */
-        	$sql = "CREATE TABLE ".MASHSB_TABLE." (
-                ID int(11) NOT NULL AUTO_INCREMENT,
-                URL varchar(250) NULL,
-                TOTAL_SHARES int(20) NOT NULL,
-                CHECK_TIMESTAMP TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                PRIMARY KEY  (ID))";
-                require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-                dbDelta( $sql );
+	
                 
     /* Setup some default options
      * Store our initial social networks in separate option row.
@@ -64,11 +52,28 @@ function mashsb_install() {
         'Subscribe'
     );
 
-    if (false == get_option('mashsb_networks')) {
+    if (false === get_option('mashsb_networks')) {
         update_option('mashsb_networks', $networks);
         /* Uncomment for debug */
         //update_option('mashsb_networks', $networks);
     }
+    
+    // Bail if activating from network, or bulk
+	if ( is_network_admin() || isset( $_GET['activate-multi'] ) ) {
+		return;	
+        }
+        
+        // Add the transient to redirect / not for multisites
+	set_transient( '_mashsb_activation_redirect', true, 30 );
+                /* create database table */
+        	$sql = "CREATE TABLE ".MASHSB_TABLE." (
+                ID int(11) NOT NULL AUTO_INCREMENT,
+                URL varchar(250) NULL,
+                TOTAL_SHARES int(20) NOT NULL,
+                CHECK_TIMESTAMP TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                PRIMARY KEY  (ID))";
+                require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+                dbDelta( $sql );
 
 }
 register_activation_hook( MASHSB_PLUGIN_FILE, 'mashsb_install' );
