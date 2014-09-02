@@ -421,7 +421,8 @@ add_action('mashshare', 'mashshare');
             return apply_filters( 'mashsb_output_buttons', $return );       
     }
     
-    /* Returns active status of Mashshare
+    /* Returns active status of Mashshare.
+     * Used for scripts.php $hook
      * @scince 2.0.3
      * @return bool True if MASHSB is enabled on specific page or post.
      */
@@ -430,7 +431,7 @@ add_action('mashshare', 'mashshare');
        global $mashsb_options, $post;
        $option_posts = isset( $mashsb_options['post_types']['mashsharer_posts'] ) ? $mashsb_options['post_types']['mashsharer_posts'] : null;
        $option_pages = isset( $mashsb_options['post_types']['mashsharer_pages'] ) ? $mashsb_options['post_types']['mashsharer_pages'] : null;
-       $frontpage = isset( $mashsb_options['frontpage'] ) ? $mashsb_options['frontpage'] : null;
+       $frontpage = isset( $mashsb_options['frontpage'] ) ? $frontpage = 1 : $frontpage = 0;
        $currentposttype = get_post_type();
        
        if ($option_posts === 'Posts')
@@ -443,16 +444,14 @@ add_action('mashshare', 'mashshare');
             $option_pages
         );
        
+       mashdebug()->info("var frontpage: " . $frontpage . "is_front_page(): " . is_front_page());
        
-       if ($post_types && in_array($currentposttype, $post_types) && is_singular()) {
-           //mashdebug()->info(mashsbGetActiveStatus() . "singular true" . var_dump($post_types));
+       if ($post_types && in_array($currentposttype, $post_types)) {
            return true;
        }
 
-       if ($frontpage == 1 && is_front_page() == true) {
-            //mashdebug()->info(mashsbGetActiveStatus() . " frontpage true");
+       if ($frontpage == 1 && is_front_page() == 1) {
             return true;
-            
         }
        
     }
@@ -503,13 +502,15 @@ add_action('mashshare', 'mashshare');
           } */
 
 	if (!is_singular()) {
-            // disabled to show mashshare on blog frontpage
-            //return $content;
+            /* disabled to show mashshare on non singualar pages to do: allow mashshare on this pages
+               We have to hardcode the share links into php source href instead using only js 
+            */
+            return $content;
         }
         if (in_array('get_the_excerpt', $wp_current_filter)) {
             return $content;
         }
-        if ($frontpage == 0 && is_front_page() == true) {
+        if ($frontpage == 0 && is_front_page() == 1) {
             return $content;
         }
         if (is_feed()) {
