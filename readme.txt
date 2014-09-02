@@ -35,7 +35,7 @@ This plugin is in active development and will be updated on a regular basis - Pl
 - Shortcode function
 - Additional Add-Ons available (Analytic, more share services, responsive and mobile optimized features)
 
-<h2All Features:</h2>
+= All Features: =
 
 New Version 2.x
 * New: Improved performance
