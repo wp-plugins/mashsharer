@@ -28,55 +28,56 @@ This plugin is in active development and will be updated on a regular basis - Pl
 
 = Main Features =
 
-- High Performance - easy to use - Share Buttons for the most common networks
-- High Resolution vector font icons
-- Total Share count
-- Full cached
-- Shortcode function
-- Additional Add-Ons available (Analytic, more share services, responsive and mobile optimized features)
+* High Performance - easy to use - Share Buttons for the most common networks
+* High Resolution vector font icons
+* Total Share count
+* Full cached
+* Shortcode function
+* Additional Add-Ons available (Analytic, more share services, responsive and mobile optimized features)
 
 = All Features: =
 
-New Version 2.x
-- New: Improved performance
-- New: Option to disable share count completely  (no sql queries will be generated any longer)
-- New: Shortcode option to disable share counts
-- New: Check if curl is working on the server
-- New: Option to disable share cache for testing purposes
-- New: Use of sharp and crisp clear font icons instead png icons
-- New: Button 'extra content' for content slider subcribe forms or any other content
-- New: Use a link behind the Subscribe button instead the toggle slider
-- New: Complete rewrite of css for easier modifications
-- New: Improved extension system
-- New: Improved backend, new Add-On page
-- New: Multi language capable, *.po files
-- New: Change color of share counts via setting
-- New: Count up animation for share counts (Does not work for shortcodes and on blog pages)
-- New: HTML5 Tag <aside> wrapped around to tell search engines that the share buttons are not part of the content
-- New: Plus button moves to end of share buttons when activated and does not stay longer in place.
-- New: Drag and drop sort order of services.
-- New: Enable desired services with one click
-- New: Choose which network should be visible all the time This ones will be large sized by default. Other ones are behind the plus sign
-- New: Two different share button styles includes
-- New: Choose border radius of the buttons from settings
-- New: Keep settings when plugin is uninstalled - optional
-- New: Custom CSS field
+**New Version 2.x**
 
-Version 1.x
-- Performance improvement for your website as no external scripts and count data is loaded
-- Privacy protection for your user - No permanent connection to Facebook, Twitter and Google needed for sharing
-- High-Performance caching functionality. You decide how often counts are updated.
-- All counts will be collected in your database and loaded first from cache. No further database requests than.
-- Up to 10.000 free daily requests
-- Up to 40.000 free additional daily requests with an api key (Get it free at sharedcount.com)
-- Social buttons works with every Theme
-- Works on pages and posts
-- Automatic embedding or manual via Shortcode into posts and pages
-- Simple installation and setup
-- Uninstaller: Removes all plugin tables and settings in the WP database
-- Service and support by the author
-- Periodic updates and improvements.
-- More Share Buttons are coming soon. 
+* New: Improved performance
+* New: Option to disable share count completely  (no sql queries will be generated any longer)
+* New: Shortcode option to disable share counts
+* New: Check if curl is working on the server
+* New: Option to disable share cache for testing purposes
+* New: Use of sharp and crisp clear font icons instead png icons
+* New: Button 'extra content' for content slider subcribe forms or any other content New: Use a link behind the Subscribe button instead the toggle slider
+* New: Complete rewrite of css for easier modifications
+* New: Improved extension system
+* New: Improved backend, new Add-On page
+* New: Multi language capable, *.po files
+* New: Change color of share counts via setting
+* New: Count up animation for share counts (Does not work for shortcodes and on blog pages)
+* New: HTML5 Tag <aside> wrapped around to tell search engines that the share buttons are not part of the content
+* New: Plus button moves to end of share buttons when activated and does not stay longer in place.
+* New: Drag and drop sort order of services.
+* New: Enable desired services with one click
+* New: Choose which network should be visible all the time This ones will be large sized by default. Other ones are behind the plus sign
+* New: Two different share button styles includes
+* New: Choose border radius of the buttons from settings
+* New: Keep settings when plugin is uninstalled - optional
+* New: Custom CSS field
+
+**Version 1.x**
+
+* Performance improvement for your website as no external scripts and count data is loaded
+* Privacy protection for your user - No permanent connection to Facebook, Twitter and Google needed for sharing
+* High-Performance caching functionality. You decide how often counts are updated.
+* All counts will be collected in your database and loaded first from cache. No further database requests than.
+* Up to 10.000 free daily requests
+* Up to 40.000 free additional daily requests with an api key (Get it free at sharedcount.com)
+* Social buttons works with every Theme
+* Works on pages and posts
+* Automatic embedding or manual via Shortcode into posts and pages
+* Simple installation and setup
+* Uninstaller: Removes all plugin tables and settings in the WP database
+* Service and support by the author
+* Periodic updates and improvements.
+* More Share Buttons are coming soon. 
 
 **Shortcodes**
 
@@ -105,7 +106,7 @@ After installation goto the settings page Settings->Mashshare and make your chan
 
 == Frequently Asked Questions ==
 
-> Find here the most asked questions and my answers. If you have any special question do not hesitate to write me personally at rene[at]digitalsday.com
+> Find here the most asked questions and answers:
 
 <h4>Why is the total count not shown immediately after sharing?</h4>
 It takes some time for the script to detect the sharing. So wait a few minutes than you see the total calculated clicks. Keep also in mind the caching time you defined in the admin panel.
