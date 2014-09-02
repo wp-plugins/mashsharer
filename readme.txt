@@ -1,7 +1,7 @@
 ﻿=== Share Button Mashshare ===
 Author URL: https://www.mashshare.net
 Plugin URL: https://www.mashshare.net
-Contributors: Rene Hermenau
+Contributors: Rene Hermenau, ReneHermi
 Donate link: https://www.mashshare.net/buy-me-a-coffee/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
