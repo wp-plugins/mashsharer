@@ -28,24 +28,24 @@ This plugin is in active development and will be updated on a regular basis - Pl
 
 = Main Features =
 
-- High Performance - easy to use - Share Buttons the most common networks
-- High Resolution vector font icons
-- Total Share count
-- Full cached
-- Shortcode function
-- Additional Add-Ons available (Analytic, more share services, responsive and mobile optimized features)
+* High Performance - easy to use - Share Buttons for the most common networks
+* High Resolution vector font icons
+* Total Share count
+* Full cached
+* Shortcode function
+* Additional Add-Ons available (Analytic, more share services, responsive and mobile optimized features)
 
 = All Features: =
 
-New Version 2.x
+**New Version 2.x**
+
 * New: Improved performance
 * New: Option to disable share count completely  (no sql queries will be generated any longer)
 * New: Shortcode option to disable share counts
 * New: Check if curl is working on the server
 * New: Option to disable share cache for testing purposes
 * New: Use of sharp and crisp clear font icons instead png icons
-* New: Button 'extra content' for content slider subcribe forms or any other content
-* New: Use a link behind the Subscribe button instead the toggle slider
+* New: Button 'extra content' for content slider subcribe forms or any other content New: Use a link behind the Subscribe button instead the toggle slider
 * New: Complete rewrite of css for easier modifications
 * New: Improved extension system
 * New: Improved backend, new Add-On page
@@ -61,22 +61,6 @@ New Version 2.x
 * New: Choose border radius of the buttons from settings
 * New: Keep settings when plugin is uninstalled - optional
 * New: Custom CSS field
-
-Version 1.x
-* Performance improvement for your website as no external scripts and count data is loaded
-* Privacy protection for your user - No permanent connection to Facebook, Twitter and Google needed for sharing
-* High-Performance caching functionality. You decide how often counts are updated.
-* All counts will be collected in your database and loaded first from cache. No further database requests than.
-* Up to 10.000 free daily requests
-* Up to 40.000 free additional daily requests with an api key (Get it free at sharedcount.com)
-* Social buttons works with every Theme
-* Works on pages and posts
-* Automatic embedding or manual via Shortcode into posts and pages
-* Simple installation and setup
-* Uninstaller: Removes all plugin tables and settings in the WP database
-* Service and support by the author
-* Periodic updates and improvements.
-* More Share Buttons are coming soon. 
 
 **Shortcodes**
 
