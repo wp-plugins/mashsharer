@@ -76,6 +76,10 @@ There are more parameters available:
 Configure the Share buttons sharing function in the settings page of the plugin.
 * Change the color of Mashshare count with setting option.
 
+**Full SEO third party plugin support**
+Mashshare integrates with [All in One SEO Pack](http://wordpress.org/plugins/all-in-one-seo-pack/) and [WordPress SEO by Yoast](http://wordpress.org/plugins/wordpress-seo/).
+
+
 = How does it work? =
 
 Mashshare makes use of the great webservice sharedcount.com and periodically checks for the total count 
