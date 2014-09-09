@@ -49,11 +49,9 @@ function mashsb_install() {
         'Twitter',
         'Subscribe'
     );
-
+    
     if (false === get_option('mashsb_networks')) {
         update_option('mashsb_networks', $networks);
-        /* Uncomment for debug */
-        //update_option('mashsb_networks', $networks);
     }
     
     // Bail if activating from network, or bulk

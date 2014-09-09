@@ -176,10 +176,7 @@ final class Mashshare {
                         require_once MASHSB_PLUGIN_DIR . 'includes/admin/welcome.php';
 			require_once MASHSB_PLUGIN_DIR . 'includes/admin/settings/display-settings.php';
                         require_once MASHSB_PLUGIN_DIR . 'includes/admin/settings/contextual-help.php';
-                        require_once MASHSB_PLUGIN_DIR . 'includes/install.php';
-                        
-                        
-			
+                        require_once MASHSB_PLUGIN_DIR . 'includes/install.php';	
 		}                                              
                         		
             /* Instantiate class MASHSB_licence
