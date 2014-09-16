@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Mashable, Share button, share buttons, Facebook Share button, Twitter Share Button, Social Share, Social buttons, Share, Share this, Google+, Twitter, Facebook, Digg, Email, Stumble Upon, Linkedin,+1, add to any, AddThis, addtoany, admin, bookmark, bookmarking, bookmarks, buffer, button, del.icio.us, Digg, e-mail, email, Facebook, facebook like, google, google plus, google plus one, icon, icons, image, images, Like, linkedin, links, lockerz, page, pages, pin, pin it, pinit, pinterest, plugin, plus 1, plus one, Post, posts, Reddit, save, seo, Share, Shareaholic, sharedaddy, sharethis, sharing, shortcode, sidebar, sociable, social, social bookmarking, social bookmarks, statistics, stats, stumbleupon, svg, technorati, tumblr, tweet, twitter, vector, widget, wpmu
 Requires at least: 3.1+
 Tested up to: 4.0
-Stable tag: 2.0.6
+Stable tag: 2.0.7
 
 Mashshare share buttons plugin is a high-performance share functionality inspired by the website Mashable.com for Facebook and Twitter
 
@@ -30,8 +30,8 @@ This plugin is in active development and will be updated on a regular basis - Pl
 
 * High Performance - easy to use - Share Buttons for the most common networks
 * High Resolution vector font icons
-* Total Share count
-* Full cached
+* Show the Total Share count at a glance
+* Object and transient caches to provide incredibly fast execution speeds.
 * Shortcode function
 * Additional Add-Ons available (Analytic, more share services, responsive and mobile optimized features)
 
@@ -39,28 +39,46 @@ This plugin is in active development and will be updated on a regular basis - Pl
 
 **New Version 2.x**
 
-* New: Improved performance
-* New: Option to disable share count completely  (no sql queries will be generated any longer)
-* New: Shortcode option to disable share counts
-* New: Check if curl is working on the server
-* New: Option to disable share cache for testing purposes
-* New: Use of sharp and crisp clear font icons instead png icons
-* New: Button 'extra content' for content slider subcribe forms or any other content New: Use a link behind the Subscribe button instead the toggle slider
-* New: Complete rewrite of css for easier modifications
-* New: Improved extension system
-* New: Improved backend, new Add-On page
-* New: Multi language capable, *.po files
-* New: Change color of share counts via setting
-* New: Count up animation for share counts (Does not work for shortcodes and on blog pages)
-* New: HTML5 Tag <aside> wrapped around to tell search engines that the share buttons are not part of the content
-* New: Plus button moves to end of share buttons when activated and does not stay longer in place.
-* New: Drag and drop sort order of services.
-* New: Enable desired services with one click
-* New: Choose which network should be visible all the time This ones will be large sized by default. Other ones are behind the plus sign
-* New: Two different share button styles includes
-* New: Choose border radius of the buttons from settings
-* New: Keep settings when plugin is uninstalled - optional
-* New: Custom CSS field
+* Improved performance
+* Option to disable share count completely  (no sql queries will be generated any longer)
+* Shortcode option to disable share counts
+* Check if curl is working on the server
+* Option to disable share cache for testing purposes
+* Use of sharp and crisp clear font icons instead png icons
+* Button 'extra content' for content slider subcribe forms or any other content New: Use a link behind the Subscribe button instead the toggle slider
+* Complete rewrite of css for easier modifications
+* Improved extension system
+* Improved backend, new Add-On page
+* Multi language capable, *.po files
+* Change color of share counts via setting
+* Count up animation for share counts (Does not work for shortcodes and on blog pages)
+* HTML5 Tag <aside> wrapped around to tell search engines that the share buttons are not part of the content
+* Plus button moves to end of share buttons when activated and does not stay longer in place.
+* Drag and drop sort order of services.
+* Enable desired services with one click
+* Choose which network should be visible all the time This ones will be large sized by default. Other ones are behind the plus sign
+* Two different share button styles includes
+* Choose border radius of the buttons from settings
+* Keep settings when plugin is uninstalled - optional
+* Custom CSS field for individual styling of the share buttons
+
+** Add-Ons available for **
+
+* Google / G+
+* Whatsapp
+* Pinterest
+* Digg
+* Linkedin
+* Reddit
+* Stumbleupon
+* Vk / VKontakte
+* Print
+* Delicious
+* Buffer
+* Weibo
+* Pocket
+* Xing
+* Tumblr
 
 **Shortcodes**
 
@@ -155,20 +173,17 @@ http://wordpress.org/plugins/nextgen-facebook/
 
 == Changelog ==
 
-Attention: This 2.x version of Mashshare share buttons is a major update and uses new css3 share buttons and vector scalable icon fonts which are much easier to modify, sharper and more beautiful. 
-As a drawback your old css styles will no longer be compatible with this share buttons. 
-Please make sure that you have the latest responsive and network Add-On before you install it.
+Note: Before you install this update and you have the Mashshare Networks or Responsive Add-On running make sure you update them first.
+See latest versions here:
+https://www.mashshare.net/downloads/mashshare-responsive/
+https://www.mashshare.net/downloads/mashshare-social-networks-addon/
 
-If you already use an older version of Mashshare and you did a lot of customizing work for your buttons,
-test this update first before you install it. Converting your old share buttons to the new ones will be easy 
-and you can contact me if you need any help: info@mashshare.net
-
-Yours, René
 
 See release notes and complete changelog at:
 https://www.mashshare.net/changelogs/mashshare/changelog.txt
 
-Old changelog:
+
+Old changelog (history):
 
 = 1.2.4 =
 * New: Option to round the shares e.g. 1.5k instead 1500
