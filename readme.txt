@@ -248,3 +248,7 @@ Fix: Error in sharing title in EDD easy digital download and other third party p
 
 = 1.0 = 
 * First release
+
+= 2.0.8 =
+2.0.8 brings some new features. Test extensions and your theme prior to updating, ensure extensions are up to date and 2.0.8 compatible, and ensure that you keep backups.
+
