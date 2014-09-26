@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Mashable, Share button, share buttons, Facebook Share button, Twitter Share Button, Social Share, Social buttons, Share, Share this, Google+, Twitter, Facebook, Digg, Email, Stumble Upon, Linkedin,+1, add to any, AddThis, addtoany, admin, bookmark, bookmarking, bookmarks, buffer, button, del.icio.us, Digg, e-mail, email, Facebook, facebook like, google, google plus, google plus one, icon, icons, image, images, Like, linkedin, links, lockerz, page, pages, pin, pin it, pinit, pinterest, plugin, plus 1, plus one, Post, posts, Reddit, save, seo, Share, Shareaholic, sharedaddy, sharethis, sharing, shortcode, sidebar, sociable, social, social bookmarking, social bookmarks, statistics, stats, stumbleupon, svg, technorati, tumblr, tweet, twitter, vector, widget, wpmu
 Requires at least: 3.1+
 Tested up to: 4.0
-Stable tag: 2.0.8
+Stable tag: 2.0.9
 
 Mashshare share buttons plugin is a high-performance share functionality inspired by the website Mashable.com for Facebook and Twitter
 
@@ -21,7 +21,7 @@ It´s inspired by the Share buttons Mashable.com is using.
 
 <h3> Mashshare demo </h3>
 
-[Share Buttons](http://www.mashshare.net/?ref=1 "Share-Buttons - Mashable inspired Share Buttons")
+[Share Buttons](https://www.mashshare.net/?ref=1 "Share-Buttons - Mashable inspired Share Buttons")
 
 
 This plugin is in active development and will be updated on a regular basis - Please do not rate negative before i tried my best to solve your issue. Thanks buddy!
@@ -79,6 +79,7 @@ This plugin is in active development and will be updated on a regular basis - Pl
 * Pocket
 * Xing
 * Tumblr
+* Mail
 
 **Shortcodes**
 
@@ -111,7 +112,12 @@ After installation goto the settings page Settings->Mashshare and make your chan
 
 == Frequently Asked Questions ==
 
-> Find here the most asked questions and my answers. If you have any special question do not hesitate to write me personally at rene[at]digitalsday.com
+> Find here the Frequently Asked Questions. If your question is not answered look at:
+https://www.mashshare.net/faq/
+
+<h4>There are no social share buttons visible after updating or installing Mashshare</h4>
+This happens ins most cases when you are using the Mashshare Network Add-On which is disabled during update process or when your are updating from a very early Mashshare version 1.x.
+Solution: Disable Mashshare Network Add-On and Mashshare. Enable Mashshare THAN the Network Add-On and all Share buttons become visible again. (Activating order is important here)
 
 <h4>Why is the total count not shown immediately after sharing?</h4>
 It takes some time for the script to detect the sharing. So wait a few minutes than you see the total calculated clicks. Keep also in mind the caching time you defined in the admin panel.
@@ -157,7 +163,7 @@ http://wordpress.org/plugins/nextgen-facebook/
 
 
 == Official Site ==
-* http://www.mashshare.net
+* https://www.mashshare.net
 
 == Installation ==
 1. Download the share button plugin "Mashshare" , unzip and place it in your wp-content/plugins/ folder. You can alternatively upload and install it via the WordPress plugin backend.
@@ -173,11 +179,21 @@ http://wordpress.org/plugins/nextgen-facebook/
 
 == Changelog ==
 
+Update notices 2.0.9:
+- After updating to 2.0.9 go to Mashshare->Settings->Visual and enable Mashshare for the new Post Types fields. 
+- This update uses a new and FASTER SHARE ENGINE which could results in zero share counts for a few minutes after updating.
+- If you notice any zero counts for longer than the expired cache time disable the Mashshare Transient cache and reload the page.
+- Enable the cache after this step. (This is a one time step)
+
+THIS UPDATE IS NECESSARY IF YOU LIKE TO USE THE VELOCITY GRAPH ADD-ON
+
 See release notes and complete changelog at:
 https://www.mashshare.net/changelogs/mashshare/changelog.txt
 
 
-Old changelog (history):
+
+
+Old changelog (only for history purposes):
 
 = 1.2.4 =
 * New: Option to round the shares e.g. 1.5k instead 1500
@@ -245,5 +261,5 @@ Fix: Error in sharing title in EDD easy digital download and other third party p
 
 == Upgrade Notice ==
 
-= 2.0.8 =
-2.0.8 brings some new features. Test extensions and your theme prior to updating, ensure extensions are up to date and 2.0.8 compatible, and ensure that you keep backups.
+= 2.0.9 =
+2.0.9 After updating go to Mashshare->Settings->Visual and enable Mashshare on the new Post Types fields. This update uses a new and faster share engine which could results in zero share counts for a few minutes after updating.
