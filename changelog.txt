@@ -1,5 +1,8 @@
 CHANGELOG MASHSHARE
 
+= 2.1.0 =
+Fix: Problem where sharecounts are zero
+
 = 2.0.9 =
 Fix: Allows Shortcodes in Subscribe forms!!!
 Fix: Suppress header output warning when Debug mode is enabled

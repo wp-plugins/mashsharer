@@ -261,5 +261,5 @@ Fix: Error in sharing title in EDD easy digital download and other third party p
 
 == Upgrade Notice ==
 
-= 2.0.9 =
-2.0.9 After updating go to Mashshare->Settings->Visual and enable Mashshare on the new Post Types fields. This update uses a new and faster share engine which could results in zero share counts for a few minutes after updating.
+= 2.1.0 =
+2.1.0 After updating go to Mashshare->Settings->Visual and enable Mashshare on the new Post Types fields. This update uses a new and faster share engine which could results in zero share counts for a few minutes after updating.
