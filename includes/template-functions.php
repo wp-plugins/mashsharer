@@ -194,8 +194,8 @@ function getSharedcount($url) {
             /* return counts from getAllCounts() when they are updated in DB */
             return apply_filters('filter_get_sharedcount', $mashsbShareCounts['total'] + getFakecount());
         }
-        /* return previous counts from DB Cache | this happens when API has a hiccup and does not return any resutl as expected*/
-        return apply_filters('filter_get_sharedcount', end((array_values($lastDBStoredShare))) + getFakecount());
+        /* return previous counts from DB Cache | this happens when API has a hiccup and does not return any result as expected*/
+        return apply_filters('filter_get_sharedcount', end((array_values($lastDBStoredShareArr))) + getFakecount());
     } else {
         /* return counts from post_meta cache | This is regular cached result */
         $cachedCountsArr = explode(",", get_post_meta($post->ID, 'mashsb_shares', true));
