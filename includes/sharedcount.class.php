@@ -22,13 +22,13 @@ function getFBTWCounts(){
     
         $sharecounts = $this->get_sharedcount();
         
-	$ret = array('shares'=>array(),'total'=>0);
-	$ret['shares']['fb'] = $sharecounts['Facebook']['total_count'];;
-	$ret['shares']['tw'] = $sharecounts['Twitter'];
+	$counts = array('shares'=>array(),'total'=>0);
+	$counts['shares']['fb'] = $sharecounts['Facebook']['total_count'];;
+	$counts['shares']['tw'] = $sharecounts['Twitter'];
 
-	foreach ($ret['shares'] as $sbserv => $sbsharecount) $ret['total'] += (int)$sbsharecount;
-        mashdebug()->error("sharedcount.com getFBTWCounts: " . $ret['total']);
-	return $ret;
+	foreach ($counts['shares'] as $mashsbcounts => $sharecount) $counts['total'] += (int)$sharecount;
+        mashdebug()->error("sharedcount.com getFBTWCounts: " . $counts['total']);
+	return $counts;
 
 }
 /* Only used when mashshare-networks is enabled */
@@ -36,17 +36,17 @@ function getAllCounts(){
 
         $sharecounts = $this->get_sharedcount();
         
-	$ret = array('shares'=>array(),'total'=>0);
-	$ret['shares']['fb'] = $sharecounts['Facebook']['total_count'];
-	$ret['shares']['tw'] = $sharecounts['Twitter'];
-	$ret['shares']['gp'] = $sharecounts['GooglePlusOne'];
-	$ret['shares']['li'] = $sharecounts['LinkedIn'];
-	$ret['shares']['st'] = $sharecounts['StumbleUpon'];
-	$ret['shares']['pin'] = $sharecounts['Pinterest'];
+	$counts = array('shares'=>array(),'total'=>0);
+	$counts['shares']['fb'] = $sharecounts['Facebook']['total_count'];
+	$counts['shares']['tw'] = $sharecounts['Twitter'];
+	$counts['shares']['gp'] = $sharecounts['GooglePlusOne'];
+	$counts['shares']['li'] = $sharecounts['LinkedIn'];
+	$counts['shares']['st'] = $sharecounts['StumbleUpon'];
+	$counts['shares']['pin'] = $sharecounts['Pinterest'];
 
-	foreach ($ret['shares'] as $sbserv => $sbsharecount) $ret['total'] += (int)$sbsharecount;
-        mashdebug()->error("sharedcount.com getAllCounts: " . $ret['total']);
-	return $ret;
+	foreach ($counts['shares'] as $sbserv => $sbsharecount) $counts['total'] += (int)$sbsharecount;
+        mashdebug()->error("sharedcount.com getAllCounts: " . $counts['total']);
+	return $counts;
 }
 
 function get_sharedcount()  {

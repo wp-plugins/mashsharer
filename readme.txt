@@ -5,7 +5,7 @@ Contributors: ReneHermi
 Donate link: https://www.mashshare.net/buy-me-a-coffee/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: Mashable, Share button, share buttons, Facebook Share button, Twitter Share Button, Social Share, Social buttons, Share, Share this, Google+, Twitter, Facebook, Digg, Email, Stumble Upon, Linkedin,+1, add to any, AddThis, addtoany, admin, bookmark, bookmarking, bookmarks, buffer, button, del.icio.us, Digg, e-mail, email, Facebook, facebook like, google, google plus, google plus one, icon, icons, image, images, Like, linkedin, links, lockerz, page, pages, pin, pin it, pinit, pinterest, plugin, plus 1, plus one, Post, posts, Reddit, save, seo, Share, Shareaholic, sharedaddy, sharethis, sharing, shortcode, sidebar, sociable, social, social bookmarking, social bookmarks, statistics, stats, stumbleupon, svg, technorati, tumblr, tweet, twitter, vector, widget, wpmu
+Tags: Mashable, Share button, share buttons, Facebook Share button, Twitter Share Button, Social Share, Social buttons, Share, Share this, Google+, Twitter, Facebook, Digg, Stumble Upon, Linkedin, +1, add to any, AddThis, add this, addtoany, admin, aim, analytics, bookmark, bookmarking, bookmarks, bookmark button, bookmark menu, buddypress, chrome extension, comments, del.icio.us, Diigo, buffer, button, del.icio.us, e-mail, email, email button, Facebook, facebook like, facebook recommend, facebook share, facebook share button, fark, firefox extension, flickr, floating buttons, follow, foursquare, gmail, goo.gl, google, google analytics, google plus, google plus one, google widget, hackernews, Hubspot, hyves, instagram, instapaper, NewsVine, odnoklassniki, pocket, popular, outbrain, PrintFriendly, popular posts, print, Whatsapp, rss, related posts, related content, share links, share bar, sharebar, social analytics, velocity graph, social networking, share and enjoy, sidebar, Vkontakte, technorati, socialize, url shortener, sonico, statistics tumblr, vimeo, yarrp, youtube, recommendations, posterous, orkut, icon, icons, image, images, Like, links, lockerz, page, pages, pin, pin it, pinit, pinterest, plugin, plus 1, plus one, Post, posts, Reddit, save, seo, Share, Shareaholic, sharedaddy, sharethis, sharing, shortcode, sidebar, sociable, social, social bookmarking, social bookmarks, statistics, stats, stumbleupon, svg, technorati, tumblr, tweet, twitter, vector, widget, wpmu
 Requires at least: 3.1+
 Tested up to: 4.0
 Stable tag: 2.1.1
@@ -29,15 +29,16 @@ This plugin is in active development and will be updated on a regular basis - Pl
 = Main Features =
 
 * High Performance - easy to use - Share Buttons for the most common networks
-* High Resolution vector font icons
+* High Resolution lossless vector font icons
 * Show the Total Share count at a glance
-* Object and transient caches to provide incredibly fast execution speeds.
-* Shortcode function
-* Additional Add-Ons available (Analytic, more share services, responsive and mobile optimized features)
+* Object and transient caches to provide incredibly fast execution speed
+* Shortcodes
+* Extensible with many [Add-Ons](https://www.mashshare.net/downloads) (Google Analytics, More Social Networks, Responsive, Velocity Graph end more...)
+* Developer friendly with several filters and actions.
 
 = All Features: =
 
-**New Version 2.x**
+<strong>New Version 2.x</strong>
 
 * Improved performance
 * Option to disable share count completely  (no sql queries will be generated any longer)
@@ -65,7 +66,7 @@ This plugin is in active development and will be updated on a regular basis - Pl
 ** Add-Ons available for **
 
 * Google / G+
-* Whatsapp
+* Whatsapp (Whatsapp button only shown on iOS devices)
 * Pinterest
 * Digg
 * Linkedin
@@ -261,5 +262,5 @@ Fix: Error in sharing title in EDD easy digital download and other third party p
 
 == Upgrade Notice ==
 
-= 2.1.0 =
-2.1.0 After updating go to Mashshare->Settings->Visual and enable Mashshare on the new Post Types fields. This update uses a new and faster share engine which could results in zero share counts for a few minutes after updating.
+= 2.1.1 =
+2.1.1 New: [Free Add-On for Shorturls!](https://www.mashshare.net/downloads) After updating go to Mashshare->Settings->Visual and enable Mashshare on the new Post Types fields. This update uses a new and faster share engine which could results in zero share counts for a few minutes after updating.

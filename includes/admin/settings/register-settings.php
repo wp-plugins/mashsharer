@@ -289,6 +289,7 @@ function mashsb_get_registered_settings() {
 					'type' => 'select',
                                         'options' => array(
 						'shadow' => '"Shadow" Created by Rene Hermenau',
+                                                'gradiant' => '"Gradiant" Created by Rene Hermenau',
                                                 'default' => 'Default'
 					),
                                         'std' => 'default'

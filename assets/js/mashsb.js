@@ -25,6 +25,7 @@ jQuery(document).ready( function($) {
     });
     }
     if (typeof mashsb !== 'undefined') {
+        console.log('tester' + mashsb.title);
     $('.mashicon-twitter').click( function() {
         winWidth = 520;
         winHeight = 350;

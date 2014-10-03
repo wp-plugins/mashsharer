@@ -133,21 +133,19 @@ function getSharedcount($url) {
     global $wpdb, $mashsb_options, $post;
     $cacheexpire = $mashsb_options['mashsharer_cache'];
     /* make sure 300sec is default value */
-    if ($cacheexpire < 300) {
-        $cacheexpire = 300;
-    }
+    $cacheexpire < 300 ? $cacheexpire = 300 : $cacheexpire;
 
     if (isset($mashsb_options['disable_cache'])) {
         $cacheexpire = 5;
     }
-    $mashsbUpdateFreq = (int) $cacheexpire;
+    $mashsbNextUpdate = (int) $cacheexpire;
     $mashsbLastUpdated = get_post_meta($post->ID, 'mashsb_timestamp', true);
     if (empty($mashsbLastUpdated)) {
-        $sbFirstUpdate = true;
+        $mashsbCheckUpdate = true;
         $mashsbLastUpdated = 0;
     }
-    if ($mashsbLastUpdated < (time() - $mashsbUpdateFreq)) {
-        mashdebug()->info( " Update frequency " . $mashsbUpdateFreq . " last updated: " . $mashsbLastUpdated . "time: " . time());
+    if ($mashsbLastUpdated < (time() - $mashsbNextUpdate)) {
+        mashdebug()->info( " Update frequency " . $mashsbNextUpdate . " last updated: " . $mashsbLastUpdated . "time: " . time());
         // Get the share Object
         $mashsbSharesObj = mashsbGetShareObj($url);
         // Get the share counts
@@ -155,7 +153,7 @@ function getSharedcount($url) {
         
         //$mashsbShareCounts['total'] = 11; // USE THIS FOR DEBUGGING
         
-        if (isset($sbFirstUpdate)) {
+        if (isset($mashsbCheckUpdate)) {
             mashdebug()->info("First Update");
             //Some fake shares to create smooth step values for older posts which 
             //did not use Mashshare before (important for velocity graph Add-On) 
@@ -163,18 +161,17 @@ function getSharedcount($url) {
             
              if (empty($mashsbShareCountArr)){
              $mashsbShareCountArr = array(0);}
-             
-             $mashsbPreviousMeta = 0;
+             $mashsbStoredDBMeta = 0;
         } else {
-            $mashsbPreviousMeta = get_post_meta($post->ID, 'mashsb_shares', true);
-            $mashsbPreviousMetaArr = explode(",", $mashsbPreviousMeta);
-            if (count($mashsbPreviousMetaArr) >= 50) {
-                array_shift($mashsbPreviousMetaArr);
-                array_push($mashsbPreviousMetaArr, $mashsbShareCounts['total']);
+            $mashsbStoredDBMeta = get_post_meta($post->ID, 'mashsb_shares', true);
+            $mashsbStoredDBMetaArr = explode(",", $mashsbStoredDBMeta);
+            if (count($mashsbStoredDBMetaArr) >= 40) {
+                array_shift($mashsbStoredDBMetaArr);
+                array_push($mashsbStoredDBMetaArr, $mashsbShareCounts['total']);
             } else {
-                array_push($mashsbPreviousMetaArr, $mashsbShareCounts['total']);
+                array_push($mashsbStoredDBMetaArr, $mashsbShareCounts['total']);
             }
-            $mashsbShareCountArr = $mashsbPreviousMetaArr;
+            $mashsbShareCountArr = $mashsbStoredDBMetaArr;
         }
         
         /* Update post_meta only when API requested and
@@ -182,9 +179,9 @@ function getSharedcount($url) {
          * This would mean there was an error in the API (Failure or hammering any limits like X-Rate-Limit)
          */
         
-        $lastDBStoredShareArr = explode(",", $mashsbPreviousMeta);
+        $lastDBStoredShareArray = explode(",", $mashsbStoredDBMeta);
 
-        if ($mashsbShareCounts['total'] >= end((array_values($lastDBStoredShareArr)))) {
+        if ($mashsbShareCounts['total'] >= end((array_values($lastDBStoredShareArray)))) {
             
             mashdebug()->info("update database with sharedcount: " . $mashsbShareCounts['total']);
             
@@ -195,7 +192,7 @@ function getSharedcount($url) {
             return apply_filters('filter_get_sharedcount', $mashsbShareCounts['total'] + getFakecount());
         }
         /* return previous counts from DB Cache | this happens when API has a hiccup and does not return any results as expected*/
-        return apply_filters('filter_get_sharedcount', end((array_values($lastDBStoredShareArr))) + getFakecount());
+        return apply_filters('filter_get_sharedcount', end((array_values($lastDBStoredShareArray))) + getFakecount());
     } else {
         /* return counts from post_meta cache | This is regular cached result */
         $cachedCountsArr = explode(",", get_post_meta($post->ID, 'mashsb_shares', true));
@@ -827,6 +824,13 @@ function mashsb_styles_method() {
             -o-transition: all linear .25s;
             -ms-transition: all linear .25s;
             transition: all linear .25s;
+        }';   
+    }
+    if ($mashsb_options['mash_style']  == 'gradiant'){
+    $mashsb_custom_css .= '
+        .mashsb-buttons a  {
+            background-image: -webkit-linear-gradient(bottom,rgba(0, 0, 0, 0.17) 0%,rgba(255, 255, 255, 0.17) 100%);
+            background-image: linear-gradient(bottom,rgba(0,0,0,.17) 0%,rgba(255,255,255,.17) 100%);
         }';   
     }
     if (mashsb_hide_shares() === true){

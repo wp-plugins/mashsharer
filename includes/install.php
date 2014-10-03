@@ -12,6 +12,34 @@
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+/* Install Multisite
+ * check first if multisite is enabled
+ * @scince 2.1.1
+ * 
+ */
+
+register_activation_hook( MASHSB_PLUGIN_FILE, 'mashsb_install_multisite' );
+
+function mashsb_install_multisite($networkwide) {
+    global $wpdb;
+                 
+    if (function_exists('is_multisite') && is_multisite()) {
+        // check if it is a network activation - if so, run the activation function for each blog id
+        if ($networkwide) {
+                    $old_blog = $wpdb->blogid;
+            // Get all blog ids
+            $blogids = $wpdb->get_col("SELECT blog_id FROM $wpdb->blogs");
+            foreach ($blogids as $blog_id) {
+                switch_to_blog($blog_id);
+                mashsb_install();
+            }
+            switch_to_blog($old_blog);
+            return;
+        }   
+    } 
+    mashsb_install();      
+}
+
 /**
  * Install
  *
@@ -25,6 +53,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @global $wp_version
  * @return void
  */
+
 
 
 function mashsb_install() {
@@ -62,18 +91,20 @@ function mashsb_install() {
         
         // Add the transient to redirect / not for multisites
 	set_transient( '_mashsb_activation_redirect', true, 30 );
-                /* create database table */
-        	$sql = "CREATE TABLE ".MASHSB_TABLE." (
+        
+                /* create database table 
+                 * @DEPRECATED scince 2.0.9
+                 */
+        	/*$sql = "CREATE TABLE ".MASHSB_TABLE." (
                 ID int(11) NOT NULL AUTO_INCREMENT,
                 URL varchar(250) NULL,
                 TOTAL_SHARES int(20) NOT NULL,
                 CHECK_TIMESTAMP TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
                 PRIMARY KEY  (ID))";
                 require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-                dbDelta( $sql );
+                dbDelta( $sql );*/
 
 }
-register_activation_hook( MASHSB_PLUGIN_FILE, 'mashsb_install' );
 
 /**
  * Post-installation

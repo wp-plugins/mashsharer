@@ -1,7 +1,11 @@
 CHANGELOG MASHSHARE
 
 = 2.1.1 =
-Fix: Some issues where js and css is not loaded on specific post_types and frontpage
+Fix: Some issues where js and css is not loaded on specific post_types and frontpage on third party plugins like event calender
+New: WPMU WordPress Multisite compatible
+New: Some js modifications for compatibility with Twitter Short-URLs Add-On
+New: Gradiant share button style
+New: CDN Compatibility - Embed icon fonts as base64 octled to prevent cross origin issues when website is loaded from CDN
 
 = 2.1.0 =
 Fix: Problem where sharecounts are zero
