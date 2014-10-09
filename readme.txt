@@ -222,14 +222,15 @@ After installation, check with the [Facebook Open graph debugger](https://develo
 
 1. Default share buttons (included)
 2. Default share buttons with separate available responsive Add-On
+3. Add-On Marketplace with free and premium Add-Ons
 4. Default Sharebuttons with separate available responsive Add-On
 5. Responsive Design + Social-Networks (separate Add-Ons)
 6. Default Share buttons + Subscribe Button opened (included)
 7. Sticky Sharebar Add-On on mobile device
 8. Sticky Sharebar Add-On on desktop device
 9. Round circle style (included)
-10.Drag and drop setting menue
-11. Add-On Marketplace with free and premium Add-Ons
+10. Drag and drop setting menue
+
 
 
 == Changelog ==
