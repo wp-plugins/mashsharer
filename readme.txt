@@ -18,7 +18,7 @@ Mashshare social sharing buttons, a high-performance social sharing optimization
 It puts some beautiful and clean designed Share Buttons on top and end of your posts to get the best most possible social share feedback from your user.
 It´s inspired by the Share buttons Mashable.com is using.
 
-Free and premium Add-Ons available for Google Analytics, Further Social Networks, Responsive design, Velocity Graph, Sticky Share bar, Social Sharing Optimization and much more.
+Free and premium Add-Ons available for Google Analytics, moe Social Networks, responsive design, Velocity Graph, Sticky Share bar, Social Sharing Optimization and much more.
 
 <h3> Mashshare demo </h3>
 
@@ -94,7 +94,7 @@ Mashshare loads only the Javascript and php object classes it needs at the momen
 <p>This are a few example metrics from the <a href="https://wordpress.org/plugins/p3-profiler/">P3 (Plugin Performance Profiler)</a> plugin, using <a href="http://wptest.io/">WP Test Data</a>, and the default settings of several popular plugins, 
 along with the WordPress Core and Twenty Fourteen theme for reference purposes:
 
- (Thanks to [JS Morisset] (https://profiles.wordpress.org/jsmoriss/) for the idea of creating a common list of benchmarked plugins)</p>
+Thanks to [JS Morisset](https://profiles.wordpress.org/jsmoriss/ "Social Sharing benchmark") for the idea of creating a common list of benchmarked plugins</p>
 
 <ul>
         <li><strong>0.0166</strong> secs - <em><strong>Mashshare Share buttons v2.1.2 (no Add-Ons)</strong></em></li>
