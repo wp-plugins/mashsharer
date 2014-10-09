@@ -202,11 +202,11 @@ So if you have no chance to update or change your theme do some hardcoding and p
 `<script type='text/javascript' src='http://yourwebsite.com/wp-content/plugins/mashsharer/assets/mashsharer.js?ver=1.1'></script>`
 
 <h4>Why is Facebook only sharing the URL and not the title and description of my page?</h4>
-Facebook does not longer supports custom titles, descriptions and images in the sharer.php but you can use open graph meta tags to show the desired custom formats. So if you theme does not suppport open graph meta tags (you see them in the html header as og: tags) use a plugin. Personally i use 'NextGEN Facebook Open Graph', which is great and easy to use:
-http://wordpress.org/plugins/nextgen-facebook/
+Facebook does not longer supports custom titles, descriptions and images in the sharer.php but you can use open graph meta tags to show the desired custom formats. 
+So if you theme does not suppport open graph meta tags (you see them in the html header as og: tags) use the Mashshare Add-On:
+[Open Graph Social Optimization] (https://www.mashshare.net/downloads/mashshare-open-graph/)
 
-After installation you can check with the Facebook debugger how Facebook is seeing your site: 
-http://wordpress.org/plugins/nextgen-facebook/
+After installation, check with the [Facebook Open graph debugger](https://developers.facebook.com/tools/debug/) how Facebook is seeing your site adn purge the Facebook Open Graph cache if necessary.
 
 
 == Official Site ==
@@ -221,7 +221,6 @@ http://wordpress.org/plugins/nextgen-facebook/
 
 1. Default share buttons (included)
 2. Default share buttons with separate available responsive Add-On
-3. Default share buttons with enabled dynamic subscribe button (included)
 4. Default Sharebuttons with separate available responsive Add-On
 5. Responsive Design + Social-Networks (separate Add-Ons)
 6. Default Share buttons + Subscribe Button opened (included)
