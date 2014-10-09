@@ -18,11 +18,12 @@ Mashshare social sharing buttons, a high-performance social sharing optimization
 It puts some beautiful and clean designed Share Buttons on top and end of your posts to get the best most possible social share feedback from your user.
 It´s inspired by the Share buttons Mashable.com is using.
 
-Free and premium Add-Ons available for Google Analytics, Further Social Networks, Responsive design, Velocity Graph, Sticky Share bar, Social Sharing Optimization and much more.
+Free and premium Add-Ons available for Google Analytics, moe Social Networks, responsive design, Velocity Graph, Sticky Share bar, Social Sharing Optimization and much more.
 
 <h3> Mashshare demo </h3>
 
 [Demo link Mashshare Share Buttons](https://www.mashshare.net/?ref=1 "Share-Buttons - Mashable inspired Share Buttons")
+
 This plugin is in active development and will be updated on a regular basis - Please do not rate negative before i tried my best to solve your issue.
 
 
@@ -93,12 +94,12 @@ Mashshare loads only the Javascript and php object classes it needs at the momen
 <p>This are a few example metrics from the <a href="https://wordpress.org/plugins/p3-profiler/">P3 (Plugin Performance Profiler)</a> plugin, using <a href="http://wptest.io/">WP Test Data</a>, and the default settings of several popular plugins, 
 along with the WordPress Core and Twenty Fourteen theme for reference purposes:
 
- (Thanks to [JS Morisset] (https://profiles.wordpress.org/jsmoriss/) for the idea of creating a common list of benchmarked plugins)</p>
+Thanks to [JS Morisset](https://profiles.wordpress.org/jsmoriss/ "Social Sharing benchmark") for the idea of creating a common list of benchmarked plugins</p>
 
 <ul>
-        <li><strong>0.0166</strong> secs - <em><strong>Mashshare Share buttons v2.1.2 (no Add-Ons) FB, TW, Subscribe on</strong></em></li>
+        <li><strong>0.0166</strong> secs - <em><strong>Mashshare Share buttons v2.1.2 (no Add-Ons)</strong></em></li>
 	<li><strong>0.0174</strong> secs - Facebook v1.5.5</li>
-	<li><strong>0.0176</strong> secs - WPSSO Social Sharing Buttons (SSB) v1.0.10 paired and enabled with WPSSO</li>
+	<li><strong>0.0176</strong> secs - WPSSO Social Sharing Buttons (SSB) v1.0.10 + WPSSO</li>
 	<li><strong>0.0181</strong> secs - MailPoet Newsletters (aka Wysija Newsletters) v2.6.11</li>
 	<li><strong>0.0258</strong> secs - All in One SEO Pack v2.2.3.1</li>
 	<li><strong>0.0293</strong> secs - JetPack by WordPress.com v2.9.2 ()</li>
@@ -114,7 +115,7 @@ along with the WordPress Core and Twenty Fourteen theme for reference purposes:
 	<li><strong>0.1021</strong> secs - WooCommerce v2.2.6 (No Products)</li>
 	<li><strong>0.1092</strong> secs - <strong>WordPress Core v4.0.0</strong></li>
 	<li><strong>0.1404</strong> secs - BuddyPress v2.1.1 (No Activities)</li>
-	<li><strong>0.1404</strong> secs - NextGEN Gallery by Photocrati v2.0.66.29 (No Galleries or Images) - No test possible because of </li>
+	<li><strong>0.1404</strong> secs - NextGEN Gallery by Photocrati v2.0.66.29 (No Galleries or Images)</li>
 </ul>
 
 <p><small><em>This Benchmarks were executed on Intel i5 2.3Ghz, 8GB DDR3, using an APC opcode/object cache without any DB or file Cache Plugin like W3Total, WordPress v4.0, and P3 v1.5.2 ( Attempt to disable opcode optimizers - Otherwise some plugins can not be tested) and in manual mode to make sure that
@@ -124,8 +125,8 @@ This benchmarks give only a vast overview of performance differences and results
 </em></small></p>
 <strong>Please note:</strong>
 For this test the P3 Option 'Attempt to disable opcode optimizers' is enabled (Otherwise some plugin benchmarks returns no benchmark times ). 
-So real executuion time of every single Plugin is faster (probaby with a similar factor for all benchmarked plugins) but can not be measured with my testing environment.
-
+So real execution time of every single Plugin is faster (probaby with a similar factor for all benchmarked plugins) but can not be measured exactely with my testing environment.
+<p></p>
 </blockquote>
 
 **Shortcodes**
