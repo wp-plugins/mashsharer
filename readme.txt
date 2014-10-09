@@ -1,4 +1,4 @@
-=== Mashshare Social Sharing Optimization ===
+﻿=== Mashshare Social Sharing Optimization ===
 Author URL: https://www.mashshare.net
 Plugin URL: https://www.mashshare.net
 Contributors: ReneHermi
@@ -313,3 +313,4 @@ Fix: Error in sharing title in EDD easy digital download and other third party p
 
 = 2.1.2 =
 2.1.2 New: This update is essential if you use the new Sticky Sharebar Add-On.
+
