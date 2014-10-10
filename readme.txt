@@ -1,4 +1,4 @@
-﻿=== Mashshare Social Sharing Optimization ===
+=== Mashshare Social Sharing Optimization ===
 Author URL: https://www.mashshare.net
 Plugin URL: https://www.mashshare.net
 Contributors: ReneHermi
@@ -18,7 +18,7 @@ Mashshare social sharing buttons, a high-performance social sharing optimization
 It puts some beautiful and clean designed Share Buttons on top and end of your posts to get the best most possible social share feedback from your user.
 It´s inspired by the Share buttons Mashable.com is using.
 
-Free and premium Add-Ons available for Google Analytics, moe Social Networks, responsive design, Velocity Graph, Sticky Share bar, Social Sharing Optimization and much more.
+Free and premium Add-Ons available for Google Analytics, more Social Networks, responsive design, Velocity Graph, Sticky Share bar, Social Sharing Optimization and much more.
 
 <h3> Mashshare demo </h3>
 
@@ -64,7 +64,7 @@ This plugin is in active development and will be updated on a regular basis - Pl
 * Keep settings when plugin is uninstalled - optional
 * Custom CSS field for individual styling of the share buttons
 
-** Add-Ons available for **
+<strong> Add-Ons available for </strong>
 
 * Google / G+
 * Whatsapp (Whatsapp button only shown on iOS devices)
@@ -313,4 +313,3 @@ Fix: Error in sharing title in EDD easy digital download and other third party p
 
 = 2.1.2 =
 2.1.2 New: This update is essential if you use the new Sticky Sharebar Add-On.
-
