@@ -273,4 +273,4 @@ https://www.mashshare.net/changelog/
 == Upgrade Notice ==
 
 = 2.1.3 =
-2.1.3 New: This update allows you to use Mashshare on categories and multiple blog pages. <strong>Important:</strong> Update first your network Add-On to at least version 2.0.8
+2.1.3 New: This update allows you to use Mashshare on categories and multiple blog pages. <strong>Important:</strong> Update your Network Add-On to version 2.0.8 after updating Mashshare
