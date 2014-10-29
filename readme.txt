@@ -239,42 +239,42 @@ After installation, check with the [Facebook Open graph debugger](https://develo
 == Changelog ==
 
 = 2.1.4 =
-Fix: remove empty characters in html | prevent Wordpress to inject <br> and <p> codes into buttons code
-Fix: Prevent jQuery error. Put jQuery nearest() library into document.ready
+* Fix: remove empty characters in html | prevent Wordpress to inject `<br>` and `<p>` codes into buttons code
+* Fix: Prevent jQuery error. Put jQuery nearest() library into document.ready
 
 = 2.1.3 = 
-New: Use Mashshare on categories and non singular blogposts 
-New: Use dynamic jQuery tabs in settings backend
-New: Differentiate between multiple subscribe buttons and opens only one toggle window - Not all any longer!New: Spanish translation by Nestor Pool
-Fix: Missing function in mashsb-admin.js
-Fix: Fix height of Whatsapp button
-Fix: Rewrite Purge DB Cache function to delete post_meta objects
-Fix: Delete post_meta on complete uninstall
-Fix: Undefined property ($post-ID) in template-functions
-Fix: Whatsapp icon as icon font
-Fix: Wrong size of large Whatsapp button
-Fix: Priority number ignored
+* New: Use Mashshare on categories and non singular blogposts 
+* New: Use dynamic jQuery tabs in settings backend
+* New: Differentiate between multiple subscribe buttons and opens only one toggle window - Not all any longer!New: Spanish translation by Nestor Pool
+* Fix: Missing function in mashsb-admin.js
+* Fix: * Fix height of Whatsapp button
+* Fix: Rewrite Purge DB Cache function to delete post_meta objects
+* Fix: Delete post_meta on complete uninstall
+* Fix: Undefined property ($post-ID) in template-functions
+* Fix: Whatsapp icon as icon font
+* Fix: Wrong size of large Whatsapp button
+* Fix: Priority number ignored
 
 
 = 2.1.2 =
-Fix: Padding issue Whatsapp icon
-Fix: Delete some deprecated code
-Fix: More values for border radius to create circle like buttons
-Fix: Gradiant style compatible in Firefox
-New: New callback function colorpicker for settings
-New: Performance benchmarks compaired with other plugins published in readme.txt
+* Fix: Padding issue Whatsapp icon
+* Fix: Delete some deprecated code
+* Fix: More values for border radius to create circle like buttons
+* Fix: Gradiant style compatible in Firefox
+* New: New callback function colorpicker for settings
+* New: Performance benchmarks compaired with other plugins published in readme.txt
 
 = 2.1.1 =
-Fix: Some issues where js and css is not loaded on specific post_types and frontpage on third party plugins like event calender
-New: WPMU WordPress Multisite compatible
-New: Some js modifications for compatibility with Twitter Short-URLs Add-On
-New: Gradiant share button style
-New: CDN Compatibility - Embed icon fonts as base64 octled to prevent cross origin issues when website is loaded from CDN
+* Fix: Some issues where js and css is not loaded on specific post_types and frontpage on third party plugins like event calender
+* New: WPMU WordPress Multisite compatible
+* New: Some js modifications for compatibility with Twitter Short-URLs Add-On
+* New: Gradiant share button style
+* New: CDN Compatibility - Embed icon fonts as base64 octled to prevent cross origin issues when website is loaded from CDN
 
 See release notes and complete changelog at:
 https://www.mashshare.net/changelog/
 
 == Upgrade Notice ==
 
-= 2.1.3 =
-2.1.3 New: This update allows you to use Mashshare on categories and multiple blog pages. <strong>Important:</strong> Update your Network Add-On to version 2.0.8 after updating Mashshare
+= 2.1.4 =
+2.1.4 New: This update allows you to use Mashshare on categories and multiple blog pages. <strong>Important:</strong> Update your Network Add-On to version 2.0.8 after updating Mashshare
