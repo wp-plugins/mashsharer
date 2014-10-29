@@ -245,9 +245,10 @@ After installation, check with the [Facebook Open graph debugger](https://develo
 = 2.1.3 = 
 * New: Use Mashshare on categories and non singular blogposts 
 * New: Use dynamic jQuery tabs in settings backend
-* New: Differentiate between multiple subscribe buttons and opens only one toggle window - Not all any longer!New: Spanish translation by Nestor Pool
+* New: Differentiate between multiple subscribe buttons and opens only one toggle window
+* New: Spanish translation by Nestor Pool
 * Fix: Missing function in mashsb-admin.js
-* Fix: * Fix height of Whatsapp button
+* Fix: height of Whatsapp button
 * Fix: Rewrite Purge DB Cache function to delete post_meta objects
 * Fix: Delete post_meta on complete uninstall
 * Fix: Undefined property ($post-ID) in template-functions
