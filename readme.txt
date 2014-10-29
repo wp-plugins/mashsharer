@@ -1,4 +1,4 @@
-=== Mashshare Social Sharing Optimization ===
+=== Mashshare - Social SEO Share buttons for Facebook Google+ Twitter Pinterest ===
 Author URL: https://www.mashshare.net
 Plugin URL: https://www.mashshare.net
 Contributors: ReneHermi
@@ -10,7 +10,7 @@ Requires at least: 3.1+
 Tested up to: 4.0
 Stable tag: 2.1.4
 
-Mashshare social sharing buttons, a high-performance social sharing optimization ecosystem for Facebook Twitter Subscribe and 17 more networks 
+Mashshare social sharing buttons, a high-performance social sharing and social seo ecosystem for Facebook Twitter Subscribe and more networks 
 
 == Description == 
 
