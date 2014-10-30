@@ -1,4 +1,4 @@
-=== Mashshare - Social SEO Share buttons for Facebook Google+ Twitter Pinterest ===
+﻿=== Mashshare - Social SEO Share buttons for Facebook Google+ Twitter Pinterest ===
 Author URL: https://www.mashshare.net
 Plugin URL: https://www.mashshare.net
 Contributors: ReneHermi
@@ -283,5 +283,5 @@ https://www.mashshare.net/changelog/
 
 == Upgrade Notice ==
 
-= 2.1.4 =
-2.1.4 New: This update allows you to use Mashshare on categories and multiple blog pages. <strong>Important:</strong> Update your Network Add-On to version 2.0.8 after updating Mashshare
+= 2.1.5 =
+2.1.5 This update brings some new features.. <strong>Note:</strong> Update your Network Add-On to at least version 2.0.8 after updating Mashshare
