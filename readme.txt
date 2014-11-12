@@ -149,6 +149,9 @@ Configure the Share buttons sharing function in the settings page of the plugin.
 **Full SEO third party plugin support**
 Mashshare integrates with [All in One SEO Pack](http://wordpress.org/plugins/all-in-one-seo-pack/) and [WordPress SEO by Yoast](http://wordpress.org/plugins/wordpress-seo/).
 
+** GitHub **
+Follow the development and improve Mashshare.
+You find us on GitHub at: https://github.com/mashshare/Mashshare 
 
 = How does it work? =
 
