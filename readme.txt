@@ -5,10 +5,17 @@ Contributors: ReneHermi
 Donate link: https://www.mashshare.net/buy-me-a-coffee/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: Mashable, Social Sharing, Social sharing optimization, Share button, share buttons, Facebook Share button, Twitter Share Button, Social Share, Social buttons, social share buttons, Share, Share this, simple social buttons, simple share buttons adder,  Google+, Twitter, Facebook, Digg, Stumble Upon, Linkedin, +1, add to any, AddThis, add this, addtoany, admin, aim, analytics, bookmark, bookmarking, bookmarks, bookmark button, bookmark menu, buddypress, chrome extension, comments, del.icio.us, Diigo, buffer, button, del.icio.us, e-mail, email, email button, Facebook, facebook like, facebook recommend, facebook share, facebook share button, fark, firefox extension, flickr, floating buttons, follow, foursquare, gmail, goo.gl, google, google analytics, google plus, google plus one, google widget, hackernews, Hubspot, hyves, instagram, instapaper, ManageWP, NewsVine, odnoklassniki, pocket, popular, outbrain, PrintFriendly, popular posts, print, Whatsapp, rss, related posts, related content, share links, share bar, sharebar, social analytics, velocity graph, social networking, share and enjoy, sidebar, Vkontakte, technorati, socialize, url shortener, sonico, statistics tumblr, vimeo, yarrp, youtube, recommendations, posterous, orkut, icon, icons, image, images, Like, links, lockerz, page, pages, pin, pin it, pinit, pinterest, plugin, plus 1, plus one, Post, posts, Reddit, save, seo, Share, Shareaholic, sharedaddy, sharethis, sharing, shortcode, sidebar, sociable, social, social bookmarking, social bookmarks, statistics, stats, stumbleupon, svg, technorati, tumblr, tweet, twitter, vector, widget, WPSSO, wpmu
+Tags: Mashable, Social Sharing, Social sharing optimization, Share button, share buttons, Facebook Share button, Twitter Share Button, Social Share, Social buttons, social share buttons, Share, Share this, simple social buttons, 
+simple share buttons adder,  Google+, Twitter, Facebook, Digg, Stumble Upon, Linkedin, +1, add to any, AddThis, add this, addtoany, admin, aim, analytics, bookmark, bookmarking, bookmarks, bookmark button, bookmark menu, 
+buddypress, chrome extension, comments, del.icio.us, Diigo, buffer, button, del.icio.us, e-mail, email, email button, Facebook, facebook like, facebook recommend, facebook share, facebook share button, fark, firefox extension, 
+flickr, floating buttons, follow, foursquare, gmail, goo.gl, google, google analytics, google plus, google plus one, google widget, hackernews, Hubspot, hyves, instagram, instapaper, ManageWP, NewsVine, odnoklassniki, pocket, 
+popular, outbrain, PrintFriendly, popular posts, print, Whatsapp, rss, related posts, related content, share links, share bar, sharebar, social analytics, velocity graph, social networking, share and enjoy, sidebar, Vkontakte, 
+technorati, socialize, url shortener, sonico, statistics tumblr, vimeo, yarrp, youtube, recommendations, posterous, orkut, icon, icons, image, images, Like, links, lockerz, page, pages, pin, pin it, pinit, pinterest, plugin, 
+plus 1, plus one, Post, posts, Reddit, save, seo, Share, Shareaholic, sharedaddy, sharethis, sharing, shortcode, sidebar, sociable, social, social bookmarking, social bookmarks, statistics, stats, stumbleupon, svg, technorati, 
+tumblr, tweet, twitter, vector, widget, WPSSO, wpmu, bruteprotect
 Requires at least: 3.1+
 Tested up to: 4.0
-Stable tag: 2.1.5
+Stable tag: 2.1.6
 
 Mashshare social share buttons, a high-performance social sharing and social seo ecosystem for Facebook Twitter Subscribe and more networks 
 
@@ -25,7 +32,6 @@ Free and premium Add-Ons available for Google Analytics, more Social Networks, r
 [Demo link Mashshare Share Buttons](https://www.mashshare.net/?ref=1 "Share-Buttons - Mashable inspired Share Buttons")
 
 This plugin is in active development and will be updated on a regular basis - Please do not rate negative before i tried my best to solve your issue.
-
 
 = Main Features =
 
@@ -94,7 +100,8 @@ Mashshare loads only the Javascript and php object classes it needs at the momen
 <blockquote>
 <h4>How proven fast is Mashshare?</h4>
 
-<p>This are a few example metrics from the <a href="https://wordpress.org/plugins/p3-profiler/">P3 (Plugin Performance Profiler)</a> plugin, using <a href="http://wptest.io/">WP Test Data</a>, and the default settings of several popular plugins, 
+<p>This are a few example metrics from the <a href="https://wordpress.org/plugins/p3-profiler/">P3 (Plugin Performance Profiler)</a> plugin, using <a href="http://wptest.io/">WP Test Data</a>, and the default settings of several 
+popular plugins, 
 along with the WordPress Core and Twenty Fourteen theme for reference purposes:
 
 Thanks to [JS Morisset](https://profiles.wordpress.org/jsmoriss/ "Social Sharing benchmark") for the idea of creating a common list of benchmarked plugins</p>
@@ -121,9 +128,12 @@ Thanks to [JS Morisset](https://profiles.wordpress.org/jsmoriss/ "Social Sharing
 	<li><strong>0.1404</strong> secs - NextGEN Gallery by Photocrati v2.0.66.29 (No Galleries or Images)</li>
 </ul>
 
-<p><small><em>This Benchmarks were executed on Intel i5 2.3Ghz, 8GB DDR3, using an APC opcode/object cache without any DB or file Cache Plugin like W3Total, WordPress v4.0, and P3 v1.5.2 ( Attempt to disable opcode optimizers - Otherwise some plugins can not be tested) and in manual mode to make sure that
-for every plugin the same page is loaded. Automatic excecution of P3 would randomly load WordPress pages which is inaccurate for testing on same conditions. All plugins were benchmarked on sepearate instances with no other plugins enabled.
-The benchmarks were runned a few times to make sure that any internal plugin caching function is fired. E.g. Mashshare gets only really fast after second load of a page because the sharecount must be returned from external service first and than stored into internal object cache.
+<p><small><em>This Benchmarks were executed on Intel i5 2.3Ghz, 8GB DDR3, using an APC opcode/object cache without any DB or file Cache Plugin like W3Total, WordPress v4.0, and P3 v1.5.2 ( Attempt to disable opcode optimizers - 
+Otherwise some plugins can not be tested) and in manual mode to make sure that
+for every plugin the same page is loaded. Automatic excecution of P3 would randomly load WordPress pages which is inaccurate for testing on same conditions. All plugins were benchmarked on sepearate instances with no other 
+plugins enabled.
+The benchmarks were runned a few times to make sure that any internal plugin caching function is fired. E.g. Mashshare gets only really fast after second load of a page because the sharecount must be returned from external 
+service first and than stored into internal object cache.
 This benchmarks give only a vast overview of performance differences and results will vary on other WordPress installations depending on different hardware and software configurations.
 </em></small></p>
 <strong>Please note:</strong>
@@ -153,9 +163,23 @@ Mashshare integrates with [All in One SEO Pack](http://wordpress.org/plugins/all
 Follow the development and improve Mashshare.
 You find us on GitHub at: https://github.com/mashshare/Mashshare 
 
+** Languages **
+
+Mashshare has been translated into the following languages:
+
+1. English
+2. German
+3. Spanish
+4. Turkish
+5. Italy
+
+Would you like to help translate the plugin into more languages? 
+Join our [Transifex Translation Team](www.transifex.com/projects/p/mashshare).
+
+
 = How does it work? =
 
-Mashshare makes use of the great webservice sharedcount.com and periodically checks for the total count 
+Mashshare makes use of the webservice sharedcount.com and periodically checks for the total count 
 of all your Facebook and Twitter shares and cumulates them. It than shows the total number beside the Share buttons. 
 No need to embed dozens of external slow loading scripts into your website. 
  
@@ -241,6 +265,23 @@ After installation, check with the [Facebook Open graph debugger](https://develo
 
 == Changelog ==
 
+= 2.1.6 =
+
+** if you install this version make sure to also update your Add-Ons which are improved by us as well **
+
+* New: Change width of large buttons in settings
+* New: New count up animation script which animates even shares in the format like 5.4k
+* Fix: Share button in FB popup not visible, popup window was too small on some screen resolutions
+* Fix: Some changes for better HTML5 compliance
+* Fix: Get FB share count instead total count / selectable
+* Fix: Delete label attribute from plus sign. Fix HTML5 W3C error.
+* Fix: Delete id mashsb-toogle to prevent duplicate use of duplicate id
+* Fix: Twitter popup opened twice when any other third party instance of Twitter tweet button is running
+* Fix: Reddit, Stumbleupon and Linkedin was not shown because of a blank character in the network array.
+* Tweak: Change css for the plus button. Cleaner and easier to adjust. 
+* Tweak: remove id mashsbcount to prevent duplicate use of duplicate id
+* Tweak: Simplified the facebook sharer url
+
 = 2.1.5 =
 * Tweak: Cleaner and more attractive Whatsapp svg icon 
 * Tweak: No more delay in hiding Whatsapp icon when share buttons not shown on mobile devices (needs network Add-On)
@@ -256,6 +297,7 @@ After installation, check with the [Facebook Open graph debugger](https://develo
 * New: Use dynamic jQuery tabs in settings backend
 * New: Differentiate between multiple subscribe buttons and opens only one toggle window
 * New: Spanish translation by Nestor Pool
+* New: Tested with bruteprotect plugin
 * Fix: Missing function in mashsb-admin.js
 * Fix: height of Whatsapp button
 * Fix: Rewrite Purge DB Cache function to delete post_meta objects
@@ -286,5 +328,5 @@ https://www.mashshare.net/changelog/
 
 == Upgrade Notice ==
 
-= 2.1.4 =
-2.1.4 New: This update allows you to use Mashshare on categories and multiple blog pages. <strong>Important:</strong> Update your Network Add-On to version 2.0.8 after updating Mashshare
+= 2.1.6 =
+2.1.6 This updates changes the style of the the plus button for HTML5 compatibility. If you modified the plus button on your page its possible that you have to convert some of your custom css styles. <strong>Note:</strong> Update your Sharebar and network Add-On to latest version for this update.

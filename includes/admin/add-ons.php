@@ -2,7 +2,7 @@
 /**
  * Admin Add-ons
  *
- * @package     Mashshare
+ * @package     MASHSB
  * @subpackage  Admin/Add-ons
  * @copyright   Copyright (c) 2014, Rene Hermenau
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
@@ -20,15 +20,15 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  * @since 1.1.8
  * @return void
  */
-function mash_add_ons_page() {
+function mashsb_add_ons_page() {
 	ob_start(); ?>
-	<div class="wrap" id="edd-add-ons">
+	<div class="wrap" id="mashsb-add-ons">
 		<h2>
-			<?php _e( 'Add Ons for Mashshare', 'mashshare' ); ?>
-			&nbsp;&mdash;&nbsp;<a href="https://www.mashshare.net" class="button-primary" title="<?php _e( 'Visit Website', 'mash' ); ?>" target="_blank"><?php _e( 'See Details', 'mash' ); ?></a>
+			<?php _e( 'Add Ons for Mashshare', 'mashsb' ); ?>
+			&nbsp;&mdash;&nbsp;<a href="https://www.mashshare.net" class="button-primary" title="<?php _e( 'Visit Website', 'mashsb' ); ?>" target="_blank"><?php _e( 'See Details', 'mashsb' ); ?></a>
 		</h2>
-		<p><?php _e( 'These add-ons extend the functionality of Mashshare.', 'mash' ); ?></p>
-		<?php echo mash_add_ons_get_feed(); ?>
+		<p><?php _e( 'These add-ons extend the functionality of Mashshare.', 'mashsb' ); ?></p>
+		<?php echo mashsb_add_ons_get_feed(); ?>
 	</div>
 	<?php
 	echo ob_get_clean();
@@ -42,7 +42,7 @@ function mash_add_ons_page() {
  * @since 1.1.8
  * @return void
  */
-function mash_add_ons_get_feed() {
+function mashsb_add_ons_get_feed() {
 	if ( false === ( $cache = get_transient( 'mashshare_add_ons_feed' ) ) ) {
 		$feed = wp_remote_get( 'https://www.mashshare.net/?feed=addons', array( 'sslverify' => false ) );
 		if ( ! is_wp_error( $feed ) ) {
@@ -51,7 +51,7 @@ function mash_add_ons_get_feed() {
 				set_transient( 'mashshare_add_ons_feed', $cache, 3600 );
 			}
 		} else {
-			$cache = '<div class="error"><p>' . __( 'There was an error retrieving the Mashshare addon list from the server. Please try again later.', 'mash' ) . '
+			$cache = '<div class="error"><p>' . __( 'There was an error retrieving the Mashshare addon list from the server. Please try again later.', 'mashsb' ) . '
                                    <br>Visit instead the Mashshare Addon Website <a href="https://www.mashshare.net" class="button-primary" title="Mashshare Add ons" target="_blank"> Get Add-Ons  </a></div>';
 		}
 	}
