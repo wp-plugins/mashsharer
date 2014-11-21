@@ -15,7 +15,7 @@ plus 1, plus one, Post, posts, Reddit, save, seo, Share, Shareaholic, sharedaddy
 tumblr, tweet, twitter, vector, widget, WPSSO, wpmu, bruteprotect
 Requires at least: 3.1+
 Tested up to: 4.0.1
-Stable tag: 2.1.7
+Stable tag: 2.1.8
 
 Mashshare social share buttons, a high-performance social sharing and social seo ecosystem for Facebook Twitter Subscribe and more networks 
 
