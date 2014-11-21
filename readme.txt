@@ -17,7 +17,7 @@ Requires at least: 3.1+
 Tested up to: 4.0.1
 Stable tag: 2.1.8
 
-Mashshare social share buttons, a high-performance social sharing and social seo ecosystem for Facebook Twitter Subscribe and more networks 
+Mashshare social share buttons, a high-performance social sharing and social SEO ecosystem for Facebook, Twitter, Subscribe and more networks 
 
 == Description == 
 
