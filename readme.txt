@@ -1,4 +1,4 @@
-=== Mashshare - Social SEO Share Buttons for Facebook, Twitter... ===
+=== Mashshare - Social SEO Share Buttons for Facebook, Twitter and more social networks ===
 Author URL: https://www.mashshare.net
 Plugin URL: https://www.mashshare.net
 Contributors: ReneHermi
