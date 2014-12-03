@@ -21,7 +21,7 @@ Mashshare social share buttons, a highly customizable social sharing and social 
 
 == Description == 
 
-> <strong>IMPORTANT:</strong> This free Plugin is a professional and highly customizable ecosystem for social sharing and optimizing of your valuable content. It gives you per default a large total share counter beside three large prominant Share Buttons for your Twitter tweets, Facebook shares and the option to place a prominent subscribe button for your news feed or mailing list. 
+> <strong>IMPORTANT:</strong> This free Plugin is a professional and highly customizable ecosystem for social sharing and optimizing of your valuable content. It gives you per default a large total share counter beside three large prominent Share Buttons for your Twitter tweets, Facebook shares and the option to place a prominent subscribe button for your news feed or mailing list. 
 This services are free per default including great support. We think this is satisfying for most websites. If you are running a website which needs services like Whatsapp, Pinterest, Mail, Print, Linkedin, Odnoklassniki etc. you have the option to afford them on the Add-On Marketplace.
 <strong>DO NOT INSTALL</strong> this plugin when you need more Social Networks from the scratch, you do not care about personal and dedicated support and you think its not worth to pay for additional social networks. There are dozens of other good working social share plugins on the WordPress repository and we recommend to use one of these than, or use them in combination with Mashshare.
 Otherwise we really appreciate your interest in Mashshare. [Please rate Mashshare](https://wordpress.org/support/view/plugin-reviews/mashsharer?filter=5 "Please rate us") if you like this plugin.
