@@ -31,7 +31,7 @@ Free and premium Add-Ons available for Google Analytics, more Social Networks, r
 
 <h3> Mashshare demo </h3>
 
-[Demo link Mashshare Share Buttons](https://www.mashshare.net/?ref=1 "Share-Buttons - Mashable inspired Share Buttons")
+Demo: [Mashshare Share Buttons](https://www.mashshare.net/?ref=1 "Share-Buttons - Mashable inspired Share Buttons")
 
 This plugin is in active development and will be updated on a regular basis - Please do not rate negative before i tried my best to solve your issue.
 
