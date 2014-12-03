@@ -1,4 +1,4 @@
-=== Mashshare - Social SEO Share buttons for Facebook Google+ Twitter Pinterest ===
+=== Mashshare - Social SEO Share Buttons for Facebook, Twitter... ===
 Author URL: https://www.mashshare.net
 Plugin URL: https://www.mashshare.net
 Contributors: ReneHermi
@@ -17,13 +17,15 @@ Requires at least: 3.1+
 Tested up to: 4.0.1
 Stable tag: 2.1.8
 
-Mashshare social share buttons, a high-performance social sharing and social SEO ecosystem for Facebook, Twitter, Subscribe and more networks 
+Mashshare social share buttons, a highly customizable social sharing and social SEO ecosystem for Facebook and Twitter, Subscribe and more networks 
 
 == Description == 
 
-> Mashshare Share Buttons shows the total share counts of Facebook and Twitter and a big subscribe button at a glance per default.
-It puts some beautiful and clean designed Share Buttons on top and end of your posts to get the best most possible social share feedback from your user.
-It´s inspired by the Share buttons Mashable.com is using.
+> <strong>IMPORTANT:</strong> This free Plugin is a professional and highly customizable ecosystem for social sharing and optimizing of your valuable content. It gives you per default a large total share counter beside three large prominant Share Buttons for your Twitter tweets, Facebook shares and the option to place a prominent subscribe button for your news feed or mailing list. 
+This services are free per default including great support. We think this is satisfying for most websites. If you are running a website which needs services like Whatsapp, Pinterest, Mail, Print, Linkedin, Odnoklassniki etc. you have the option to afford them on the Add-On Marketplace.
+<strong>DO NOT INSTALL</strong> this plugin when you need more Social Networks from the scratch, you do not care about personal and dedicated support and you think its not worth to pay for additional social networks. There are dozens of other good working social share plugins on the WordPress repository and we recommend to use one of these than, or use them in combination with Mashshare.
+Otherwise we really appreciate your interest in Mashshare. [Please rate Mashshare](https://wordpress.org/support/view/plugin-reviews/mashsharer?filter=5 "Please rate us") if you like this plugin.
+If you have any support question or a new feature request feel free to get in contact with us on [Mashshare.net](https://www.mashshare.net "Share buttons").
 
 Free and premium Add-Ons available for Google Analytics, more Social Networks, responsive design, Velocity Graph, Sticky Share bar, Social Sharing Optimization and much more.
 
@@ -250,7 +252,7 @@ After installation, check with the [Facebook Open graph debugger](https://develo
 
 == Screenshots ==
 
-1. Subscribe form with Facebook button and mail subscribe
+1. Default share buttons (included)
 2. Default share buttons with separate available responsive Add-On
 3. Add-On Marketplace with free and premium Add-Ons
 4. Default Sharebuttons with separate available responsive Add-On
@@ -260,8 +262,6 @@ After installation, check with the [Facebook Open graph debugger](https://develo
 8. Sticky Sharebar Add-On on desktop device
 9. Round circle style (included)
 10. Drag and drop setting menue
-11. Default share buttons (included)
-
 
 
 
