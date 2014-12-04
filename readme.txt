@@ -1,4 +1,4 @@
-=== Mashshare - Social SEO Share Buttons for Facebook, Twitter and more social networks ===
+=== Mashshare - Social Media Icons SEO Share Buttons for Facebook, Twitter and more ===
 
 Author URL: https://www.mashshare.net
 Plugin URL: https://www.mashshare.net
@@ -10,8 +10,8 @@ Tags: Mashable, Social Sharing, Social sharing optimization, Share button, share
 simple share buttons adder,  Google+, Twitter, Facebook, Digg, Stumble Upon, Linkedin, +1, add to any, AddThis, add this, addtoany, admin, aim, analytics, bookmark, bookmarking, bookmarks, bookmark button, bookmark menu, 
 buddypress, chrome extension, comments, del.icio.us, Diigo, buffer, button, del.icio.us, e-mail, email, email button, Facebook, facebook like, facebook recommend, facebook share, facebook share button, fark, firefox extension, 
 flickr, floating buttons, follow, foursquare, gmail, goo.gl, google, google analytics, google plus, google plus one, google widget, hackernews, Hubspot, hyves, instagram, instapaper, ManageWP, NewsVine, odnoklassniki, pocket, 
-popular, outbrain, PrintFriendly, popular posts, print, Whatsapp, rss, related posts, related content, share links, share bar, share icons, sharebar, social analytics, velocity graph, social media, social networking, share and enjoy, sidebar, Vkontakte, 
-technorati, socialize, url shortener, sonico, statistics tumblr, vimeo, yarrp, youtube, recommendations, posterous, orkut, icon, icons, image, images, Like, links, lockerz, page, pages, pin, pin it, pinit, pinterest, plugin, 
+popular, outbrain, PrintFriendly, popular posts, print, Whatsapp, rss, related posts, related content, share links, share bar, share icons, sharebar, social analytics, social media icons, velocity graph, social media, social networking, share and enjoy, sidebar, Vkontakte, 
+technorati, socialize, url shortener, sonico, social networks statistics tumblr, vimeo, yarrp, youtube, recommendations, posterous, orkut, icon, icons, image, images, Like, links, lockerz, page, pages, pin, pin it, pinit, pinterest, plugin, 
 plus 1, plus one, Post, posts, Reddit, save, seo, Share, Shareaholic, sharedaddy, sharethis, sharing, shortcode, sidebar, sociable, social, social bookmarking, social bookmarks, statistics, stats, stumbleupon, svg, technorati, 
 tumblr, tweet, twitter, vector, widget, WPSSO, wpmu, bruteprotect
 Requires at least: 3.1+
@@ -22,7 +22,7 @@ Mashshare social share buttons, a highly customizable social sharing and social 
 
 == Description == 
 
-> <strong>IMPORTANT:</strong> This free Plugin is a professional and highly customizable ecosystem for social media sharing and optimizing of your valuable content. It gives you per default a large total share counter beside three large prominent Share Buttons for your Twitter tweets, Facebook shares and the option to place a prominent subscribe button for your news feed or mailing list. 
+> <strong>IMPORTANT:</strong> This free Social Media Icons Plugin is a professional and highly customizable ecosystem for social media sharing and optimizing of your valuable content. It gives you per default a large total share counter beside three large prominent Share Buttons for your Twitter tweets, Facebook shares and the option to place a prominent subscribe button for your news feed or mailing list. 
 This services are free per default including great support. We think this is satisfying for most websites. If you are running a website which needs services like Whatsapp, Pinterest, Mail, Print, Linkedin, Odnoklassniki etc. you have the option to afford them on the Add-On Marketplace.
 <strong>DO NOT INSTALL</strong> this plugin when you need more Social Networks from the scratch, you do not care about personal and dedicated support and you think its not worth to pay for additional social networks. There are dozens of other good working social share plugins on the WordPress repository and we recommend to use one of these than, or use them in combination with Mashshare.
 Otherwise we really appreciate your interest in Mashshare. [Please rate Mashshare](https://wordpress.org/support/view/plugin-reviews/mashsharer?filter=5 "Please rate us") if you like this plugin.
@@ -30,15 +30,15 @@ If you have any support question or a new feature request feel free to get in co
 
 Free and premium Add-Ons available for Google Analytics, more Social Networks, responsive design, Velocity Graph, Sticky Share bar, Social Sharing Optimization and much more.
 
-<h3> Mashshare demo </h3>
+<h3> Mashshare Social Media Icons demo </h3>
 
-[Demo Mashshare Share Buttons](https://www.mashshare.net/?ref=1 "Share Buttons - Mashable inspired Share Buttons")
+[Demo Mashshare Social Media Icons Share Buttons](https://www.mashshare.net/?ref=1 "Social Media Icons Share Buttons - Mashable inspired Share Buttons")
 
 This plugin is in active development and will be updated on a regular basis - Please do not rate negative before i tried my best to solve your issue.
 
 = Main Features =
 
-* High Performance - easy to use - Share Buttons for the most common networks
+* High Performance - easy to use - Social Media Share Buttons for the most common networks
 * High Resolution lossless vector font share icons
 * Show the Total Share count at a glance
 * Object and transient caches to provide incredibly fast execution speed
@@ -50,7 +50,7 @@ This plugin is in active development and will be updated on a regular basis - Pl
 
 <strong>New Version 2.x</strong>
 
-* Improved performance
+* Social Media Icons with Improved performance
 * Option to disable share count completely  (no sql queries will be generated any longer)
 * Shortcode option to disable share counts
 * Check if curl is working on the server
@@ -105,12 +105,12 @@ Mashshare loads only the Javascript and php object classes it needs at the momen
 
 <p>This are a few example metrics from the <a href="https://wordpress.org/plugins/p3-profiler/">P3 (Plugin Performance Profiler)</a> plugin, using <a href="http://wptest.io/">WP Test Data</a>, and the default settings of several 
 popular plugins, 
-along with the WordPress Core and Twenty Fourteen theme for reference purposes:
+along with the WordPress Core and Twenty Fourteen theme for reference purposes compared with Mashshare Social Media Icons:
 
 Thanks to [JS Morisset](https://profiles.wordpress.org/jsmoriss/ "Social Sharing benchmark") for the idea of creating a common list of benchmarked plugins</p>
 
 <ul>
-        <li><strong>0.0166</strong> secs - <em><strong>Mashshare Share buttons v2.1.2 (no Add-Ons)</strong></em></li>
+        <li><strong>0.0166</strong> secs - <em><strong>Mashshare Social Media Icons SEO Share Buttons v2.1.2 (no Add-Ons)</strong></em></li>
 	<li><strong>0.0174</strong> secs - Facebook v1.5.5</li>
 	<li><strong>0.0176</strong> secs - WPSSO Social Sharing Buttons (SSB) v1.0.10 + WPSSO</li>
 	<li><strong>0.0181</strong> secs - MailPoet Newsletters (aka Wysija Newsletters) v2.6.11</li>
