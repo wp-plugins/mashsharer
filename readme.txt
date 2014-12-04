@@ -347,5 +347,5 @@ https://www.mashshare.net/changelog/
 
 == Upgrade Notice ==
 
-= 2.1.8 =
-2.1.8 <strong>Note:</strong> Update your Sharebar and Network Add-On to latest version for this update.
+= 2.1.9 =
+2.1.9 <strong>Note:</strong> Update your Sharebar and Network Add-On to latest version for this update.
