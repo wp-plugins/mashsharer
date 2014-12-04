@@ -1,4 +1,5 @@
-﻿=== Mashshare - Social SEO Share Buttons for Facebook, Twitter... ===
+=== Mashshare - Social SEO Share Buttons for Facebook, Twitter and more social networks ===
+
 Author URL: https://www.mashshare.net
 Plugin URL: https://www.mashshare.net
 Contributors: ReneHermi
@@ -9,19 +10,19 @@ Tags: Mashable, Social Sharing, Social sharing optimization, Share button, share
 simple share buttons adder,  Google+, Twitter, Facebook, Digg, Stumble Upon, Linkedin, +1, add to any, AddThis, add this, addtoany, admin, aim, analytics, bookmark, bookmarking, bookmarks, bookmark button, bookmark menu, 
 buddypress, chrome extension, comments, del.icio.us, Diigo, buffer, button, del.icio.us, e-mail, email, email button, Facebook, facebook like, facebook recommend, facebook share, facebook share button, fark, firefox extension, 
 flickr, floating buttons, follow, foursquare, gmail, goo.gl, google, google analytics, google plus, google plus one, google widget, hackernews, Hubspot, hyves, instagram, instapaper, ManageWP, NewsVine, odnoklassniki, pocket, 
-popular, outbrain, PrintFriendly, popular posts, print, Whatsapp, rss, related posts, related content, share links, share bar, sharebar, social analytics, velocity graph, social networking, share and enjoy, sidebar, Vkontakte, 
+popular, outbrain, PrintFriendly, popular posts, print, Whatsapp, rss, related posts, related content, share links, share bar, share icons, sharebar, social analytics, velocity graph, social media, social networking, share and enjoy, sidebar, Vkontakte, 
 technorati, socialize, url shortener, sonico, statistics tumblr, vimeo, yarrp, youtube, recommendations, posterous, orkut, icon, icons, image, images, Like, links, lockerz, page, pages, pin, pin it, pinit, pinterest, plugin, 
 plus 1, plus one, Post, posts, Reddit, save, seo, Share, Shareaholic, sharedaddy, sharethis, sharing, shortcode, sidebar, sociable, social, social bookmarking, social bookmarks, statistics, stats, stumbleupon, svg, technorati, 
 tumblr, tweet, twitter, vector, widget, WPSSO, wpmu, bruteprotect
 Requires at least: 3.1+
 Tested up to: 4.0.1
-Stable tag: 2.1.8
+Stable tag: 2.1.9
 
 Mashshare social share buttons, a highly customizable social sharing and social SEO ecosystem for Facebook and Twitter, Subscribe and more networks 
 
 == Description == 
 
-> <strong>IMPORTANT:</strong> This free Plugin is a professional and highly customizable ecosystem for social sharing and optimizing of your valuable content. It gives you per default a large total share counter beside three large prominant Share Buttons for your Twitter tweets, Facebook shares and the option to place a prominent subscribe button for your news feed or mailing list. 
+> <strong>IMPORTANT:</strong> This free Plugin is a professional and highly customizable ecosystem for social media sharing and optimizing of your valuable content. It gives you per default a large total share counter beside three large prominent Share Buttons for your Twitter tweets, Facebook shares and the option to place a prominent subscribe button for your news feed or mailing list. 
 This services are free per default including great support. We think this is satisfying for most websites. If you are running a website which needs services like Whatsapp, Pinterest, Mail, Print, Linkedin, Odnoklassniki etc. you have the option to afford them on the Add-On Marketplace.
 <strong>DO NOT INSTALL</strong> this plugin when you need more Social Networks from the scratch, you do not care about personal and dedicated support and you think its not worth to pay for additional social networks. There are dozens of other good working social share plugins on the WordPress repository and we recommend to use one of these than, or use them in combination with Mashshare.
 Otherwise we really appreciate your interest in Mashshare. [Please rate Mashshare](https://wordpress.org/support/view/plugin-reviews/mashsharer?filter=5 "Please rate us") if you like this plugin.
@@ -31,14 +32,14 @@ Free and premium Add-Ons available for Google Analytics, more Social Networks, r
 
 <h3> Mashshare demo </h3>
 
-[Demo link Mashshare Share Buttons](https://www.mashshare.net/?ref=1 "Share-Buttons - Mashable inspired Share Buttons")
+[Demo Mashshare Share Buttons](https://www.mashshare.net/?ref=1 "Share Buttons - Mashable inspired Share Buttons")
 
 This plugin is in active development and will be updated on a regular basis - Please do not rate negative before i tried my best to solve your issue.
 
 = Main Features =
 
 * High Performance - easy to use - Share Buttons for the most common networks
-* High Resolution lossless vector font icons
+* High Resolution lossless vector font share icons
 * Show the Total Share count at a glance
 * Object and transient caches to provide incredibly fast execution speed
 * Shortcodes
@@ -54,7 +55,7 @@ This plugin is in active development and will be updated on a regular basis - Pl
 * Shortcode option to disable share counts
 * Check if curl is working on the server
 * Option to disable share cache for testing purposes
-* Use of sharp and crisp clear font icons instead png icons
+* Use of sharp and crisp clear font share icons instead png share icons
 * Button 'extra content' for content slider subcribe forms or any other content New: Use a link behind the Subscribe button instead the toggle slider
 * Complete rewrite of css for easier modifications
 * Improved extension system
@@ -67,10 +68,10 @@ This plugin is in active development and will be updated on a regular basis - Pl
 * Drag and drop sort order of services.
 * Enable desired services with one click
 * Choose which network should be visible all the time This ones will be large sized by default. Other ones are behind the plus sign
-* Two different share button styles includes
-* Choose border radius of the buttons from settings
+* Three different effective share button styles - Less is more here
+* Choose border radius of the buttons
 * Keep settings when plugin is uninstalled - optional
-* Custom CSS field for individual styling of the share buttons
+* Custom CSS field for individual styling of the social media share buttons
 
 <strong> Add-Ons available for </strong>
 
@@ -252,7 +253,7 @@ After installation, check with the [Facebook Open graph debugger](https://develo
 
 == Screenshots ==
 
-1. Default share buttons (included)
+1. Subscribe form with Facebook button and mail subscribe
 2. Default share buttons with separate available responsive Add-On
 3. Add-On Marketplace with free and premium Add-Ons
 4. Default Sharebuttons with separate available responsive Add-On
@@ -262,10 +263,16 @@ After installation, check with the [Facebook Open graph debugger](https://develo
 8. Sticky Sharebar Add-On on desktop device
 9. Round circle style (included)
 10. Drag and drop setting menue
+11. Default share buttons (included)
+
 
 
 
 == Changelog ==
+
+= 2.1.9 =
+* Fix: If Twitter username is empty the plugin still appends "via @" at end of tweet
+* Fix: Exclude posts not working on every constellations.
 
 = 2.1.8 =
 * Fix: Shares on the share buttons are not counted on specific configurations
@@ -295,7 +302,7 @@ After installation, check with the [Facebook Open graph debugger](https://develo
 * Tweak: Simplified the facebook sharer url
 
 = 2.1.5 =
-* Tweak: Cleaner and more attractive Whatsapp svg icon 
+* Tweak: Cleaner and more attractive Whatsapp svg share icon 
 * Tweak: No more delay in hiding Whatsapp icon when share buttons not shown on mobile devices (needs network Add-On)
 * Tweak: Change some wordings in admin settings
 * New: Use small share buttons feature
