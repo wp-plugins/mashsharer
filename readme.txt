@@ -38,10 +38,10 @@ This plugin is in active development and will be updated on a regular basis - Pl
 
 = Main Features =
 
-* High Performance - easy to use - Social Media Share Buttons for the most common networks
+* High Performance Social Media Icons - easy to use - Share Buttons for the most common networks
 * High Resolution lossless vector font share icons
 * Show the Total Share count at a glance
-* Object and transient caches to provide incredibly fast execution speed
+* Object and transient caches to provide incredibly fast execution speed of Social Media Icons
 * Shortcodes
 * Extensible with many [Add-Ons](https://www.mashshare.net/downloads) (Google Analytics, More Social Networks, Responsive, Velocity Graph and more...)
 * Developer friendly with several filters and actions.
@@ -54,8 +54,8 @@ This plugin is in active development and will be updated on a regular basis - Pl
 * Option to disable share count completely  (no sql queries will be generated any longer)
 * Shortcode option to disable share counts
 * Check if curl is working on the server
-* Option to disable share cache for testing purposes
-* Use of sharp and crisp clear font share icons instead png share icons
+* Option to disable share count cache for testing purposes
+* Use of sharp and crisp clear font Social Media Icons instead Social Media Icons images
 * Button 'extra content' for content slider subcribe forms or any other content New: Use a link behind the Subscribe button instead the toggle slider
 * Complete rewrite of css for easier modifications
 * Improved extension system
@@ -66,7 +66,7 @@ This plugin is in active development and will be updated on a regular basis - Pl
 * HTML5 Tag <aside> wrapped around to tell search engines that the share buttons are not part of the content
 * Plus button moves to end of share buttons when activated and does not stay longer in place.
 * Drag and drop sort order of services.
-* Enable desired services with one click
+* Enable desired Social Media Icons services with one click
 * Choose which network should be visible all the time This ones will be large sized by default. Other ones are behind the plus sign
 * Three different effective share button styles - Less is more here
 * Choose border radius of the buttons
@@ -183,7 +183,7 @@ Join our [Transifex Translation Team](www.transifex.com/projects/p/mashshare).
 = How does it work? =
 
 Mashshare makes use of the webservice sharedcount.com and periodically checks for the total count 
-of all your Facebook and Twitter shares and cumulates them. It than shows the total number beside the Share buttons. 
+of all your Facebook and Twitter shares and cumulates them. It than shows the total number beside the Share buttons and Social Media Icons. 
 No need to embed dozens of external slow loading scripts into your website. 
  
 = How to install and setup? =
