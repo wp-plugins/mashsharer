@@ -6,14 +6,10 @@ Contributors: ReneHermi
 Donate link: https://www.mashshare.net/buy-me-a-coffee/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: Mashable, Social Sharing, Social sharing optimization, Share button, share buttons, Facebook Share button, Twitter Share Button, Social Share, Social buttons, social share buttons, Share, Share this, simple social buttons, 
+Tags: Mashable, Social Media Pop-Up, Social Media Widget, Social Media Sharing, Social Media Networks, Social Sharing, Social sharing optimization, Share button, share buttons, Facebook Share button, Twitter Share Button, Social Share, Social buttons, social share buttons, Share, Share this, simple social buttons, 
 simple share buttons adder,  Google+, Twitter, Facebook, Digg, Stumble Upon, Linkedin, +1, add to any, AddThis, add this, addtoany, admin, aim, analytics, bookmark, bookmarking, bookmarks, bookmark button, bookmark menu, 
 buddypress, chrome extension, comments, del.icio.us, Diigo, buffer, button, del.icio.us, e-mail, email, email button, Facebook, facebook like, facebook recommend, facebook share, facebook share button, fark, firefox extension, 
-flickr, floating buttons, follow, foursquare, gmail, goo.gl, google, google analytics, google plus, google plus one, google widget, hackernews, Hubspot, hyves, instagram, instapaper, ManageWP, NewsVine, odnoklassniki, pocket, 
-popular, outbrain, PrintFriendly, popular posts, print, Whatsapp, rss, related posts, related content, share links, share bar, share icons, sharebar, social analytics, social media icons, velocity graph, social media, social networking, share and enjoy, sidebar, Vkontakte, 
-technorati, socialize, url shortener, sonico, social networks statistics tumblr, vimeo, yarrp, youtube, recommendations, posterous, orkut, icon, icons, image, images, Like, links, lockerz, page, pages, pin, pin it, pinit, pinterest, plugin, 
-plus 1, plus one, Post, posts, Reddit, save, seo, Share, Shareaholic, sharedaddy, sharethis, sharing, shortcode, sidebar, sociable, social, social bookmarking, social bookmarks, statistics, stats, stumbleupon, svg, technorati, 
-tumblr, tweet, twitter, vector, widget, WPSSO, wpmu, bruteprotect
+flickr, floating buttons, follow, foursquare, gmail, goo.gl
 Requires at least: 3.1+
 Tested up to: 4.0.1
 Stable tag: 2.1.9
