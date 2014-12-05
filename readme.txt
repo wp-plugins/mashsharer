@@ -34,7 +34,7 @@ Free and premium Add-Ons available for Google Analytics, more Social Networks, r
 
 [Demo Mashshare Social Media Icons Share Buttons](https://www.mashshare.net/?ref=1 "Social Media Icons Share Buttons - Mashable inspired Share Buttons")
 
-This plugin is in active development and will be updated on a regular basis - Please do not rate negative before i tried my best to solve your issue.
+This Social Media plugin is in active development and will be updated on a regular basis - Please do not rate negative before i tried my best to solve your issue.
 
 = Main Features =
 
