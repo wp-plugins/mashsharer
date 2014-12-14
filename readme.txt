@@ -12,7 +12,7 @@ buddypress, chrome extension, comments, del.icio.us, Diigo, buffer, button, del.
 flickr, floating buttons, follow, foursquare, gmail, goo.gl
 Requires at least: 3.1+
 Tested up to: 4.1.0
-Stable tag: 2.2.0
+Stable tag: 2.2.1
 
 Social Media Icons & Share Buttons, a highly customizable social sharing and & Media SEO ecosystem Facebook, Twitter and more ...
 
@@ -267,6 +267,10 @@ Read here more FAQ: [https://www.mashshare.net/faq/](https://www.mashshare.net/f
 
 
 == Changelog ==
+
+= 2.2.1 =
+* Fix: array undefined
+* Fix: Missing global $wp
 
 = 2.2.0 =
 * New: Use custom share texts and images for all buttons including Tweeter when free Mashshare Add-On "OpenGraph" is installed. 
