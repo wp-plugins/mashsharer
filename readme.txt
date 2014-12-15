@@ -268,6 +268,9 @@ Read here more FAQ: [https://www.mashshare.net/faq/](https://www.mashshare.net/f
 
 == Changelog ==
 
+= 2.2.2 =
+* Fix: A bug where twitter does not open 
+
 = 2.2.1 =
 * Fix: array undefined
 * Fix: Missing global $wp
