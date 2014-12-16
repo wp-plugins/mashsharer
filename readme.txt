@@ -1,4 +1,4 @@
-=== Mashshare - Social Media Icons SEO Share Buttons for Facebook, Twitter and more ===
+﻿=== Mashshare - Social Media Icons SEO Share Buttons for Facebook, Twitter and more ===
 
 Author URL: https://www.mashshare.net
 Plugin URL: https://www.mashshare.net
@@ -12,7 +12,7 @@ buddypress, chrome extension, comments, del.icio.us, Diigo, buffer, button, del.
 flickr, floating buttons, follow, foursquare, gmail, goo.gl
 Requires at least: 3.1+
 Tested up to: 4.1.0
-Stable tag: 2.2.1
+Stable tag: 2.2.2
 
 Social Media Icons & Share Buttons, a highly customizable social sharing and & Media SEO ecosystem Facebook, Twitter and more ...
 
