@@ -268,8 +268,8 @@ Read here more FAQ: [https://www.mashshare.net/faq/](https://www.mashshare.net/f
 == Changelog ==
 
 = 2.2.5 =
-* New: Optional loading of scripts and styles into footer. See new option in Mashshare->Settings->General settings
-* Info: No longer compatible to older versions than WordPress 3.6
+* New: Optional loading of share button scripts and styles into footer. See new option in Mashshare->Settings->General settings
+* Info: Share buttons no longer compatible to older versions than WordPress 3.6
 
 = 2.2.4 =
 * New: New input field to select the sharedcount api endpoint. e.g. free.sharedcount.com or plus.sharedcount.com
@@ -370,5 +370,5 @@ https://www.mashshare.net/changelog/
 
 == Upgrade Notice ==
 
-= 2.2.3 =
-2.2.3 <strong>Note:</strong> Update your Network Add-On and Open Graph Add-On to latest version.
+= 2.2.5 =
+2.2.5 <strong></strong> Its recommend to update to latest version due to stability
