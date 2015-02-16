@@ -268,12 +268,10 @@ Read here more FAQ: [https://www.mashshare.net/faq/](https://www.mashshare.net/f
 == Changelog ==
 
 = 2.2.5 =
-* New: Optional loading of share button scripts and styles into footer. See new option in Mashshare->Settings->General settings
-* Info: Share buttons no longer compatible to older versions than WordPress 3.6
+
 
 = 2.2.4 =
-* New: New input field to select the sharedcount api endpoint. e.g. free.sharedcount.com or plus.sharedcount.com
-* Tweak: No more requests to sharedcount api when rate limit exceeds. 
+
 
 = 2.2.3 =
 Tweak: Prevent duplicate popups for some constellations
