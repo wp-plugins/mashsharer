@@ -26,7 +26,7 @@ If you have any support question or a new feature request feel free to get in co
 
 Free and premium Add-Ons available for Google Analytics, more Social Networks, responsive design, Velocity Graph, Sticky Share bar, Social Sharing Optimization and much more.
 
-<h3> Mashshare Social Media Icons demo </h3>
+<h3> Mashshare Share Buttons Social Media Icons demo </h3>
 
 [Demo Mashshare Social Media Icons Share Buttons](https://www.mashshare.net/?ref=1 "Social Media Icons Share Buttons - Mashable inspired Share Buttons")
 
@@ -41,6 +41,7 @@ This Social Media plugin is in active development and will be updated on a regul
 * Shortcodes
 * Extensible with many [Add-Ons](https://www.mashshare.net/downloads) (Google Analytics, More Social Networks, Responsive, Velocity Graph and more...)
 * Developer friendly with several filters and actions.
+* Smart (virtual) share count function. Add some virtual shares to fresh and new posts. Make use of psychological aspects to increase shares. 
 
 = All Features: =
 
@@ -58,15 +59,15 @@ This Social Media plugin is in active development and will be updated on a regul
 * Improved backend, new Mashshare Social Media Add-On page
 * Multi language capable, *.po files
 * Change color of share counts via setting
-* Count up animation for share counts (Does not work for shortcodes and on blog pages)
+* Count up animation for share buttons counts (Does not work for shortcodes and on blog pages)
 * HTML5 Tag <aside> wrapped around to tell search engines that the share buttons are not part of the content
 * Plus button moves to end of share buttons when activated and does not stay longer in place.
-* Drag and drop sort order of services.
-* Enable desired Social Media Icons services with one click
+* Drag and drop sort order of share buttons services.
+* Enable desired Social Media share buttons Icons with one click
 * Choose which Social Media network should be visible all the time This ones will be large sized by default. Other Social Media networks are behind the plus sign
 * Three different effective share button styles - Less is more here
 * Choose border radius of the Social Media buttons
-* Keep settings when plugin is uninstalled - optional
+* Keep settings when share buttons are uninstalled - optional
 * Custom CSS field for individual styling of the social media share buttons
 
 <strong> Social Media Add-Ons available for </strong>
