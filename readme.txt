@@ -375,4 +375,4 @@ https://www.mashshare.net/changelog/
 == Upgrade Notice ==
 
 = 2.2.6 =
-2.2.6 <strong></strong> Its recommend to update to latest version due to stability aspects. If possible test this first on a staging platform. If something goes wrong with the update remove the folder /wp-content/mashsharer completely via FTP and install Mashshare again. None of your settings will be lost.
+2.2.6 <strong></strong> Its recommend to update to latest version due to stability aspects. If possible test this first on a staging platform. If something goes wrong with the update remove the folder <strong>/wp-content/plugins/mashsharer</strong> completely via FTP and install Mashshare again. None of your settings will be lost.
