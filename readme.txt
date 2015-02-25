@@ -18,19 +18,33 @@ Social Media Icons & Share Buttons, a highly customizable social sharing and & M
 
 == Description == 
 
-> <strong>IMPORTANT:</strong> This free Social Media Icons Plugin is a professional and highly customizable ecosystem for social media sharing and optimizing of your valuable content. It gives you per default a large total share counter beside three large prominent Share Buttons for your Twitter tweets, Facebook shares and the option to place a prominent subscribe button for your news feed or mailing list. 
-This services are free per default including great support. We also offer some free Add-Ons to define specifc hashtags and sharing desciption for every single post or to use automatic generated short links. We think this is satisfying for most websites. If you are running a website which needs services like Whatsapp, Pinterest, Mail, Print, Linkedin, Odnoklassniki etc. you have the option to afford them on the Add-On Marketplace.
-<strong>DO NOT INSTALL</strong> this plugin when you need more Social Networks from the scratch, you do not care about personal and dedicated support and you think its not worth to pay this. There are dozens of other good working social share plugins on the WordPress repository and we recommend to use one of these than, or use them in combination with Mashshare.
-Otherwise we really appreciate your interest in Mashshare. [Please rate Mashshare](https://wordpress.org/support/view/plugin-reviews/mashsharer?filter=5 "Please rate us") if you like this plugin.
-If you have any support question or a new feature request feel free to get in contact with us on [Mashshare.net](https://www.mashshare.net "Share buttons").
+> This free Social Media Icons Plugin is a professional and highly customizable<br />
+> ecosystem for social media sharing and optimizing of your valuable content.<br /> 
+>
+> It gives you per default a large total share counter beside three large 
+> prominent Share Buttons for your Twitter tweets, Facebook shares and the option<br /> 
+> to place a prominent subscribe button for your news feed and mailing list. 
+>
+> This services are free per default including great support.<br /> 
+>
+> We also offer some free Add-Ons for specifing sharing image, title,<br />
+> description and twitter hashtags<br /> 
+> We think this is satisfying for most website owners who need a free and effective<br />  
+> working sharing solution.<br /> 
+>
+> If you need services like Whatsapp, Pinterest, Mail,<br />
+> Print, Linkedin, Odnoklassniki etc., you get them on the Add-On Marketplace.<br />
+> 
+> Mashshare can also be used in conjunction with other share buttons!
+>
+> Free and paid Add-Ons available for Google Analytics, more Social Networks,<br /> 
+> Responsiveness, Velocity Graph, Sticky Share bar, Social Sharing Optimization and more.<br />
+>
+> [Demo](https://www.mashshare.net?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=after-features-info-link) | [Get Add-Ons >>](https://www.mashshare.net/downloads?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=get-addons)
 
-Free and premium Add-Ons available for Google Analytics, more Social Networks, responsive design, Velocity Graph, Sticky Share bar, Social Sharing Optimization and much more.
+<h3> Mashshare Share Buttons Social Media Icons </h3>
 
-<h3> Mashshare Share Buttons Social Media Icons demo </h3>
-
-[Demo Mashshare Social Media Icons Share Buttons](https://www.mashshare.net/?ref=1 "Social Media Icons Share Buttons - Mashable inspired Share Buttons")
-
-This Social Media plugin is in active development and will be updated on a regular basis - Please do not rate negative before i tried my best to solve your issue.
+This Social Media plugin is in active development and will be updated on a regular basis - Please do not rate negative before we tried to solve your issue.
 
 = Main Features =
 
@@ -144,15 +158,15 @@ So real execution time of every single Plugin is faster (probaby with a similar 
 
 **Shortcodes**
 
-* Use `[mashshare]` anywhere in pages or post's text to show the buttons and total count where you like to at a custom position.
-Buttons are shown exactly on the place where you use the shortcode in your content.
+* Use `[mashshare]` anywhere in pages or post's text to show the buttons and total share count wherever you like.
+Share Buttons will be shown exactly on the place where you copy the shortcode in your content.
 
 There are more parameters available:
 
  `[mashshare shares="false" buttons="true" align="left"]` for buttons without shares, alignment left
  `[mashshare shares="true" buttons="false" align="right"]` for sharecount without buttons, alignment right
 
-* For manual insertion of the Share Buttons in your template files use the following php code where you want to show your Mash share buttons:`do_action('mashshare');`
+* For manual insertion of the Share Buttons in your template files use the following php code on place you like to see the share buttons:`echo do_shortcode('[mashshare]');`
 Configure the Share buttons sharing function in the settings page of the plugin.
 * Change the color of Mashshare count with setting option.
 
