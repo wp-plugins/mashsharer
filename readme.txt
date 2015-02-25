@@ -1,4 +1,4 @@
-=== Mashshare - Social Media Icons SEO Share Buttons for Facebook, Twitter, Subscribe ===
+﻿=== Mashshare - Social Media Icons SEO Share Buttons for Facebook, Twitter, Subscribe ===
 
 Author URL: https://www.mashshare.net
 Plugin URL: https://www.mashshare.net
@@ -18,6 +18,7 @@ Social Media Icons & Share Buttons, a highly customizable social sharing and & M
 
 == Description == 
 
+> <h4>Mashshare</h4>
 > This free Social Media Icons Plugin is a professional and highly customizable<br />
 > ecosystem for social media sharing and optimizing of your valuable content.<br /> 
 >
@@ -27,18 +28,22 @@ Social Media Icons & Share Buttons, a highly customizable social sharing and & M
 >
 > This services are free per default including great support.<br /> 
 >
-> We also offer some free Add-Ons for specifing sharing image, title,<br />
-> description and twitter hashtags<br /> 
-> We think this is satisfying for most website owners who need a free and effective<br />  
-> working sharing solution.<br /> 
+> We also offer free Add-Ons for specifing sharing image, title, description and twitter hashtags<br /> 
+> and think this is satisfying for most website owners who need a free and effective working sharing solution.<br /> 
 >
 > If you need services like Whatsapp, Pinterest, Mail,<br />
 > Print, Linkedin, Odnoklassniki etc., you get them on the Add-On Marketplace.<br />
 > 
 > Mashshare can also be used in conjunction with other share buttons!
 >
-> Free and paid Add-Ons available for Google Analytics, more Social Networks,<br /> 
-> Responsiveness, Velocity Graph, Sticky Share bar, Social Sharing Optimization and more.<br />
+> Free and paid Add-Ons available:
+> 
+> - Google Analytics
+> - more Social Networks
+> - Responsiveness
+> - Sticky Share bar
+> - Social Sharing Optimization
+> - and more...
 >
 > [Demo](https://www.mashshare.net?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=after-features-info-link) | [Get Add-Ons >>](https://www.mashshare.net/downloads?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=get-addons)
 
