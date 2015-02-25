@@ -18,7 +18,7 @@ Social Media Icons & Share Buttons, a highly customizable social sharing and & M
 
 == Description == 
 
-> <h4>Mashshare</h4>
+> #### Mashshare</h4>
 > This free Social Media Icons Plugin is a professional and highly customizable<br />
 > ecosystem for social media sharing and optimizing of your valuable content.<br /> 
 >
@@ -38,12 +38,12 @@ Social Media Icons & Share Buttons, a highly customizable social sharing and & M
 >
 > Free and paid Add-Ons available:
 > 
-> - Google Analytics
-> - more Social Networks
-> - Responsiveness
-> - Sticky Share bar
-> - Social Sharing Optimization
-> - and more...
+> - Google Analytics<br /> 
+> - more Social Networks<br /> 
+> - Responsiveness<br /> 
+> - Sticky Share bar<br /> 
+> - Social Sharing Optimization<br /> 
+> - and more...<br /> 
 >
 > [Demo](https://www.mashshare.net?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=after-features-info-link) | [Get Add-Ons >>](https://www.mashshare.net/downloads?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=get-addons)
 
