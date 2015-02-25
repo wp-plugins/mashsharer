@@ -18,7 +18,7 @@ Social Media Icons & Share Buttons, a highly customizable social sharing and & M
 
 == Description == 
 
-> #### Mashshare</h4>
+> #### Mashshare - The Social Media Ecosystem
 > This free Social Media Icons Plugin is a professional and highly customizable<br />
 > ecosystem for social media sharing and optimizing of your valuable content.<br /> 
 >
