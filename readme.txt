@@ -12,30 +12,49 @@ buddypress, chrome extension, comments, del.icio.us, Diigo, buffer, button, del.
 flickr, floating buttons, follow, foursquare, gmail, goo.gl
 Requires at least: 3.6+
 Tested up to: 4.2.0
-Stable tag: 2.2.6
+Stable tag: 2.2.7
 
 Social Media Icons & Share Buttons, a highly customizable social sharing and & Media SEO ecosystem Facebook, Twitter and more ...
 
 == Description == 
 
-> <strong>IMPORTANT:</strong> This free Social Media Icons Plugin is a professional and highly customizable ecosystem for social media sharing and optimizing of your valuable content. It gives you per default a large total share counter beside three large prominent Share Buttons for your Twitter tweets, Facebook shares and the option to place a prominent subscribe button for your news feed or mailing list. 
-This services are free per default including great support. We also offer some free Add-Ons to define specifc hashtags and sharing desciption for every single post or to use automatic generated short links. We think this is satisfying for most websites. If you are running a website which needs services like Whatsapp, Pinterest, Mail, Print, Linkedin, Odnoklassniki etc. you have the option to afford them on the Add-On Marketplace.
-<strong>DO NOT INSTALL</strong> this plugin when you need more Social Networks from the scratch, you do not care about personal and dedicated support and you think its not worth to pay this. There are dozens of other good working social share plugins on the WordPress repository and we recommend to use one of these than, or use them in combination with Mashshare.
-Otherwise we really appreciate your interest in Mashshare. [Please rate Mashshare](https://wordpress.org/support/view/plugin-reviews/mashsharer?filter=5 "Please rate us") if you like this plugin.
-If you have any support question or a new feature request feel free to get in contact with us on [Mashshare.net](https://www.mashshare.net "Share buttons").
+> #### Mashshare - The Social Media Ecosystem
+> This free Social Media Icons Plugin is a professional and highly customizable<br />
+> ecosystem for social media sharing and optimizing of your valuable content.<br /> 
+>
+> It gives you per default a large total share counter beside three large 
+> prominent Share Buttons for your Twitter tweets, Facebook shares and the option<br /> 
+> to place a prominent subscribe button for your news feed and mailing list. 
+>
+> This services are free per default including great support.<br /> 
+>
+> We also offer free Add-Ons for specifing sharing image, title, description and twitter hashtags and think this is satisfying for most website owners who need a free and effective working sharing solution.<br /> 
+>
+> If you need services like Whatsapp, Pinterest, Mail,<br />
+> Print, Linkedin, Odnoklassniki etc., you get them on the Add-On Marketplace.<br />
+> 
+> Mashshare can also be used in conjunction with other share buttons!
+>
+> Free and paid Add-Ons available:
+> 
+> - More Social Share Buttons<br /> 
+> - YouTube Video Share Popup<br />
+> - Share Button Responsive<br /> 
+> - Sticky Share bar<br /> 
+> - Social Sharing Optimization<br /> 
+> - Google Analytics<br /> 
+> - and more...<br /> 
+>
+> [Demo](https://www.mashshare.net?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=after-features-info-link) | [Get Add-Ons >>](https://www.mashshare.net/downloads?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=get-addons)
 
-Free and premium Add-Ons available for Google Analytics, more Social Networks, responsive design, Velocity Graph, Sticky Share bar, Social Sharing Optimization and much more.
+<h3> Mashshare Share Buttons Social Media Icons </h3>
 
-<h3> Mashshare Share Buttons Social Media Icons demo </h3>
-
-[Demo Mashshare Social Media Icons Share Buttons](https://www.mashshare.net/?ref=1 "Social Media Icons Share Buttons - Mashable inspired Share Buttons")
-
-This Social Media plugin is in active development and will be updated on a regular basis - Please do not rate negative before i tried my best to solve your issue.
+This Social Media share button plugin is in active development and will be updated on a regular basis - Please do not rate negative before we tried to solve your issue.
 
 = Main Features =
 
 * High Performance Social Media Icons - easy to use - Share Buttons for the most common networks
-* High Resolution lossless vector font share icons
+* High Resolution lossless vector font share button icons
 * Show the Total Social Media Share count at a glance
 * Object and transient caches to provide incredibly fast execution speed of Social Media Icons
 * Shortcodes
@@ -111,6 +130,11 @@ Thanks to [JS Morisset](https://profiles.wordpress.org/jsmoriss/ "Social Sharing
 	<li><strong>0.0174</strong> secs - Facebook v1.5.5</li>
 	<li><strong>0.0176</strong> secs - WPSSO Social Sharing Buttons (SSB) v1.0.10 + WPSSO</li>
 	<li><strong>0.0181</strong> secs - MailPoet Newsletters (aka Wysija Newsletters) v2.6.11</li>
+        <li><strong>0.0125</strong> secs - ShareThis v7.0.17</li>
+        <li><strong>0.0140</strong> secs - AddThis Social Bookmarking Widget v3.5.10</li>
+        <li><strong>0.0150</strong> secs - WPSSO Social Sharing Buttons (SSB) v1.0.9</li>
+        <li><strong>0.0170</strong> secs - Digg Digg v5.3.6</li>
+        <li><strong>0.0181</strong> secs - Facebook v1.5.5 (Provides Only Facebook Buttons)</li>
 	<li><strong>0.0258</strong> secs - All in One SEO Pack v2.2.3.1</li>
 	<li><strong>0.0293</strong> secs - JetPack by WordPress.com v2.9.2 ()</li>
 	<li><strong>0.0342</strong> secs - WP e-Commerce v3.8.13.3 (No Products)</li>
@@ -126,6 +150,9 @@ Thanks to [JS Morisset](https://profiles.wordpress.org/jsmoriss/ "Social Sharing
 	<li><strong>0.1092</strong> secs - <strong>WordPress Core v4.0.0</strong></li>
 	<li><strong>0.1404</strong> secs - BuddyPress v2.1.1 (No Activities)</li>
 	<li><strong>0.1404</strong> secs - NextGEN Gallery by Photocrati v2.0.66.29 (No Galleries or Images)</li>
+
+        <li><strong>0.0096</strong> secs - Share Buttons by AddToAny v1.3.4</li>
+        <li><strong>0.0232</strong> secs - Shareaholic | share buttons, analytics, related content v7.5.0.2</li>
 </ul>
 
 <p><small><em>This Benchmarks were executed on Intel i5 2.3Ghz, 8GB DDR3, using an APC opcode/object cache without any DB or file Cache Plugin like W3Total, WordPress v4.0, and P3 v1.5.2 ( Attempt to disable opcode optimizers - 
@@ -144,15 +171,15 @@ So real execution time of every single Plugin is faster (probaby with a similar 
 
 **Shortcodes**
 
-* Use `[mashshare]` anywhere in pages or post's text to show the buttons and total count where you like to at a custom position.
-Buttons are shown exactly on the place where you use the shortcode in your content.
+* Use `[mashshare]` anywhere in pages or post's text to show the buttons and total share count wherever you like.
+Share Buttons will be shown exactly on the place where you copy the shortcode in your content.
 
 There are more parameters available:
 
  `[mashshare shares="false" buttons="true" align="left"]` for buttons without shares, alignment left
  `[mashshare shares="true" buttons="false" align="right"]` for sharecount without buttons, alignment right
 
-* For manual insertion of the Share Buttons in your template files use the following php code where you want to show your Mash share buttons:`do_action('mashshare');`
+* For manual insertion of the Share Buttons in your template files use the following php code on place you like to see the share buttons:`echo do_shortcode('[mashshare]');`
 Configure the Share buttons sharing function in the settings page of the plugin.
 * Change the color of Mashshare count with setting option.
 
@@ -268,6 +295,10 @@ Read here more FAQ: [https://www.mashshare.net/faq/](https://www.mashshare.net/f
 
 == Changelog ==
 
+= 2.2.7 =
+* New: Translate the word "SHARES" via settings
+* Fix: Better english grammar in share buttons settings
+
 = 2.2.6 =
 * New: New sharebutton logging function for debug mode which stores all requested share counts in wp-content/plugins/mashsharer/logs/
 
@@ -374,5 +405,5 @@ https://www.mashshare.net/changelog/
 
 == Upgrade Notice ==
 
-= 2.2.6 =
-2.2.6 <strong></strong> Its recommend to update to latest version due to stability aspects. If possible test this first on a staging platform. If something goes wrong with the update remove the folder <strong>/wp-content/plugins/mashsharer</strong> completely via FTP and install Mashshare again. None of your settings will be lost.
+= 2.2.7 =
+2.2.7 <strong></strong> Its recommend to update to latest version due to stability aspects. Its recommend to test new plugin updates on a staging platform first. If something goes wrong with the update remove the folder <strong>/wp-content/plugins/mashsharer</strong> completely via FTP and install Mashshare again. None of your settings will be lost.
