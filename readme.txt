@@ -297,6 +297,7 @@ Read here more FAQ: [https://www.mashshare.net/faq/](https://www.mashshare.net/f
 
 = 2.2.7 =
 * New: Translate the word "SHARES" via settings
+* Tweak: Change subscribe content field from rich editor to textarea.
 * Fix: Better english grammar in share buttons settings
 
 = 2.2.6 =
