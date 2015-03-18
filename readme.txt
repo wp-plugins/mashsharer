@@ -1,4 +1,4 @@
-=== Mashshare - Social Media Icons SEO Share Buttons for Facebook, Twitter, Subscribe ===
+=== Mashshare - Social Media Icons SEO Share Buttons for Facebook, Twitter, Subscribe === 
 
 Author URL: https://www.mashshare.net
 Plugin URL: https://www.mashshare.net
@@ -12,7 +12,7 @@ buddypress, chrome extension, comments, del.icio.us, Diigo, buffer, button, del.
 flickr, floating buttons, follow, foursquare, gmail, goo.gl
 Requires at least: 3.6+
 Tested up to: 4.2.0
-Stable tag: 2.2.7
+Stable tag: 2.2.8
 
 Social Media Icons & Share Buttons, a highly customizable social sharing and & Media SEO ecosystem Facebook, Twitter and more ...
 
@@ -295,6 +295,14 @@ Read here more FAQ: [https://www.mashshare.net/faq/](https://www.mashshare.net/f
 
 == Changelog ==
 
+= 2.2.8 =
+* New: Integration of a new share count engine. sharedcount.com and api key is not longer needed.
+* New: Check if '<!-- nextpage -->' is used and share primary url without page parameter
+* New: Complete rewrite of the admin layout. New design and better responsibility on mobile devices. Main option description below header. New sub description below option field.
+* Fix: Change class name Logger to mashsbLogger. This fix "redeclare error" on some system
+* Tweak: Add header to the social network tab
+* Tweak: Store all different shares as json string in post meta. We can access this.
+
 = 2.2.7 =
 * New: Translate the word "SHARES" via settings
 * Tweak: Change subscribe content field from rich editor to textarea.
@@ -406,5 +414,5 @@ https://www.mashshare.net/changelog/
 
 == Upgrade Notice ==
 
-= 2.2.7 =
-2.2.7 <strong></strong> Its recommend to update to latest version due to stability aspects. Its recommend to test new plugin updates on a staging platform first. If something goes wrong with the update remove the folder <strong>/wp-content/plugins/mashsharer</strong> completely via FTP and install Mashshare again. None of your settings will be lost.
+= 2.2.8 =
+2.2.8 <strong>FEATURE UPDATE:</strong> MashEngine is the name of our new sharecount engine. No more need for sharedcount.com and the API key! Just in case: If something goes wrong, and the update is running into any issues just remove the folder <strong>/wp-content/plugins/mashsharer</strong> completely via FTP and install Mashshare again. Your settings will not lost. However, Its recommend to test every new plugin update on a staging platform first!
