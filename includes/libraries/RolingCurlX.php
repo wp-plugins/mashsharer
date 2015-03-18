@@ -50,20 +50,20 @@ Class RollingCurlX {
                         array $options = NULL, //individual cURL options
                         array $headers = NULL //individual cURL request headers
     ) { //Add to request queue
-        $this->requests[] = [
+        $this->requests[] = array(
             'url' => $url,
             'post_data' => ($post_data) ? $post_data : NULL,
             'callback' => ($callback) ? $callback : $this->_callback,
             'user_data' => ($user_data) ? $user_data : NULL,
             'options' => ($options) ? $options : NULL,
             'headers' => ($headers) ? $headers : NULL
-        ];
+        );
         return count($this->requests) - 1; //return request number/index
     }
 
     //Reset request queue
     public function reset() {
-        $this->requests = [];
+        $this->requests = array();
     }
 
     //Execute the request queue
