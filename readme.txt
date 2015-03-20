@@ -26,7 +26,7 @@ If you have any support question or a new feature request feel free to get in co
 
 Free and premium Add-Ons available for Google Analytics, more Social Networks, responsive design, Velocity Graph, Sticky Share bar, Social Sharing Optimization and much more.
 
-<h3> Mashshare Share Buttons Social Media Icons demo </h3>
+<h3> Mashshare Share Buttons | Social Media Icons demo </h3>
 
 [Demo Mashshare Social Media Icons Share Buttons](https://www.mashshare.net/?ref=1 "Social Media Icons Share Buttons - Mashable inspired Share Buttons")
 
