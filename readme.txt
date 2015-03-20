@@ -1,4 +1,4 @@
-﻿=== Mashshare - Social Media Icons SEO Share Buttons for Facebook, Twitter, Subscribe === 
+=== Mashshare - Social Media Icons SEO Share Buttons for Facebook, Twitter, Subscribe === 
 
 Author URL: https://www.mashshare.net
 Plugin URL: https://www.mashshare.net
@@ -6,13 +6,10 @@ Contributors: ReneHermi
 Donate link: https://www.mashshare.net/buy-me-a-coffee/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: Mashable, Social Media Pop-Up, Social Media Widget, Social Media Sharing, Social Media Networks, Social Sharing, Social sharing optimization, Share button, share buttons, Facebook Share button, Twitter Share Button, Social Share, Social buttons, social share buttons, Share, Share this, simple social buttons, 
-simple share buttons adder,  Google+, Twitter, Facebook, Digg, Stumble Upon, Linkedin, +1, add to any, AddThis, add this, addtoany, admin, aim, analytics, bookmark, bookmarking, bookmarks, bookmark button, bookmark menu, 
-buddypress, chrome extension, comments, del.icio.us, Diigo, buffer, button, del.icio.us, e-mail, email, email button, Facebook, facebook like, facebook recommend, facebook share, facebook share button, fark, firefox extension, 
-flickr, floating buttons, follow, foursquare, gmail, goo.gl
+Tags: Mashable, Social Media Pop-Up, Social Media Widget, Social Media Sharing, Social Media Networks, Social Sharing, Social sharing optimization, Share button, share buttons, Facebook Share button, Twitter Share Button, Social Share, Social buttons, social share buttons, Share, Share this, simple social buttons, simple share buttons adder,  Google+, Twitter, Facebook, Digg, Stumble Upon, Linkedin, +1, add to any, AddThis, add this, addtoany, admin, aim, analytics, bookmark, bookmarking, bookmarks, bookmark button, bookmark menu, buddypress, chrome extension, comments, del.icio.us, Diigo, buffer, button, del.icio.us, e-mail, email, email button, Facebook, facebook like, facebook recommend, facebook share, facebook share button, fark, firefox extension, flickr, floating buttons, follow, foursquare, gmail, goo.gl
 Requires at least: 3.6+
 Tested up to: 4.2.0
-Stable tag: 2.2.7
+Stable tag: 2.2.9  
 
 Social Media Icons & Share Buttons, a highly customizable social sharing and & Media SEO ecosystem Facebook, Twitter and more ...
 
@@ -295,6 +292,19 @@ Read here more FAQ: [https://www.mashshare.net/faq/](https://www.mashshare.net/f
 
 == Changelog ==
 
+= 2.2.9 =
+* New: Two more share counts available, Buffer and VK.
+* Fix: Blank page on php 5.3 and older versions
+* Fix: Error message 'Undefined' when sharedcount.com is used and no api key available
+* Fix: Load class RollingCurlX only when not already exists
+* Fix: Create new curl() timeout var for sharedcount class and mashengine
+* Fix: array creation $array = [] not supported in php 5.3 and older
+* Fix: Use of php type 'callable' not supported in php 5.3 and older
+* Fix: Share button url on singular pages appends query string parameter like 'year' or 'name'
+* Fix: Delete all options when uninstaling mashshare share buttons completely
+* Fix: Show 'Ask for rating' box after 7 days of installation
+* Fix: Undefined index warning when mashshare network add-on installed but disabled
+
 = 2.2.8 =
 * New: Integration of a new share count engine. sharedcount.com and api key is not longer needed.
 * New: Check if mashshare is used on paginated page and ' <! -- nextpage -- >' is used. Share primary url without page parameter
@@ -414,5 +424,5 @@ https://www.mashshare.net/changelog/
 
 == Upgrade Notice ==
 
-= 2.2.8 =
-2.2.8 <strong>FEATURE UPDATE:</strong> MashEngine is the name of our new sharecount engine. No more need for sharedcount.com and the API key! Just in case: If something goes wrong, and the update is running into any issues just remove the folder <strong>/wp-content/plugins/mashsharer</strong> completely via FTP and install Mashshare again. Your settings will not lost. However, Its recommend to test every new plugin update on a staging platform first!
+= 2.2.9 =
+2.2.9 <strong>FEATURE UPDATE:</strong> MashEngine is the name of our new sharecount engine. No more need for sharedcount.com and the API key! Just in case: If something goes wrong, and the update is running into any issues just remove the folder <strong>/wp-content/plugins/mashsharer</strong> completely via FTP and install Mashshare again. Your settings will not lost. However, Its recommend to test every new plugin update on a staging platform first!

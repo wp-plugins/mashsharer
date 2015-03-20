@@ -131,24 +131,44 @@ function mashsb_get_registered_settings() {
 					'desc' => __( ' ', 'mashsb' ),
 					'type' => 'header'
 				),
-				'mashsharer_cache' => array(
-					'id' => 'mashsharer_cache',
-					'name' =>  __( 'Cache expire', 'mashsb' ),
-					'desc' => __('The amount of shares are updated after time of "cache expire". Notice that Sharedcount.com uses his own cache (30 - 60min) so it does not update immediately when expire time is very low, e.g. 5 minutes.', 'mashsb'),
+                                'mashsb_sharemethod' => array(
+					'id' => 'mashsb_sharemethod',
+					'name' =>  __( 'Share counts', 'mashsb' ),
+					'desc' => __('<i>MashEngine</i> collects shares by calling directly social networks from your server. All shares are cached and stored in your database. <p> If you notice performance issues choose the classical <i>Sharedcount.com</i>. This needs an API key and is limited to 10.000 free requests daily but it is a little bit faster on requesting. After caching there is no performance advantage to MashEngine! <p> <strong>MashEngine collects: </strong> Facebook, Twitter, LinkedIn, Google+, Pinterest, Stumbleupon, Buffer, VK. <strong>Default:</strong> MashEngine', 'mashsb'),
 					'type' => 'select',
-					'options' => mashsb_get_expiretimes()
+					'options' => array(
+                                            'mashengine' => 'MashEngine',
+                                            'sharedcount' => 'Sharedcount.com'
+                                        )
+     
 				),
+				
 				'mashsharer_apikey' => array(
 					'id' => 'mashsharer_apikey',
-					'name' => __( 'API Key - Important', 'mashsb' ),
-					'desc' => __( 'Get it FREE at <a href="https://admin.sharedcount.com/admin/signup.php" target="_blank">SharedCount.com</a> for 10.000 free daily requests. It´s essential for accurate function of this plugin. Make sure Curl is working on your server.', 'mashsb' ),
+					'name' => __( 'Sharedcount.com API Key', 'mashsb' ),
+					'desc' => __( 'Get it at <a href="https://sharedcount.com" target="_blank">SharedCount.com</a> for 10.000 free daily requests.', 'mashsb' ),
 					'type' => 'text',
 					'size' => 'medium'
+				),
+				'mashsharer_sharecount_domain' => array(
+					'id' => 'mashsharer_sharecount_domain',
+					'name' => __( 'Sharedcount.com endpint', 'mashsb' ),
+					'desc' => __( 'The SharedCount Domain your API key is configured to query. For example, free.sharedcount.com. This may update automatically if configured incorrectly.', 'mashsb' ),
+					'type' => 'text',
+					'size' => 'medium',
+					'std'  => 'free.sharedcount.com'
+				),
+                                'mashsharer_cache' => array(
+					'id' => 'mashsharer_cache',
+					'name' =>  __( 'Cache expiration', 'mashsb' ),
+					'desc' => __('Shares are counted for every post after this time. Notice that Sharedcount.com uses his own cache (30 - 60min) so share count does not update immediately. If you have a very large website with 100k and more daily pageviews make sure to increase this value, scpecially when you use MashEngine! Otherwise it could happen that some networks block your requests due to hammering their rate limits.', 'mashsb'),
+					'type' => 'select',
+					'options' => mashsb_get_expiretimes()
 				),
                                 'disable_sharecount' => array(
 					'id' => 'disable_sharecount',
 					'name' => __( 'Disable Sharecount', 'mashsb' ),
-					'desc' => __( 'Use this when you can not enable curl_exec and share counts stays zero on your site. In this mode the plugin do not calls the database and no SQL queries are done. (Gives just a very little performance boost because all database requests are cached in any case.)', 'mashsb' ),
+					'desc' => __( 'Use this when curl() is not supported on your server or share counts should not counted. This mode does not call the database and no SQL queries are generated. (Only less performance advantage. All db requests are cached) Default: false', 'mashsb' ),
 					'type' => 'checkbox'
 				),
                                 'hide_sharecount' => array(
@@ -161,7 +181,7 @@ function mashsb_get_registered_settings() {
                                 'excluded_from' => array(
 					'id' => 'excluded_from',
 					'name' => __( 'Exclude from', 'mashsb' ),
-					'desc' => __( 'Exclude share buttons from a list of specific posts and pages. Put in the page id seperated by a comma, e.g. 23, 63, 114 ', 'mashsb' ),
+					'desc' => __( 'Exclude share buttons from a list of specific posts and pages. Put in the page id separated by a comma, e.g. 23, 63, 114 ', 'mashsb' ),
 					'type' => 'text',
                                         'size' => 'medium'
 				),
@@ -176,20 +196,26 @@ function mashsb_get_registered_settings() {
                                 'fake_count' => array(
 					'id' => 'fake_count',
 					'name' => __( 'Fake Share counts', 'mashsb' ),
-					'desc' => __( 'This number will be aggregated to all your share counts multiplied with a post specific factor based on title word count divided 10.', 'mashsb' ),
+					'desc' => __( 'This number will be aggregated to all your share counts and is multiplied with a post specific factor. (Number of post title words divided with 10).', 'mashsb' ),
 					'type' => 'text',
                                         'size' => 'medium'
 				),
-                                'facebook_count' => array(
+                                'load_scripts_footer' => array(
+					'id' => 'load_scripts_footer',
+					'name' => __( 'JS Load Order', 'mashsb' ),
+					'desc' => __( 'Enable this to load all *.js files into footer. Make sure your theme uses the wp_footer() template tag in the appropriate place. Default: Disabled', 'mashsb' ),
+					'type' => 'checkbox'
+				),
+                                /*'facebook_count' => array(
 					'id' => 'facebook_count_mode',
-					'name' => __( 'Facebook Total Counter', 'mashsb' ),
-					'desc' => __( 'Specify if you like to get the FB total counts including likes and shares or if you only like to get the total share counts', 'mashsb' ),
+					'name' => __( 'Facebook Count', 'mashsb' ),
+					'desc' => __( 'Get the Facebook total count including "likes" and "shares" or get only the pure share count', 'mashsb' ),
 					'type' => 'select',
                                         'options' => array(
                                             'total' => 'Total counts',
                                             'shares' => 'Only share counts'
                                         )
-				),
+				),*/
                                 'uninstall_on_delete' => array(
 					'id' => 'uninstall_on_delete',
 					'name' => __( 'Remove Data on Uninstall?', 'mashsb' ),
@@ -204,13 +230,13 @@ function mashsb_get_registered_settings() {
 				),
                                 array(
 					'id' => 'disable_cache',
-					'name' => __( 'Disable Transient Cache', 'mashsb' ),
-					'desc' => __( '<strong>Note: </strong>Use this only for testing to see if share counts are working! Your page loading performance will drop. Works only when sharecount is enabled.<br>' . mashsb_cache_status(), 'mashsb' ),
+					'name' => __( 'Disable Cache', 'mashsb' ),
+					'desc' => __( '<strong>Note: </strong>Use this only for testing to see if shares are counted! Your page loading performance will drop. Works only when sharecount is enabled.<br>' . mashsb_cache_status(), 'mashsb' ),
 					'type' => 'checkbox'
 				),
                                 'delete_cache_objects' => array(
 					'id' => 'delete_cache_objects',
-					'name' => __( 'Delete DB Cache', 'mashsb' ),
+					'name' => __( 'Purge DB Cache', 'mashsb' ),
 					'desc' => __( '<strong>Note: </strong>Use this with caution when you think your share counts are wrong. Checking this and using the save button will delete all stored mashshare post_meta objects.<br>' . mashsb_delete_cache_objects(), 'mashsb' ),
 					'type' => 'checkbox'
 				),
@@ -218,7 +244,7 @@ function mashsb_get_registered_settings() {
                                 'debug_mode' => array(
 					'id' => 'debug_mode',
 					'name' => __( 'Debug mode', 'mashsb' ),
-					'desc' => __( '<strong>Note: </strong> Check this box this before you get in contact with our support team. This allows us to check publically hidden debug messages on your website. Do not forget to disable it thereafter!', 'mashsb' ),
+					'desc' => __( '<strong>Note: </strong> Check this box before you get in contact with our support team. This allows us to check publically hidden debug messages on your website. Do not forget to disable it thereafter! Enable this also to write daily sorted log files of requested share counts to folder /wp-content/plugins/mashsharer/logs. Please send us this files when you notice a wrong share count.' . mashsb_log_permissions(), 'mashsb' ),
 					'type' => 'checkbox'
 				)
                                 
@@ -235,7 +261,7 @@ function mashsb_get_registered_settings() {
                             'mashsharer_position' => array(
 					'id' => 'mashsharer_position',
 					'name' => __( 'Position', 'mashsb' ),
-					'desc' => __( 'Choose where you would like the social icons to appear, before or after the main content. If set to Manual, you can use this code to place your Social links anywhere you like in your templates files: <strong>&lt;?php do_action("mashshare"); ?&gt;</strong> or use the shortcode: [mashshare] in your posts. Optional: <strong>[mashshare shares="off"]</strong> if you like to disable the share number.', 'mashsb' ),
+					'desc' => __( 'Location of Share Buttons. Set to <i>manual</i> if you do not want to use the automatic embeding. Use the shortcode function to place Mashshare directly into your theme template files: <strong>&lt;?php echo do_shortcode("[mashshare]"); ?&gt;</strong> or the content shortcode: [mashshare] for posts and pages. See all <a href="https://www.mashshare.net/faq/#Is_there_a_shortcode_for_pages_and_posts" target="_blank">available shortcodes</a> here.', 'mashsb' ),
 					'type' => 'select',
                                         'options' => array(
 						'before' => __( 'Top', 'mashsb' ),
@@ -254,7 +280,7 @@ function mashsb_get_registered_settings() {
                                 'singular' => array(
 					'id' => 'singular',
 					'name' => __( 'Categories', 'mashsb' ),
-					'desc' => __('Enable this checkbox to enable Mashshare on categories with multiple blogposts.','mashsb'),
+					'desc' => __('Enable this checkbox to enable Mashshare on categories with multiple blogposts. <strong>Note: </strong> Post_types: "Post" must be enabled.','mashsb'),
 					'type' => 'checkbox',
                                         'std' => '0'
 				),
@@ -278,27 +304,43 @@ function mashsb_get_registered_settings() {
                                         'std' => '0'
                                     
 				),
+                                'mashsb_shortcode_info' => array(
+					'id' => 'mashsb_shortcode_info',
+					'name' => __( 'Note:', 'mashsb' ),
+					'desc' => __('Using the shortcode <strong>[mashshare]</strong> is forcing the load of dependacy scripts and styles on that specific pages. It is overwriting any other location setting.','mashsb'),
+					'type' => 'note',
+                                        'label_for' => 'test'
+                                    
+				),
                                 'style_header' => array(
 					'id' => 'style_header',
-					'name' => '<strong>' . __( 'Visual Style & Template', 'mashsb' ) . '</strong>',
+					'name' => '<strong>' . __( 'Customize', 'mashsb' ) . '</strong>',
 					'desc' => __( ' ', 'mashsb' ),
 					'type' => 'header'
                                 ),
 				'mashsharer_round' => array(
 					'id' => 'mashsharer_round',
 					'name' => __( 'Round Shares', 'mashsb' ),
-					'desc' => __( 'Share counts more than 1000 are shown as 1k. More than 1 Million as 1M', 'mashsb' ),
+					'desc' => __( 'Share counts greater than 1.000 will be shown as 1k. Greater than 1 Million as 1M', 'mashsb' ),
 					'type' => 'checkbox'
 				),
                                 'animate_shares' => array(
 					'id' => 'animate_shares',
 					'name' => __( 'Animate Shares', 'mashsb' ),
-					'desc' => __( 'Count up the shares on page loading with a nice looking and fast jQuery animation. This only works on singular pages and not with shortcodes generated buttons.', 'mashsb' ),
+					'desc' => __( 'Count up the shares on page loading with a nice looking animation effect. This only works on singular pages and not with shortcodes generated buttons.', 'mashsb' ),
 					'type' => 'checkbox'
+				),
+                                'sharecount_title' => array(
+					'id' => 'sharecount_title',
+					'name' => __( 'Share count title', 'mashsb' ),
+					'desc' => __( 'Change the text of the Share count title. <strong>Default:</strong> SHARES', 'mashsb' ),
+					'type' => 'text',
+					'size' => 'medium',
+                                        'std' => 'SHARES'
 				),
 				'mashsharer_hashtag' => array(
 					'id' => 'mashsharer_hashtag',
-					'name' => __( 'Twitter Handle', 'mashsb' ),
+					'name' => __( 'Twitter handle', 'mashsb' ),
 					'desc' => __( '<strong>Optional:</strong> Using your twitter username, e.g. \'Mashshare\' results in via @Mashshare', 'mashsb' ),
 					'type' => 'text',
 					'size' => 'medium'
@@ -357,9 +399,9 @@ function mashsb_get_registered_settings() {
 					'desc' => __( 'Change visual appearance of the share buttons.', 'mashsb' ),
 					'type' => 'select',
                                         'options' => array(
-						'shadow' => '"Shadow" Created by Rene Hermenau',
-                                                'gradiant' => '"Gradiant" Created by Rene Hermenau',
-                                                'default' => 'Default'
+						'shadow' => 'Shadowed buttons',
+                                                'gradiant' => 'Gradient colored buttons',
+                                                'default' => 'Clean buttons - no effects'
 					),
                                         'std' => 'default'
 					
@@ -372,20 +414,20 @@ function mashsb_get_registered_settings() {
 				),
                                 'subscribe_behavior' => array(
 					'id' => 'subscribe_behavior',
-					'name' => __( 'Subscribe behavior', 'mashsb' ),
-					'desc' => __( 'Specify behavior of the subscribe button and decide if you like to link the button directly to any content or to have a toggled content slider below the button.', 'mashsb' ),
+					'name' => __( 'Subscribe button', 'mashsb' ),
+					'desc' => __( 'Specify if the subscribe button is opening a content box below the button or if the button is linked to the "subscribe url" below.', 'mashsb' ),
 					'type' => 'select',
                                         'options' => array(
-						'content' => 'Content',
-                                                'link' => 'Link'
+						'content' => 'Open content box',
+                                                'link' => 'Open Subscribe Link'
 					),
                                         'std' => 'content'
 					
 				),
                                 'subscribe_link' => array(
 					'id' => 'subscribe_link',
-					'name' => __( 'Subscribe Link', 'mashsb' ),
-					'desc' => __( 'Put a link behind the subscribe button and use no opening toggle window, e.g. http://yoursite.com/subscribe', 'mashsb' ),
+					'name' => __( 'Subscribe URL', 'mashsb' ),
+					'desc' => __( 'Link the Subscribe button to this URL. This can be the url to your subscribe page, facebook fanpage, RSS feed etc. e.g. http://yoursite.com/subscribe', 'mashsb' ),
 					'type' => 'text',
 					'size' => 'regular',
                                         'std' => ''
@@ -393,15 +435,15 @@ function mashsb_get_registered_settings() {
                                 'subscribe_content' => array(
 					'id' => 'subscribe_content',
 					'name' => __( 'Subscribe content', 'mashsb' ),
-					'desc' => __( 'Define the content of the opening toggle subscribe window here. Use formulars, like button, links or any other text. Shortcodes are supported, e.g.: [contact-form-7]', 'mashsb' ),
-					'type' => 'rich_editor',
-					'textarea_rows' => '6',
-                                        'std' => ''
+					'desc' => __( '<br>Define the content of the opening toggle subscribe window here. Use formulars, like button, links or any other text. Shortcodes are supported, e.g.: [contact-form-7]', 'mashsb' ),
+					'type' => 'textarea',
+					'textarea_rows' => '3',
+                                        'size' => 15
 				),                                
                                 'custom_css' => array(
 					'id' => 'custom_css',
 					'name' => __( 'Custom CSS', 'mashsb' ),
-					'desc' => __( 'Put in some custom styles here', 'mashsb' ),
+					'desc' => __( '<br>Put in some custom styles here', 'mashsb' ),
 					'type' => 'textarea',
 					'size' => 15
                                         
@@ -410,6 +452,12 @@ function mashsb_get_registered_settings() {
 		),
                  'networks' => apply_filters( 'mashsb_settings_networks',
                          array(
+                                'services_header' => array(
+					'id' => 'services_header',
+					'name' => __( 'Select available networks', 'mashsb' ),
+					'desc' => '',
+					'type' => 'header'
+				),
                                 'visible_services' => array(
 					'id' => 'visible_services',
 					'name' => __( 'Large Buttons', 'mashsb' ),
@@ -427,7 +475,12 @@ function mashsb_get_registered_settings() {
                          )
                 ),
 		'licenses' => apply_filters('mashsb_settings_licenses',
-			array()
+			array('licenses_header' => array(
+					'id' => 'licenses_header',
+					'name' => __( 'Activate your Add-Ons', 'mashsb' ),
+					'desc' => '',
+					'type' => 'header'
+				),)
 		),
                 'extensions' => apply_filters('mashsb_settings_extension',
 			array()
@@ -436,10 +489,11 @@ function mashsb_get_registered_settings() {
 			array(
                                 'addons' => array(
 					'id' => 'addons',
-					'name' => __( 'Add-Ons', 'mashsb' ),
-					'desc' => __( 'All Mashshare Add-Ons at a glance', 'mashsb' ),
+					'name' => __( '', 'mashsb' ),
+					'desc' => __( '', 'mashsb' ),
 					'type' => 'addons'
 				)
+                            //mashsb_addons_callback()
                         )
 		)
 	);
@@ -657,7 +711,7 @@ function mashsb_checkbox_callback( $args ) {
 
 	$checked = isset( $mashsb_options[ $args[ 'id' ] ] ) ? checked( 1, $mashsb_options[ $args[ 'id' ] ], false ) : '';
 	$html = '<input type="checkbox" id="mashsb_settings[' . $args['id'] . ']" name="mashsb_settings[' . $args['id'] . ']" value="1" ' . $checked . '/>';
-	$html .= '<label for="mashsb_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+	$html .= '<label class="mashsb_hidden" for="mashsb_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
 
 	echo $html;
 }
@@ -682,7 +736,7 @@ function mashsb_multicheck_callback( $args ) {
 			echo '<input name="mashsb_settings[' . $args['id'] . '][' . $key . ']" id="mashsb_settings[' . $args['id'] . '][' . $key . ']" type="checkbox" value="' . $option . '" ' . checked($option, $enabled, false) . '/>&nbsp;';
 			echo '<label for="mashsb_settings[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>';
 		endforeach;
-		echo '<p class="description">' . $args['desc'] . '</p>';
+		echo '<p class="description mashsb_hidden">' . $args['desc'] . '</p>';
 	}
 }
 
@@ -711,7 +765,7 @@ function mashsb_radio_callback( $args ) {
 		echo '<label for="mashsb_settings[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>';
 	endforeach;
 
-	echo '<p class="description">' . $args['desc'] . '</p>';
+	echo '<p class="description mashsb_hidden">' . $args['desc'] . '</p>';
 }
 
 /**
@@ -739,7 +793,7 @@ function mashsb_gateways_callback( $args ) {
 }
 
 /**
- * Gateways Callback (drop down)
+ * Dropdown Callback (drop down)
  *
  * Renders gateways select menu
  *
@@ -782,7 +836,7 @@ function mashsb_text_callback( $args ) {
 
 	$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
 	$html = '<input type="text" class="' . $size . '-text" id="mashsb_settings[' . $args['id'] . ']" name="mashsb_settings[' . $args['id'] . ']" value="' . esc_attr( stripslashes( $value ) ) . '"/>';
-	$html .= '<label for="mashsb_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+	$html .= '<label class="mashsb_hidden" class="mashsb_hidden" for="mashsb_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
 
 	echo $html;
 }
@@ -811,7 +865,7 @@ function mashsb_number_callback( $args ) {
 
 	$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
 	$html = '<input type="number" step="' . esc_attr( $step ) . '" max="' . esc_attr( $max ) . '" min="' . esc_attr( $min ) . '" class="' . $size . '-text" id="mashsb_settings[' . $args['id'] . ']" name="mashsb_settings[' . $args['id'] . ']" value="' . esc_attr( stripslashes( $value ) ) . '"/>';
-	$html .= '<label for="mashsb_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+	$html .= '<label class="mashsb_hidden" for="mashsb_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
 
 	echo $html;
 }
@@ -836,7 +890,7 @@ function mashsb_textarea_callback( $args ) {
 
 	$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : '40';
 	$html = '<textarea class="large-text mashsb-textarea" cols="50" rows="' . $size . '" id="mashsb_settings[' . $args['id'] . ']" name="mashsb_settings[' . $args['id'] . ']">' . esc_textarea( stripslashes( $value ) ) . '</textarea>';
-	$html .= '<label for="mashsb_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+	$html .= '<label class="mashsb_hidden" for="mashsb_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
 
 	echo $html;
 }
@@ -905,7 +959,7 @@ function mashsb_select_callback($args) {
 	endforeach;
 
 	$html .= '</select>';
-	$html .= '<label for="mashsb_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+	$html .= '<label class="mashsb_hidden" for="mashsb_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
 
 	echo $html;
 }
@@ -952,7 +1006,7 @@ function mashsb_color_select_callback( $args ) {
 	$html = '<strong>#:</strong><input type="text" style="max-width:80px;border:1px solid #' . esc_attr( stripslashes( $value ) ) . ';border-right:20px solid #' . esc_attr( stripslashes( $value ) ) . ';" id="mashsb_settings[' . $args['id'] . ']" class="medium-text ' . $args['id'] . '" name="mashsb_settings[' . $args['id'] . ']" value="' . esc_attr( stripslashes( $value ) ) . '"/>';
 
 	$html .= '</select>';
-	$html .= '<label for="mashsb_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+	$html .= '<label class="mashsb_hidden" for="mashsb_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
 
 	echo $html;
 }
@@ -982,7 +1036,7 @@ function mashsb_rich_editor_callback( $args ) {
 		$html = '<textarea class="large-text mashsb-richeditor" rows="10" id="mashsb_settings[' . $args['id'] . ']" name="mashsb_settings[' . $args['id'] . ']">' . esc_textarea( stripslashes( $value ) ) . '</textarea>';
 	}
 
-	$html .= '<br/><label for="mashsb_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+	$html .= '<br/><label class="mashsb_hidden" for="mashsb_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
 
 	echo $html;
 }
@@ -1008,7 +1062,7 @@ function mashsb_upload_callback( $args ) {
 	$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
 	$html = '<input type="text" class="' . $size . '-text mashsb_upload_field" id="mashsb_settings[' . $args['id'] . ']" name="mashsb_settings[' . $args['id'] . ']" value="' . esc_attr( stripslashes( $value ) ) . '"/>';
 	$html .= '<span>&nbsp;<input type="button" class="mashsb_settings_upload_button button-secondary" value="' . __( 'Upload File', 'mashsb' ) . '"/></span>';
-	$html .= '<label for="mashsb_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+	$html .= '<label class="mashsb_hidden" for="mashsb_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
 
 	echo $html;
 }
@@ -1036,7 +1090,7 @@ function mashsb_color_callback( $args ) {
 
 	$size = ( isset( $args['size'] ) && ! is_null( $args['size'] ) ) ? $args['size'] : 'regular';
 	$html = '<input type="text" class="mashsb-color-picker" id="mashsb_settings[' . $args['id'] . ']" name="mashsb_settings[' . $args['id'] . ']" value="' . esc_attr( $value ) . '" data-default-color="' . esc_attr( $default ) . '" />';
-	$html .= '<label for="mashsb_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+	$html .= '<label class="mashsb_hidden" for="mashsb_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
 
 	echo $html;
 }
@@ -1072,7 +1126,7 @@ if ( ! function_exists( 'mashsb_license_key_callback' ) ) {
 }
 
 /**
- * Networks Callback / Facebook and Twitter default
+ * Networks Callback / Facebook, Twitter and Subscribe default
  *
  * Renders network order table. Uses separate option field 'mashsb_networks 
  *
@@ -1084,7 +1138,7 @@ if ( ! function_exists( 'mashsb_license_key_callback' ) ) {
 
 function mashsb_networks_callback( $args ) {
 	global $mashsb_options;
-       /* Our array in $mashsb_option['networks']
+       /* Array in $mashsb_option['networks']
         * 
         *                                   array(
                                                 0 => array (
@@ -1168,7 +1222,7 @@ function mashsb_addons_callback( $args ) {
 	
 		$html .= '<input type="submit" class="button-secondary mashsb_upload_image" name="' . $args['id'] . '_upload" value="' . __( 'Select Image',  'mashsb' ) . '"/>';
 		
-		$html .= '<label for="mashsb_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
+		$html .= '<label class="mashsb_hidden" for="mashsb_settings[' . $args['id'] . ']"> '  . $args['desc'] . '</label>';
 
 		echo $html;
 	}
@@ -1198,8 +1252,25 @@ function mashsb_posttypes_callback ($args){
 			echo '<input name="mashsb_settings[' . $args['id'] . '][' . $key . ']" id="mashsb_settings[' . $args['id'] . '][' . $key . ']" type="checkbox" value="' . $option . '" ' . checked($option, $enabled, false) . '/>&nbsp;';
 			echo '<label for="mashsb_settings[' . $args['id'] . '][' . $key . ']">' . $option . '</label><br/>';
 		endforeach;
-		echo '<p class="description">' . $args['desc'] . '</p>';
+		echo '<p class="description mashsb_hidden">' . $args['desc'] . '</p>';
 	}
+}
+
+/* 
+ * Note Callback
+ * 
+ * Show a note
+ * 
+ * @since 2.2.8
+ * @param array $args Arguments passed by the setting
+ * @return void
+ * 
+ */
+
+function mashsb_note_callback ($args){
+  global $mashsb_options;
+  $html = !empty($args['desc']) ? $args['desc'] : '';
+  echo $html;
 }
         
 /**
@@ -1257,8 +1328,9 @@ function mashsb_delete_cache_objects(){
         //require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         //$wpdb->query($sql);
         delete_post_meta_by_key( 'mashsb_timestamp' );
-        delete_post_meta_by_key( 'mashsb_shares' );
-        return ' <strong style="color:red;">' . __('DB cache deleted! Do not forget to uncheck this box for performance increase after doing the job.') . '</strong> ';
+        delete_post_meta_by_key( 'mashsb_shares' ); 
+        delete_post_meta_by_key( 'mashsb_jsonshares' );
+        return ' <strong style="color:red;">' . __('DB cache deleted! Do not forget to uncheck this box for performance increase after doing the job.', 'mashsb') . '</strong> ';
     }
 }
 
@@ -1271,6 +1343,19 @@ function mashsb_delete_cache_objects(){
 function mashsb_cache_status(){
     global $mashsb_options;
     if (isset($mashsb_options['disable_cache'])){
-        return ' <strong style="color:red;">' . __('Transient Cache disabled! Enable it for performance increase.') . '</strong> ';
+        return ' <strong style="color:red;">' . __('Transient Cache disabled! Enable it for performance increase.' , 'mashsb') . '</strong> ';
+    }
+}
+
+/* Permission check if logfile is writable
+ *
+ * @since 2.0.6
+ * @return string
+ */
+
+function mashsb_log_permissions(){
+    global $mashsb_options;
+    if (!MASHSB()->logger->checkDir() ){
+        return '<br><strong style="color:red;">' . __('Log file directory not writable! Set FTP permission to 755 or 777 for /wp-content/mashsharer/logs/', 'mashsb') . '</strong> Read here more about <a href="http://codex.wordpress.org/Changing_File_Permissions" target="_blank">file permissions</a> ';
     }
 }

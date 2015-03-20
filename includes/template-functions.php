@@ -45,6 +45,7 @@ function getExecutionOrder(){
      * 
      * @since 2.0.9
      * @return int
+     * @deprecated deprecated since version 2.2.8
      */
 function mashsbSmoothVelocity ($mashsbShareCounts) {
         switch ($mashsbShareCounts) {
@@ -86,18 +87,23 @@ function mashsbSmoothVelocity ($mashsbShareCounts) {
                         }
 }
 
-/* Get the ShareObject depending if Mashshare Server Add-On
- * is enabled or native API calls are used.
+/* Get mashsbShareObject 
+ * depending if MashEngine or sharedcount.com is used
  * 
  * @since 2.0.9
  * @return object
+ * @changed 2.2.7
  */
 
 function mashsbGetShareObj($url) {
-    if (class_exists('mashserver')) {
-        //require_once(MASHSB_PLUGIN_DIR . 'includes/mashserver.php');
-        $mashsbSharesObj = new shareCount($url);
-        $mashsbSharesObj = new mashsbSharedcount($url);
+    global $mashsb_options;
+    $mashengine = isset($mashsb_options['mashsb_sharemethod']) && $mashsb_options['mashsb_sharemethod'] === 'mashengine' ? true : false;
+    if ($mashengine) {
+        if(!class_exists('RollingCurlX'))  
+        require_once MASHSB_PLUGIN_DIR . 'includes/libraries/RolingCurlX.php';
+        if(!class_exists('mashengine'))         
+            require_once(MASHSB_PLUGIN_DIR . 'includes/mashengine.php');
+        $mashsbSharesObj = new mashengine($url);
         return $mashsbSharesObj;
     } 
         require_once(MASHSB_PLUGIN_DIR . 'includes/sharedcount.class.php');
@@ -105,14 +111,14 @@ function mashsbGetShareObj($url) {
         return $mashsbSharesObj;   
 }
 
-/* Get the correct share method depening if mashshare networks is enabled
+/* Get the correct share method depending if mashshare networks is enabled
  * 
  * @since 2.0.9
  * @return var
  * 
  */
 
-/* Get the sharecounts from sharedcount.com or direct API calls.
+/* Get the sharecounts from sharedcount.com or MashEngine
  * Creates the share count cache using post_meta db fields.
  * 
  * @since 2.0.9
@@ -139,6 +145,7 @@ function getSharedcount($url) {
     }
     $mashsbNextUpdate = (int) $cacheexpire;
     $mashsbLastUpdated = get_post_meta($post->ID, 'mashsb_timestamp', true);
+
     if (empty($mashsbLastUpdated)) {
         $mashsbCheckUpdate = true;
         $mashsbLastUpdated = 0;
@@ -149,53 +156,31 @@ function getSharedcount($url) {
         $mashsbSharesObj = mashsbGetShareObj($url);
         // Get the share counts
         $mashsbShareCounts = mashsbGetShareMethod($mashsbSharesObj);
-        
         //$mashsbShareCounts['total'] = 11; // USE THIS FOR DEBUGGING
-        
-        if (isset($mashsbCheckUpdate)) {
-            mashdebug()->info("First Update");
-            //Some fake shares to create smooth step values for older posts which 
-            //did not use Mashshare before (important for velocity graph Add-On) 
-            $mashsbShareCountArr = mashsbSmoothVelocity($mashsbShareCounts['total']);
-            
-             if (empty($mashsbShareCountArr)){
-             $mashsbShareCountArr = array(0);}
-             $mashsbStoredDBMeta = 0;
-        } else {
-            $mashsbStoredDBMeta = get_post_meta($post->ID, 'mashsb_shares', true);
-            $mashsbStoredDBMetaArr = explode(",", $mashsbStoredDBMeta);
-            if (count($mashsbStoredDBMetaArr) >= 40) {
-                array_shift($mashsbStoredDBMetaArr);
-                array_push($mashsbStoredDBMetaArr, $mashsbShareCounts['total']);
-            } else {
-                array_push($mashsbStoredDBMetaArr, $mashsbShareCounts['total']);
-            }
-            $mashsbShareCountArr = $mashsbStoredDBMetaArr;
-        }
-        
-        /* Update post_meta only when API requested and
-         * API share count is not smaller than current sharecount 
-         * This would mean there was an error in the API (Failure or hammering any limits like X-Rate-Limit)
-         */
-        
-        $lastDBStoredShareArray = explode(",", $mashsbStoredDBMeta);
 
-        if ($mashsbShareCounts['total'] >= end((array_values($lastDBStoredShareArray)))) {
-            
-            mashdebug()->info("update database with sharedcount: " . $mashsbShareCounts['total']);
-            
-            $mashsbShareCountArr = implode(",", $mashsbShareCountArr);
-            update_post_meta($post->ID, 'mashsb_shares', $mashsbShareCountArr);
+            mashdebug()->info("First Update");
+            $mashsbStoredDBMeta = get_post_meta($post->ID, 'mashsb_shares', true);
+
+        
+        /* Update post_meta only when API is requested and
+         * API share count is not smaller than current sharecount 
+         * This would mean there was an error in the API (Failure or hammering any limits, e.g. X-Rate-Limit)
+         */
+
+        if ($mashsbShareCounts->total >= $mashsbShareCounts->total) {
+            update_post_meta($post->ID, 'mashsb_shares', $mashsbShareCounts->total);
             update_post_meta($post->ID, 'mashsb_timestamp', time());
-            /* return counts from getAllCounts() when they are updated in DB */
-            return apply_filters('filter_get_sharedcount', $mashsbShareCounts['total'] + getFakecount());
+            update_post_meta($post->ID, 'mashsb_jsonshares', json_encode($mashsbShareCounts));
+            mashdebug()->info("updated database with share count: " . $mashsbShareCounts->total);
+            /* return counts from getAllCounts() after DB update */
+            return apply_filters('filter_get_sharedcount', $mashsbShareCounts->total + getFakecount());
         }
         /* return previous counts from DB Cache | this happens when API has a hiccup and does not return any results as expected*/
-        return apply_filters('filter_get_sharedcount', end((array_values($lastDBStoredShareArray))) + getFakecount());
+        return apply_filters('filter_get_sharedcount', $mashsbStoredDBMeta + getFakecount());
     } else {
-        /* return counts from post_meta cache | This is regular cached result */
-        $cachedCountsArr = explode(",", get_post_meta($post->ID, 'mashsb_shares', true));
-        $cachedCounts = end((array_values($cachedCountsArr))) + getFakecount();
+        /* return counts from post_meta plus fake count | This is regular cached result */
+        $cachedCountsMeta = get_post_meta($post->ID, 'mashsb_shares', true);
+        $cachedCounts = $cachedCountsMeta + getFakecount();
         return apply_filters('filter_get_sharedcount', $cachedCounts);
     }
 }
@@ -314,37 +299,41 @@ function getSharedcount($url) {
     function arrNetworks($name, $url, $title) {
         global $mashsb_options, $post;
         $singular = isset( $mashsb_options['singular'] ) ? $singular = true : $singular = false;
-        //$url = get_permalink($post->ID);
             
         if (function_exists('mashsuGetShortURL')){
             mashsuGetShortURL() !== 0 ? $urltw = mashsuGetShortURL() : $urltw = $url;
         }else{
             $urltw = $url;
         }
+       
         
-        //$title = urlencode(html_entity_decode(the_title_attribute('echo=0'), ENT_COMPAT, 'UTF-8'));
-        //$title = str_replace('#' , '%23', $title); 
-        //$titleclean = esc_html($title);
+        function_exists('MASHOG') ? $image = MASHOG()->MASHOG_OG_Output->_add_image() : $image = mashsb_get_image($post->ID);
+        function_exists('MASHOG') ? $desc = MASHOG()->MASHOG_OG_Output->_get_description() : $desc = urlencode(mashsb_get_excerpt_by_id($post->ID));
+        if (function_exists('MASHOG')){
+            $twittertitle = MASHOG()->MASHOG_OG_Output->_get_tw_title();
+            $twittertitle = html_entity_decode($twittertitle, ENT_QUOTES, 'UTF-8');
+            $twittertitle = urlencode($twittertitle);
+            $twittertitle = str_replace('#' , '%23', $twittertitle);
+            $twittertitle = esc_html($twittertitle);
+            empty($twittertitle) ? $twittertitle = $title : $twittertitle; 
+        } else {
+            $twittertitle = $title;
+        }
+    
         
-        $image = mashsb_get_image($post->ID);
-        $desc = urlencode(mashsb_get_excerpt_by_id($post->ID));
-        
-        !empty($mashsb_options['mashsharer_hashtag']) ? $hashtag = $mashsb_options['mashsharer_hashtag'] : $hashtag = '';
+        !empty($mashsb_options['mashsharer_hashtag']) ? $via = '&amp;via=' . $mashsb_options['mashsharer_hashtag'] : $via = '';
        
         
         $networks = apply_filters('mashsb_array_networks', array(
             'facebook' => 'http://www.facebook.com/sharer.php?u=' . $url,
-            'twitter' =>  'https://twitter.com/intent/tweet?text=' . $title . '&amp;via=' . $hashtag . '&amp;url=' . $urltw,
+            'twitter' =>  'https://twitter.com/intent/tweet?text=' . $twittertitle . $via . '&amp;url=' . $urltw,
             'subscribe' => '#',
             'url' => $url,
             'title' => $title   
         ));
         
-        //if ($singular === true){
+            //return isset($networks[$name]) ? $networks[$name] : $networks[$name] = '';    
             return $networks[$name];
-        /*} else  {
-            return 'javascript:void(0)';
-        } */       
         }
         
 
@@ -374,8 +363,7 @@ function getSharedcount($url) {
         }else{
         $enablednetworks = $getnetworks; 
         }
-        //var_dump($enablednetworks);
-        //echo "max: " . $maxcounter;
+
     if (!empty($enablednetworks)) {
         foreach ($enablednetworks as $key => $network):
             if($mashsb_options['visible_services'] !== 'all' && $maxcounter != count($enablednetworks) && $mashsb_options['visible_services'] < count($enablednetworks)){
@@ -416,8 +404,11 @@ function getSharedcount($url) {
      */
     function mashshareShow($atts, $place, $url, $title) {
         mashdebug()->timer('timer');
+        
         global $wpdb, $mashsb_options, $post;
         !empty($mashsb_options['mashsharer_apikey']) ? $apikey = $mashsb_options['mashsharer_apikey'] : $apikey = '';
+        !empty($mashsb_options['sharecount_title']) ? $sharecount_title = $mashsb_options['sharecount_title'] : $sharecount_title = __('SHARES', 'mashsb');
+        
 
             /* Load hashshag*/       
             /*if ($mashsb_options['mashsharer_hashtag'] != '') {
@@ -433,7 +424,7 @@ function getSharedcount($url) {
                     if (isset($mashsb_options['mashsharer_round'])) {
                         $totalshares = roundshares($totalshares);
                     }  
-                 $sharecount = '<div class="mashsb-count"><div class="counts mashsbcount">' . $totalshares . '</div><span class="mashsb-sharetext">' . __('SHARES', 'mashsb') . '</span></div>';    
+                 $sharecount = '<div class="mashsb-count"><div class="counts mashsbcount">' . $totalshares . '</div><span class="mashsb-sharetext">' . $sharecount_title . '</span></div>';    
              } else {
                  $sharecount = '';
              }
@@ -452,6 +443,7 @@ function getSharedcount($url) {
                         <!-- Share buttons made by mashshare.net - Version: ' . MASHSB_VERSION . '-->';
             mashdebug()->timer('timer', true);
             return apply_filters( 'mashsb_output_buttons', $return );
+            
     }
     
     /* Shortcode function
@@ -460,10 +452,15 @@ function getSharedcount($url) {
      * @returns string
      */
     function mashshareShortcodeShow($atts, $place) {
-        global $wpdb ,$mashsb_options, $post;
-        $url = get_permalink($post->ID);
+        global $wpdb ,$mashsb_options, $post, $wp;
+        /* Use permalink when its not singular page, so on category pages the permalink is used. */
+        //is_singular() ? $url = urlencode(home_url( $wp->request )) : $url = urlencode(get_permalink($post->ID));
+        $url = mashsb_get_url();
+        !empty($mashsb_options['sharecount_title']) ? $sharecount_title = $mashsb_options['sharecount_title'] : $sharecount_title = __('SHARES', 'mashsb');
 
-        $title = html_entity_decode(the_title_attribute('echo=0'), ENT_QUOTES, 'UTF-8');
+        
+        function_exists('MASHOG') ? $title = MASHOG()->MASHOG_OG_Output->_get_title() : $title = the_title_attribute('echo=0');
+        $title = html_entity_decode($title, ENT_QUOTES, 'UTF-8');
         $title = urlencode($title);
         $title = str_replace('#' , '%23', $title);
         $title = esc_html($title);
@@ -479,9 +476,9 @@ function getSharedcount($url) {
 
             /* Load hashshag*/       
             if ($mashsb_options['mashsharer_hashtag'] != '') {
-                $hashtag = '&amp;via=' . $mashsb_options['mashsharer_hashtag'];
+                $via = '&amp;via=' . $mashsb_options['mashsharer_hashtag'];
             } else {
-                $hashtag = '';
+                $via = '';
             }
 
             
@@ -493,7 +490,7 @@ function getSharedcount($url) {
                         if ($roundenabled) {
                             $totalshares = roundshares($totalshares);
                         }
-                    $sharecount = '<div class="mashsb-count" style="float:' . $align . ';"><div class="counts">' . $totalshares . '</div><span class="mashsb-sharetext">' . __('SHARES', 'mashsb') . '</span></div>';    
+                    $sharecount = '<div class="mashsb-count" style="float:' . $align . ';"><div class="counts">' . $totalshares . '</div><span class="mashsb-sharetext">' . $sharecount_title . '</span></div>';    
                     /*If shortcode [mashshare shares="true" onlyshares="true"]
                      * return shares and exit;
                      */
@@ -517,9 +514,7 @@ function getSharedcount($url) {
                     . mashsb_subscribe_content() .
                     '</aside>
                         <!-- Share buttons made by mashshare.net - Version: ' . MASHSB_VERSION . '-->';
-          
-            return apply_filters( 'mashsb_output_buttons', $return );  
-          
+            return apply_filters( 'mashsb_output_buttons', $return );    
     }
     
     /* Returns active status of Mashshare.
@@ -534,10 +529,31 @@ function getSharedcount($url) {
 
        $frontpage = isset( $mashsb_options['frontpage'] ) ? $frontpage = 1 : $frontpage = 0;
        $current_post_type = get_post_type();
-       $enabled_post_types = isset( $mashsb_options['post_types'] ) ? $mashsb_options['post_types'] : null;
+       $enabled_post_types = isset( $mashsb_options['post_types'] ) ? $mashsb_options['post_types'] : array();
        $excluded = isset( $mashsb_options['excluded_from'] ) ? $mashsb_options['excluded_from'] : null;
        $singular = isset( $mashsb_options['singular'] ) ? $singular = true : $singular = false;
-
+       
+       // Load scripts when shortcode is used
+       /* Check if shortcode is used */ 
+       if( has_shortcode( $post->post_content, 'mashshare' ) ) {
+           mashdebug()->info("400");
+            return true;
+       } 
+       
+       // Load scripts when do_action('mashshare') is used
+       //if(has_action('mashshare') && mashsb_is_excluded() !== true) {
+       if(has_action('mashshare')) {
+           mashdebug()->info("action1");
+           return true;    
+       }
+       
+       // Load scripts when do_action('mashsharer') is used
+       //if(has_action('mashsharer') && mashsb_is_excluded() !== true) {
+       if(has_action('mashsharer')) {
+           mashdebug()->info("action2");
+           return true;    
+       } 
+       
        // No scripts on non singular page
        if (!is_singular() == 1 && $singular !== true) {
         return false;
@@ -557,7 +573,8 @@ function getSharedcount($url) {
        
        // Load scripts when post_type is defined (for automatic embeding)
        //if ($enabled_post_types && in_array($currentposttype, $enabled_post_types) && mashsb_is_excluded() !== true ) {
-       if ($enabled_post_types == null or in_array($current_post_type, $enabled_post_types)) {
+       //if ($enabled_post_types == null or in_array($current_post_type, $enabled_post_types)) {
+       if (in_array($current_post_type, $enabled_post_types)) {
            mashdebug()->info("100");
            return true;
        }  
@@ -576,26 +593,7 @@ function getSharedcount($url) {
            mashdebug()->info("300");
             return true;
        }
-       // Load scripts when shortcode is used
-       /* Check if shortcode is used */ 
-       if( has_shortcode( $post->post_content, 'mashshare' ) ) {
-           mashdebug()->info("400");
-            return true;
-       } 
-       
-       // Load scripts when do_action('mashshare') is used
-       //if(has_action('mashshare') && mashsb_is_excluded() !== true) {
-       if(has_action('mashshare')) {
-           mashdebug()->info("action1");
-           return true;    
-       }
-       
-       // Load scripts when do_action('mashsharer') is used
-       //if(has_action('mashsharer') && mashsb_is_excluded() !== true) {
-       if(has_action('mashsharer')) {
-           mashdebug()->info("action2");
-           //return true;    
-       } 
+
     }
     
 
@@ -607,16 +605,13 @@ function getSharedcount($url) {
      * @return string
      */
     function mashshare_filter_content($content){
-         
-        global $atts, $mashsb_options, $post;
-        global $wp_current_filter;
+        global $atts, $mashsb_options, $post, $wp_current_filter, $wp;
         
-        /* define some vars here to reduce multiple execution of some basic functions */
-        $url = urlencode(get_permalink($post->ID));
-
-        //$title = addslashes(the_title_attribute('echo=0'));
-        //$title = html_entity_decode(the_title_attribute('echo=0'), ENT_COMPAT, 'UTF-8');
-        $title = html_entity_decode(the_title_attribute('echo=0'), ENT_QUOTES, 'UTF-8');
+        /* define some vars here to reduce multiple execution of basic functions */
+        /* Use permalink when its not singular page, so on category pages the permalink is used. */
+        $url = mashsb_get_url();
+        function_exists('MASHOG') ? $title = MASHOG()->MASHOG_OG_Output->_get_title() : $title = the_title_attribute('echo=0');
+        $title = html_entity_decode($title, ENT_QUOTES, 'UTF-8');
         $title = urlencode($title);
         $title = str_replace('#' , '%23', $title);
         $title = esc_html($title);
@@ -680,6 +675,26 @@ function getSharedcount($url) {
 
         }
 
+/* Template function mashshare() 
+ * @since 2.0.0
+ * @return string
+*/ 
+function mashshare(){
+    global $content;
+    global $atts;
+    global $post;
+    global $wp;
+
+    /* Use permalink when its not singular page, so on category pages the permalink is used. */
+    //is_singular() ? $url = urlencode(home_url( $wp->request )) : $url = urlencode(get_permalink($post->ID));
+    $url = mashsb_get_url();
+    function_exists('MASHOG') ? $title = MASHOG()->MASHOG_OG_Output->_get_title() : $title = the_title_attribute('echo=0');
+    $title = html_entity_decode($title, ENT_QUOTES, 'UTF-8');
+    $title = urlencode($title);
+    $title = str_replace('#' , '%23', $title);
+    $title = esc_html($title);
+    echo mashshareShow($atts, '', $url, $title);
+}
 
 /* Deprecated: Template function mashsharer()
  * @since 1.0
@@ -691,31 +706,19 @@ function mashsharer(){
     //global $url;
     //global $title;
     global $post;
-    $url = get_permalink($post->ID);
-    $title = html_entity_decode(the_title_attribute('echo=0'), ENT_QUOTES, 'UTF-8');
+    global $wp;
+    //is_singular() ? $url = urlencode(home_url( $wp->request )) : $url = urlencode(get_permalink($post->ID));
+    $url = mashsb_get_url();
+    function_exists('MASHOG') ? $title = MASHOG()->MASHOG_OG_Output->_get_title() : $title = the_title_attribute('echo=0');
+    //$title = html_entity_decode(the_title_attribute('echo=0'), ENT_QUOTES, 'UTF-8');
+    $title = html_entity_decode($title, ENT_QUOTES, 'UTF-8');
     $title = urlencode($title);
     $title = str_replace('#' , '%23', $title);
     $title = esc_html($title);
     echo mashshareShow($atts, '', $url, $title);
 }
 
-/* Template function mashshare() 
- * @since 2.0.0
- * @return string
-*/ 
-function mashshare(){
-    global $content;
-    global $atts;
-    //global $url;
-    //global $title;
-    global $post;
-    $url = get_permalink($post->ID);
-    $title = html_entity_decode(the_title_attribute('echo=0'), ENT_QUOTES, 'UTF-8');
-    $title = urlencode($title);
-    $title = str_replace('#' , '%23', $title);
-    $title = esc_html($title);
-    echo mashshareShow($atts, '', $url, $title);
-}
+
 
 
 /**
@@ -876,7 +879,7 @@ function mashsb_styles_method() {
         }';   
     }
     if (mashsb_hide_shares() === true){
-    $mashsb_custom_css .= '
+    $mashsb_custom_css .= ' 
         .mashsb-box .mashsb-count {
             display: none;
         }';   
@@ -930,5 +933,32 @@ function mashsb_styles_method() {
         wp_add_inline_style( 'mashsb-styles', $mashsb_custom_css );
 }
 add_action( 'wp_enqueue_scripts', 'mashsb_styles_method' );
+
+
+    
+/* Get URL to share
+ * 
+ * @return url  $string
+ * @scince 2.2.8
+ */
+
+function mashsb_get_url(){
+    global $wp, $post, $numpages;
+    if($numpages > 1){ // check if '<!-- nextpage -->' is used
+        $url = urlencode(get_permalink($post->ID));
+    } elseif (is_singular()){
+        // Stays here for compatibility. Not sure if this breaks when we switch to get_permalink($post->ID)
+        //!empty($wp->query_string) ? $url = add_query_arg($wp->query_string, '', urlencode(home_url( $wp->request ))) : $url = urlencode(home_url( $wp->request )); 
+        /*if (!empty($wp->query_string)){
+            $url = add_query_arg($wp->query_string, '', urlencode(home_url( $wp->request ))); 
+        }else{
+            $url = urlencode(home_url( $wp->request )); // Stays here for compatibility. Not sure if this breaks when we switch to get_permalink($post->ID)
+        }*/
+        $url = urlencode(get_permalink($post->ID));
+    }else{
+        $url = urlencode(get_permalink($post->ID));
+    }
+    return apply_filters('mashsb_get_url', $url);
+}
 
 
