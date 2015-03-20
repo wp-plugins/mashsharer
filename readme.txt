@@ -296,7 +296,7 @@ Read here more FAQ: [https://www.mashshare.net/faq/](https://www.mashshare.net/f
 * New: Two more share counts available, Buffer and VK.
 * Fix: Blank page on php 5.3 and older versions
 * Fix: Error message 'Undefined' when sharedcount.com is used and no api key available
-* Fix: Load class RollingCurlX only when not already exists
+* Fix: Load class RollingCurlX only when it exists
 * Fix: Create new curl() timeout var for sharedcount class and mashengine
 * Fix: array creation $array = [] not supported in php 5.3 and older
 * Fix: Use of php type 'callable' not supported in php 5.3 and older
