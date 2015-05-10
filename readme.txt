@@ -293,6 +293,7 @@ Read here more FAQ: [https://www.mashshare.net/faq/](https://www.mashshare.net/f
 
 = 2.3.5 =
 * Fix: Wrong sharing title when mashshare is used on category / archive pages with multiple blog posts
+* New: Tested up to WP 4.2.2
 
 = 2.3.4 =
 * New: Several performance improvements for faster php execution. Removal of duplicate foreach loops and array_filter callback function
