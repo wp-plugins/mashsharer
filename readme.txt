@@ -8,8 +8,8 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Mashable, Social Media Pop-Up, Social Media Widget, Social Media Sharing, Social Media Networks, Social Sharing, Social sharing optimization, Share button, share buttons, Facebook Share button, Twitter Share Button, Social Share, Social buttons, social share buttons, Share, Share this, simple social buttons, simple share buttons adder,  Google+, Twitter, Facebook, Digg, Stumble Upon, Linkedin, +1, add to any, AddThis, add this, addtoany, admin, aim, analytics, bookmark, bookmarking, bookmarks, bookmark button, bookmark menu, buddypress, chrome extension, comments, del.icio.us, Diigo, buffer, button, del.icio.us, e-mail, email, email button, Facebook, facebook like, facebook recommend, facebook share, facebook share button, fark, firefox extension, flickr, floating buttons, follow, foursquare, gmail, goo.gl
 Requires at least: 3.6+
-Tested up to: 4.2.2
-Stable tag: 2.4.1
+Tested up to: 4.2.4
+Stable tag: 2.4.2
 
 Social Media Icons & Share Buttons, a highly customizable social sharing and & Media SEO ecosystem Facebook, Twitter and more ...
 
@@ -19,18 +19,22 @@ Social Media Icons & Share Buttons, a highly customizable social sharing and & M
 > This free Social Media Icons Plugin is a professional and highly customizable<br />
 > ecosystem for social media sharing and optimizing of your valuable content.<br /> 
 >
+> No external script dependencies are needed and and all code resides on your site. <br /> 
+> So the default share buttons ensure yours and your visitors privacy! <br /> 
+>
 > It gives you per default a large total share counter beside three large 
 > prominent Share Buttons for your Twitter tweets, Facebook shares and the option<br /> 
 > to place a prominent subscribe button for your news feed and mailing list. 
 >
-> This services are free per default including great support.<br /> 
+> This services are free per default including great support. 
+> There is no need to have an account like other share services demands from you <br /> 
 >
-> We also offer free Add-Ons for specifing sharing image, title, description and twitter hashtags and think this is satisfying for most website owners who need a free and effective working sharing solution.<br /> 
+> We also offer free Add-Ons for specifing social sharing image, title, description and twitter hashtags and think this is satisfying for most website owners who need a free and effective working social sharing solution.<br /> 
 >
 > If you need services like Whatsapp, Pinterest, Mail,<br />
 > Print, Linkedin, Odnoklassniki etc., you get them on the Add-On Marketplace.<br />
 > 
-> Mashshare can also be used in conjunction with other share buttons!
+> Mashshare can also be used in conjunction with other third-party share buttons vendor!
 >
 > Free and paid Add-Ons available:
 > 
@@ -42,7 +46,8 @@ Social Media Icons & Share Buttons, a highly customizable social sharing and & M
 > - Google Analytics<br /> 
 > - and more...<br /> 
 >
-> [Demo](https://www.mashshare.net?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=after-features-info-link) | [Get Add-Ons >>](https://www.mashshare.net/downloads?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=get-addons)
+> [Demo](https://www.mashshare.net?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=after-features-info-link) | [More Add-Ons >>](https://www.mashshare.net/downloads?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=get-addons)
+
 
 <h3> Mashshare Share Buttons Social Media Icons </h3>
 
@@ -176,6 +181,7 @@ There are more parameters available:
 
  `[mashshare shares="false" buttons="true" align="left"]` for buttons without shares, alignment left
  `[mashshare shares="true" buttons="false" align="right"]` for sharecount without buttons, alignment right
+ `[mashshare url="http://yourwebsite.com/yourpage"]` for share buttons with custom url
 
 * For manual insertion of the Share Buttons in your template files use the following php code on place you like to see the share buttons:`echo do_shortcode('[mashshare]');`
 Configure the Share buttons sharing function in the settings page of the plugin.
@@ -286,10 +292,14 @@ Read here more FAQ: [https://www.mashshare.net/faq/](https://www.mashshare.net/f
 8. Sticky Sharebar Add-On on desktop device
 9. Round circle style (included)
 11. Default share buttons (included)
-12. Custom Sharing descriptions with free Mashshare Open Graph Add-On
+12. Custom Social Sharing descriptions with free Mashshare Open Graph Add-On
 
 
 == Changelog == 
+
+= 2.4.2 =
+* New: New shortcode argument allows you to define custom url´s, e.g. [mashshare url="yourwebsite.com/yourpage"]
+* New: Tested up to Wordpress 4.2.4
 
 = 2.4.1 =
 * Fix: License API for add-ons not working under all circumstances
@@ -317,7 +327,7 @@ Fix: wrong font icons for whatsapp and memeame
 * New: Support for mail.ru and line (only with network add-on)
 
 = 2.3.5 =
-* Fix: Wrong sharing title when mashshare is used on category / archive pages with multiple blog posts
+* Fix: Wrong social sharing title when mashshare is used on category / archive pages with multiple blog posts
 * New: Tested up to WP 4.2.2
 
 = 2.3.4 =
@@ -402,7 +412,7 @@ New: Ask for review notice after 7 days
 * New: Use custom share texts and images for all buttons including Tweeter when free Mashshare Add-On "OpenGraph" is installed. 
 * Use custom predefined hashtags for all posts with free Mashshare Add-On "OpenGraph"
 * Fix: Missing URLencode for shortcode function, prevents "not found" for tumblr button
-* Tweak: Use Current page for sharing and not permalink url when current page not_singular(). (Compatibility for )
+* Tweak: Use Current page for social sharing and not permalink url when current page not_singular(). (Compatibility for )
 
 = 2.1.9 =
 * Fix: If Twitter username is empty the plugin still appends "via @" at end of tweet
@@ -481,5 +491,5 @@ https://www.mashshare.net/changelog/
 
 == Upgrade Notice ==
 
-= 2.4.0 =
-2.4.0 <strong> UPDATE:</strong> Update contains a performance improvement and a important fix if you are using version 2.3.9
+= 2.4.2 =
+2.4.2 <strong> UPDATE:</strong> New shortcode argument [mashshare url="yourwebsite.com"]. Its recommended to test this update first on a staging website before installing it on a live site. Use the free plugin <a href="https://wordpress.org/plugins/wp-staging/" target="_blank">WP Staging</a> for creating a test staging site with two clicks.
