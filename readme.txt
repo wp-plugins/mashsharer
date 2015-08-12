@@ -25,7 +25,6 @@ Social Media Icons & Share Buttons, a highly customizable social sharing and & M
 > It gives you per default a large total share counter beside three large 
 > prominent Share Buttons for your Twitter tweets, Facebook shares and the option<br /> 
 > to place a prominent subscribe button for your news feed and mailing list. 
->
 > This services are free per default including great support. 
 > There is no need to have an account like other share services demands from you <br /> 
 >
@@ -35,6 +34,9 @@ Social Media Icons & Share Buttons, a highly customizable social sharing and & M
 > Print, Linkedin, Odnoklassniki etc., you get them on the Add-On Marketplace.<br />
 > 
 > Mashshare can also be used in conjunction with other third-party share buttons vendor!
+>
+> <strong>See the demonstration video by Katrinah.com</strong>
+> [youtube https://www.youtube.com/watch?v=vRSE-pQJTBQ]
 >
 > Free and paid Add-Ons available:
 > 
