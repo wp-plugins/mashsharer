@@ -19,6 +19,10 @@ Social Media Icons & Share Buttons, a highly customizable social sharing and & M
 > This free Social Media Icons Plugin is a professional and highly customizable<br />
 > ecosystem for social media sharing and optimizing of your valuable content.<br /> 
 >
+
+<strong>See the demonstration video by Katrinah.com</strong>
+[youtube https://www.youtube.com/watch?v=vRSE-pQJTBQ]
+
 > No external script dependencies are needed and and all code resides on your site. 
 > So the default share buttons ensure yours and your visitors privacy! <br /> 
 >
@@ -48,8 +52,6 @@ Social Media Icons & Share Buttons, a highly customizable social sharing and & M
 >
 > [Demo](https://www.mashshare.net?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=after-features-info-link) | [More Add-Ons >>](https://www.mashshare.net/downloads?utm_source=wp-plugin-repo&utm_medium=link&utm_campaign=get-addons)
 
-<strong>See the demonstration video by Katrinah.com</strong>
-[youtube https://www.youtube.com/watch?v=vRSE-pQJTBQ]
 
 <h3> Mashshare Share Buttons Social Media Icons </h3>
 
